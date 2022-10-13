@@ -1,0 +1,7 @@
+/*
+    This file consolidates the styles of individual components.
+    Upon creation of a new component, place its styles here.
+*/
+
+@import "./button/button.css";
+@import "./input/input.css";
