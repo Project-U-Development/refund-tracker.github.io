@@ -1,3 +1,5 @@
 .unique-button-class {
-    
+  background: blue;
+  color: white;
+  border: none;
 }
