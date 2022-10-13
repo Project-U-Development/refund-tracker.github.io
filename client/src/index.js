@@ -1,3 +1,5 @@
 import { useButton } from '../components/button/button.mjs';
 
-useButton();
+useButton('button');
+useButton('button1');
+useButton('button2');

@@ -1,5 +1,10 @@
-.unique-button-class {
+.button-primary {
   color: white;
   border: none;
   background-color: red;
+}
+
+.button-secondary {
+  color: grey;
+  background-color: black;
 }

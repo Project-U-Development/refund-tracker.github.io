@@ -1,6 +1,6 @@
 /* Exported, publicly available function, use wherever needed in code */
 
-export function useButton() {
-  const button = document.getElementById('button');
+export function useButton(id) {
+  const button = document.getElementById(id);
   button.onclick = () => console.log('clicked');
 }
