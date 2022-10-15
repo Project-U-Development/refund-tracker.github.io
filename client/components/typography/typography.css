@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=IBM Plex Sans");
+
+body {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+}
+
+.heading-h2 {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: 0em;  
+}
+
+.heading-h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0em;
+}
+
+.heading-h5 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0em;
+}
+
+.paragraph-default {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0em;
+}
+
+.other-eyebrows {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+}
+
+.paragraph-small {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
