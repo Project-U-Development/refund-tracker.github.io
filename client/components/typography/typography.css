@@ -19,28 +19,27 @@ body {
     letter-spacing: 0em;
 }
 
-.heading-h5 {
+.heading-h5 {   /* for button text, input text and table column headers*/
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 0em;
 }
 
-.paragraph-default {
-    font-size: 18px;
+.input::placeholder {
     font-weight: 300;
+    font-size: 18px;
     line-height: 28px;
-    letter-spacing: 0em;
 }
 
-.other-eyebrows {
+.input-label-typography {
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
     letter-spacing: 0em;
 }
 
-.paragraph-small {
+.table-data-typography {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
