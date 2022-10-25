@@ -1,5 +1,74 @@
-.unique-button-class {
-  color: white;
+@import '../typography/typography.css';
+@import '../typography/color.css';
+
+button {
+  padding: 0;
   border: none;
-  background-color: red;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  height: 48px;
+  border-radius: 8px;
+  line-height: 28px;
+}
+
+.primary {
+  background: var(--primary-blue);
+  color: var(--primary-white);
+}
+
+.primary:disabled {
+  background: var(--button-disabled);
+}
+
+.primary:hover:enabled {
+  background: var(--secondary-blueberry);
+}
+
+.primary:focus-visible:enabled {
+  background: var(--border-focused);
+  color: var(--primary-dark);
+}
+
+.primary:active:enabled {
+  background: var(--secondary-blueberry);
+  border: 3px solid var(--border-focused);
+  color: var(--primary-white);
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.ghost:disabled {
+  border: 1px solid var(--button-disabled);
+  color: var(--button-disabled);
+}
+
+.ghost:hover:enabled {
+  border: 1px solid var(--secondary-blueberry);
+  color: var(--secondary-blueberry);
+}
+
+.ghost:focus-visible:enabled {
+  background: var(--border-focused);
+  color: var(--primary-dark);
+  border: none;
+}
+
+.ghost:active:enabled {
+  background: transparent;
+  border: 3px solid var(--border-focused);
+  color: var(--secondary-blueberry);
 }
