@@ -1,8 +1,10 @@
 :root {
     --primary-dark: #00003C;
     --primary-blue: #0061FF;
-    --rimary-white: #FFFFFF;
+    --primary-white: #FFFFFF;
     --placeholder: #9999B1;
     --border-unfocused: #CCDFFF;
     --border-focused: #00E4CA;
+    --button-disabled: #99C0FF;
+    --secondary-blueberry: #4649D0;
 }
