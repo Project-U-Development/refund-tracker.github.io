@@ -18,12 +18,12 @@ button {
   padding: 10px 16px;
   height: 48px;
   border-radius: 8px;
-  line-height: 28px;
 }
 
 .primary {
   background: var(--primary-blue);
   color: var(--primary-white);
+  transition: background 1s ease;
 }
 
 .primary:disabled {
@@ -32,6 +32,7 @@ button {
 
 .primary:hover:enabled {
   background: var(--secondary-blueberry);
+  trans;
 }
 
 .primary:focus-visible:enabled {
@@ -49,6 +50,7 @@ button {
   background: transparent;
   border: 1px solid var(--primary-blue);
   color: var(--primary-blue);
+  transition: background 1s ease, border 1s ease, color 1s ease;
 }
 
 .ghost:disabled {
