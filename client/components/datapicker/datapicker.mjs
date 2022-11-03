@@ -1,6 +1,7 @@
-const date = new Date();
 
-const renderCalendar = () => {
+// const date = new Date();
+
+export function renderCalendar (date) {
     date.setDate(1);
 
 const monthDays = document.querySelector('.days');
