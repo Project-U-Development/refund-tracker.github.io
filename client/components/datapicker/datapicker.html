@@ -13,28 +13,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="block"></div>
-        <div class="calendar">
-            <div class="month">
-                <i class="fas fa-angle-left prev"></i>
-                <div class="date">
-                    <h1></h1>
+    <label for="DuedateId">
+     Due date
+      <br>
+      <input  class="block" name="Duedate" id="DuedateId" type="date">
+    </label>
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>
                 </div>
-                <i class="fas fa-angle-right next"></i>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>  
+                </div>
+                <div class="days">
+                </div>
             </div>
-            <div class="weekdays table-data">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>  
-            </div>
-            <div class="days">
-            </div>
-        </div>
-    </div>
-  <script src="datapicker.mjs"></script>  
-</body>
+      </div>
+      <script src="datapicker.mjs"></script>
+      </body>
 </html>
