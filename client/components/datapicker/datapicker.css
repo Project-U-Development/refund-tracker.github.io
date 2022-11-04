@@ -12,18 +12,33 @@ body{
     font-weight: 400;
 }
 
+.block{
+    border: 1px solid black;
+    width: 448px;
+    height: 64px;
+
+}
+
 .container{
     width: 100%;
     height: 10vh;
     color: #00003C;
-    display: flex;
+    display: block;
     justify-content: center;
     align-self: center;
+    
 }
 
 .calendar{
     width: 448px;
     height: 244px;
+    overflow: hidden;
+    opacity:0;
+    height:0;
+}
+
+.kkkkk:hover .calendar {
+    display:block;
 }
 
 .month{
@@ -58,8 +73,8 @@ body{
 }
 
 .weekdays div{
-    /* font-size: 14px;
-    font-weight: 400; */
+    font-size: 14px;
+    font-weight: 400;
     width: calc(448px/7);
     display: flex;
     justify-content: center;
@@ -96,4 +111,10 @@ body{
 
 .today{
     background-color: #CCDFFF;
+}
+
+fieldset{
+    width: 500px;
+    height: 200px;
+    display: block;
 }
