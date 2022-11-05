@@ -10,7 +10,7 @@ input, textarea {
   caret-color: var(--primary-blue);
   letter-spacing: inherit;
   background: var(--primary-white);
-
+  max-width: 475px;
 } 
 textarea {
   font-weight: 300;
