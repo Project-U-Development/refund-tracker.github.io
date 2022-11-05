@@ -70,8 +70,9 @@ fieldset:invalid {
   content: "Form is invalid";
   color: var(--invalid-red);
 }
- input:invalid+label {
-  color: var(--invalid-red);
+
+input:invalid ~ label, label:invalid {
+  color:var(--invalid-red);
 }
  
 fieldset:hover {
@@ -87,8 +88,8 @@ fieldset:disabled {
 input:disabled {
   background: var(--border-unfocused);
 }
-input:disabled+label {
-  color: var(--button-disabled);
+input:disabled ~ label, label:invalid {
+color: var(--button-disabled); 
 }
 fieldset:read-only {
   background: var(--border-unfocused);
