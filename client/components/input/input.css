@@ -36,6 +36,8 @@ input[type="number"]{
 }
 
 fieldset {
+   display: flex;
+   flex-direction: column-reverse;
     border: 1px solid var(--border-unfocused);
     border-radius: 8px;
     outline: none;
@@ -63,6 +65,13 @@ fieldset:invalid {
  background-position: 95% 50%;
  width:100%;
  }
+ input:invalid+b:before {
+  content: "Form is invalid";
+  color: var(--invalid-red);
+}
+ input:invalid+label {
+  color: var(--invalid-red);
+}
  
 fieldset:hover {
   border: 1px solid var(--primary-blue);
@@ -76,6 +85,9 @@ fieldset:disabled {
 }
 input:disabled {
   background: var(--border-unfocused);
+}
+input:disabled+label {
+  color: var(--button-disabled);
 }
 fieldset:read-only {
   background: var(--border-unfocused);
