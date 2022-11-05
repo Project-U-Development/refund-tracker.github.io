@@ -38,6 +38,7 @@ input[type="number"]{
 fieldset {
    display: flex;
    flex-direction: column-reverse;
+   margin-bottom: 15px;
     border: 1px solid var(--border-unfocused);
     border-radius: 8px;
     outline: none;
