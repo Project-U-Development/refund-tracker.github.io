@@ -1,0 +1,18 @@
+.button-error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 8px;
+    width: 49px;
+    height: 24px;
+    background: #FFF2F6;
+    border-radius: 8px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #B30038;
+    border: none;
+    }
+    
+    
