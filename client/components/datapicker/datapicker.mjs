@@ -68,7 +68,6 @@ function listenToClick() {
   function clickHandler(event) {
     const year = date.getFullYear();
     const monthIndex  =(date.getMonth() + 1);
-    const dayIndex = date.getDate();
     const pickedDate = getTime(new Date(year + "-" + monthIndex+ "-" + event.target.innerText));
     setDueDate(pickedDate);
   }
@@ -114,7 +113,7 @@ function addZero(d) {
     let Y = t.getFullYear();
     let M = addZero(t.getMonth() + 1);
     let D = addZero(t.getDate());
-    return `${Y}-${M}-${D}`;
+    return `${D}-${M}-${Y}`;
   }
   const curDate = getTime(new Date());
   
