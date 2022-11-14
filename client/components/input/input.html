@@ -1,95 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Input</title>
   <link rel="stylesheet" href="./input.css">
-  
+
 
 </head>
+
 <body>
-
-<div id ="inputText" class= "fieldset" > 
-  <fieldset id= "fieldName">      
-             <input 
-                    class="input heading-h5"
-                    id = "text1" 
-                    type="text" 
-                    name="textBox"  
-                    minlength="3" 
-                    maxlength="25"
-                    placeholder="Text"
-                    size="25"
-                    pattern="[a-z]{1,15}" 
-                    required>
-                    <b></b>              
-  <label class="input-label" for="text1">What to refund:</label>
+  <fieldset class="input-fieldset" id="fieldText">
+    <label class="input-label" for="text">Label text
+      <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
+        placeholder="Text" required="">
+    </label>
   </fieldset>
-</div>
-
-<div id ="inputNumber" class= "numberInput" > 
-   <fieldset id= "fieldNumber">
-                <input 
-                    class="input heading-h5"
-                     id = "number1"   
-                     type="number" 
-                     name="nameOfInput" 
-                     min="0" 
-                     max="99000" 
-                     value=""
-                     step=".01"
-                     placeholder="Number"
-                     required  >
-                  <label class="input-label" for="number1">Amount:</label>
-     </fieldset>
- </div>
-  
- <div id ="inputText" class= "fieldset" > 
-  <fieldset id= "fieldName">      
-             <input class="inputNoLabel heading-h5"
-                    id = "text1" 
-                    type="text" 
-                    name="textBox"  
-                    minlength="0" 
-                    maxlength="25"
-                    placeholder="Text"
-                    size="25" 
-                    required>               
+  <fieldset class="input-fieldset" id="fieldEmail">
+    <label class="input-label" for="email">Label text
+      <input class="input heading-h5" id="email" type="email" name="emailInput" maxlength="125" placeholder="Email"
+        required="">
+    </label>
   </fieldset>
-</div>
-
-<div id ="inputText" class= "fieldset" > 
-  <fieldset id= "fieldName">       
-             <input 
-                    class="input heading-h5"
-                    id = "text1" 
-                    type="text" 
-                    name="textBox"  
-                    minlength="3" 
-                    maxlength="25"
-                    placeholder="Text"
-                    size="25" 
-                    required>
-  <label class="input-label" for="text1">What to refund:<span class="redStarRequired">*</span></label>
-
+  <fieldset class="input-fieldset" id="fieldNumber">
+    <label class="input-label" for="number">Label text
+      <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
+        step=".01" placeholder="Number" required="">
+    </label>
   </fieldset>
-</div>
-
-<div id ="inputText" class= "" > 
-  <fieldset class = "textArea" id= "fieldName">                 
-             <textarea class="input heading-h5"
-                       id="story" 
-                       name="story"
-                       rows="6" 
-                       cols="45" 
-                       minlength="" 
-                       maxlength=""
-                       placeholder= "Something long here">
-                    </textarea>                                                  
-                    <label class="input-label" for="text1">Long text</label>
-  </fieldset>
-</div>
-
 
 </body>
+
+</html>
+
 </html>
