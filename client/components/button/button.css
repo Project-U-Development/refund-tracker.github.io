@@ -32,7 +32,6 @@ button {
 
 .primary:hover:enabled {
   background: var(--secondary-blueberry);
-  trans;
 }
 
 .primary:focus-visible:enabled {
