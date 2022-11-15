@@ -56,7 +56,7 @@ a {
     margin-right: 12px;
 }
 
-.heading-h5 {   /* for button text, input text and table column headers*/
+.heading-h5 {
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
@@ -156,7 +156,7 @@ label {
     top: 8px;
 }
 
-.container3 {
+.setReminder {
     margin-top: 16px;
     display: flex;
     grid: repeat (1, 1fr)/repeat (3, 1fr);
