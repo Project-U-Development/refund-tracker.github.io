@@ -1,3 +1,36 @@
-<link rel="stylesheet" href="./input.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<input class="unique-input-class" type="text" />
+<head>
+  <meta charset="UTF-8">
+  <title>Input</title>
+  <link rel="stylesheet" href="./input.css">
+
+
+</head>
+
+<body>
+  <fieldset class="input-fieldset" id="fieldText">
+    <label class="input-label" for="text">Label text
+      <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
+        placeholder="Text" required="">
+    </label>
+  </fieldset>
+  <fieldset class="input-fieldset" id="fieldEmail">
+    <label class="input-label" for="email">Label text
+      <input class="input heading-h5" id="email" type="email" name="emailInput" maxlength="125" placeholder="Email"
+        required="">
+    </label>
+  </fieldset>
+  <fieldset class="input-fieldset" id="fieldNumber">
+    <label class="input-label" for="number">Label text
+      <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
+        step=".01" placeholder="Number" required="">
+    </label>
+  </fieldset>
+
+</body>
+
+</html>
+
+</html>
