@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <form class="registerForm" action="" method="post">
+    <div class="newAccount heading-h5">Create new account</div>
+    <fieldset class="input-fieldset" id="fieldName">
+        <label class="input-label" for="userName">User name
+          <input 
+          class="input heading-h5" 
+          id="newUserName" 
+          type="text" 
+          name="newUsernameInput" 
+          minlength="1" 
+          maxlength="125"
+          placeholder="Your name" 
+          required>
+        </label>
+      </fieldset>
+      <fieldset class="input-fieldset" id="fieldEmail">
+        <label class="input-label" for="email">Your E-mail
+          <input 
+          class="input heading-h5" 
+          id="eMail" 
+          type="email" 
+          name="emailInput" 
+          maxlength="125" 
+          placeholder="Your E-mail"
+          required>
+        </label>
+      </fieldset>
+      <fieldset class="input-fieldset" id="fieldPassword">
+        <label class="input-label" for="password">Enter your password
+          <input 
+          class="input heading-h5" 
+          id="password1" 
+          type="password" 
+          name="password1" 
+          min="8" 
+          max="45" 
+          placeholder="Choose your password" 
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+          onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number' : ''); if(this.checkValidity()) form.password2.pattern = this.value;"
+          required>
+        </label>
+      </fieldset>
+      <fieldset class="input-fieldset" id="fieldPasswordVerify">
+        <label class="input-label" for="password2">Verify your password
+          <input 
+          class="input heading-h5" 
+          id="password2" 
+          type="password" 
+          name="password2" 
+          min="8" 
+          max="45" 
+          placeholder="Verify your password" 
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+          onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+          required>
+        </label>
+      </fieldset>
+      <br>
+      <button class="button primary heading-h5" id="createAccount" type="submit">Create account</button>
+  
+  <div class="containerRegister heading-h5">
+    <p>Already have an account? <br>
+      <a href="#">Sign in</a></p>
+  </div>
+</form>
+</body>
+</html>
