@@ -11,13 +11,13 @@
     max-width: 340px;
     padding: 15px;
     margin: 20px auto;
-    border: 4px solid var(--primary-blue);
+    border: 1px solid var(--border-unfocused);
     border-radius: 8px;
-    background: var(--border-unfocused);
+    background: var(--primary-white);
   }
   .icon {
     padding: 10px;
-    background: var(--primary-blue);
+    background: var( --button-disabled);
     color: var(--primary-white);
     min-width: 50px;
     text-align: center;
