@@ -17,8 +17,8 @@
   }
   .icon {
     padding: 10px;
-    background: var( --button-disabled);
-    color: var(--primary-white);
+    background: var(--primary-white);
+    color: var(--primary-blue);
     min-width: 50px;
     text-align: center;
     border-radius: 5px;
