@@ -85,3 +85,13 @@
 .input:hover {
   cursor: default;
 }
+/* style of icons in user/e-mail/password inputs*/
+/* icons come from library  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*/
+.icon {
+  padding: 10px;
+  background: var(--primary-white);
+  color: var(--primary-blue);
+  min-width: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
