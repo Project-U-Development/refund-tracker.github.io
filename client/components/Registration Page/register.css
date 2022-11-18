@@ -49,10 +49,5 @@ button {
     padding-left:2%;
     margin-left:0%;
   }
-  .messageInfo {
-    color: var(--primary-red);
-    font-size: 10px;
-    line-height:3px;
-    display:none;
-  }
+
   
