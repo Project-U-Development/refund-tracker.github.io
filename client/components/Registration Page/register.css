@@ -2,12 +2,6 @@
 @import '../input/input.css';
 @import '../button/button.css';
 
-* {
-   /* box-sizing: border-box;
-   padding: 5px;
-   margin: 10px;
-   text-align: center; */
-}
 
 .mainConteiner {
    display: flex;
@@ -31,31 +25,10 @@
 .registerForm {
    max-width: 440px;
    width: 100%;
-   /* padding: 15px; */
-   /* margin: 20px auto; */
    border: 1px solid var(--border-unfocused);
    border-radius: 8px;
    background: var(--primary-white);
-
 }
-
-/* .icon {
-   padding: 10px;
-   background: var(--primary-white);
-   color: var(--primary-blue);
-   min-width: 50px;
-   text-align: center;
-   border-radius: 5px;
-} */
-
-.input {
-   /* text-align: left; */
-}
-
-/* button {
-   text-align: center;
-   margin: 0 auto;
-} */
 
 .buttonCreateAccount {
    display: flex;
@@ -64,32 +37,21 @@
    margin: 30px;
 }
 
-
-
 .checkbox {
    display: flex;
    width: 100%;
    justify-content: center;
    align-items: center;
-   /* text-align: left;
-   padding-top: 0%;
-   margin-top: 0%; */
 }
 
 .inputCheckbox {
-   /* text-align: left; */
    border: 1px solid black;
    text-align: center;
-   /* padding-left: 0%;
-   margin-left: 0%;
-   margin-right: 0%; */
 }
 
 .labelShowPassword {
    padding-left: 3px;
    color: var(--primary-blue);
-   /* padding-left: 2%;
-   margin-left: 0%; */
 }
 
 .containerRegister {
