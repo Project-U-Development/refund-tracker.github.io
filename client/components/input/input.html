@@ -2,69 +2,47 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Input</title>
-  <link rel="stylesheet" href="./input.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <meta charset="UTF-8">
+   <title>Input</title>
+   <link rel="stylesheet" href="./input.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 </head>
 
 <body>
-  <fieldset class="input-fieldset" id="fieldText">
-    <label class="input-label" for="text">Label text
-      <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
-        placeholder="Text" required="">
-    </label>
-  </fieldset>
-  
-  <fieldset class="input-fieldset" id="fieldNumber">
-    <label class="input-label" for="number">Label text
-      <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
-        step=".01" placeholder="Number" required="">
-    </label>
-  </fieldset>
+   <fieldset class="input-fieldset" id="fieldText">
+      <label class="input-label" for="text">Label text
+         <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
+            placeholder="Text" required="">
+      </label>
+   </fieldset>
 
-<!-- New inputs with icons especially for user, e-mail and password -->
-  <fieldset class="input-fieldset" id="fieldName">
-    <i class="fa fa-user icon"></i>
-      <input 
-      class="input heading-h5" 
-      id="newUserName" 
-      type="text" 
-      name="newUsernameInput" 
-      minlength="1" 
-      maxlength="125"
-      placeholder="Your name" 
-      required="">
-  </fieldset>
+   <fieldset class="input-fieldset" id="fieldNumber">
+      <label class="input-label" for="number">Label text
+         <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
+            step=".01" placeholder="Number" required="">
+      </label>
+   </fieldset>
 
-  <fieldset class="input-fieldset" id="fieldEmail">
-    <i class="fa fa-envelope icon"></i>
-      <input 
-      class="input heading-h5" 
-      id="eMail" 
-      type="email" 
-      name="emailInput" 
-      maxlength="125" 
-      placeholder="Your E-mail"
-      title="This is not a valid e-mail address"
-      required="">
-  </fieldset>
+   <!-- New inputs with icons especially for user, e-mail and password -->
+   <fieldset class="input-fieldset" id="fieldName">
+      <i class="icon iconUser"></i>
+      <input class="input inputNoLabel heading-h5" id="newUserName" type="text" name="newUsernameInput" minlength="1"
+         maxlength="125" placeholder="Your name" required="">
+   </fieldset>
 
-  <fieldset class="input-fieldset" id="fieldPassword">
-    <i class="fa fa-key icon"></i>
-      <input 
-      class="input heading-h5" 
-      id="password123" 
-      type="password" 
-      name="password1" 
-      min="8" 
-      max="45" 
-      placeholder="Choose your password" 
-      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-      title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
-      required="">
-  </fieldset>
+   <fieldset class="input-fieldset" id="fieldEmail">
+      <i class="icon iconEmail"></i>
+      <input class="input inputNoLabel heading-h5" id="eMail" type="email" name="emailInput" maxlength="125"
+         placeholder="Your E-mail" title="This is not a valid e-mail address" required="">
+   </fieldset>
+
+   <fieldset class="input-fieldset" id="fieldPassword">
+      <i class=" icon iconPassword"></i>
+      <input class="input inputNoLabel heading-h5" id="password123" type="password" name="password1" min="8" max="45"
+         placeholder="Choose your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+         title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number" required="">
+   </fieldset>
 </body>
 
 </html>
