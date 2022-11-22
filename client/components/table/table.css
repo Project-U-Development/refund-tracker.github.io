@@ -1,0 +1,20 @@
+.table-cell-head, .table-cell {
+    background: white;
+    border: 1px solid black;
+	padding: 3px;
+	margin: px;
+	width: 20%;
+	height: 20px;
+	text-align: center;
+}
+	
+.table-black-and-white {
+    width: 90%;
+	border-collapse: collapse;
+	margin: 30px 70px 30px 30px; 
+	
+}	
+	
+.table-cell {
+}
+	
