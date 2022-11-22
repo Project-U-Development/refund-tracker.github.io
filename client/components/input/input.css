@@ -89,6 +89,12 @@
    -moz-appearance: textfield;
 }
 
+.input::-webkit-contacts-auto-fill-button {
+   visibility: hidden;
+   position: absolute;
+   right: 0;
+}
+
 .input:hover {
    cursor: default;
 }
@@ -96,12 +102,6 @@
 /* style of icons in user/e-mail/password inputs*/
 /* icons come from library  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*/
 .icon {
-   /* padding: 10px;
-   background: var(--primary-white);
-   color: var(--primary-blue);
-   min-width: 50px;
-   text-align: center;
-   border-radius: 5px; */
    width: 40px;
    background-repeat: no-repeat;
    background-position: center;
