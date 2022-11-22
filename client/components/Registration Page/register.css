@@ -2,85 +2,58 @@
 @import '../input/input.css';
 @import '../button/button.css';
 
-* {
-    box-sizing: border-box;
-    padding:5px;
-    margin: 10px;
-    text-align: center;  
-  }
-  
-  .registerForm {
-    max-width: 340px;
-    padding: 15px;
-    margin: 20px auto;
-    border: 1px solid var(--border-unfocused);
-    border-radius: 8px;
-    background: var(--primary-white);
-  }
-  .icon {
-    padding: 10px;
-    background: var(--primary-white);
-    color: var(--primary-blue);
-    min-width: 50px;
-    text-align: center;
-    border-radius: 5px;
-  }
 
-.input {
-    text-align: left;
-  }
-button {
-    text-align: center; 
-    margin: 0 auto;
-  }
-  .checkbox {
-    text-align: left;
-    padding-top:0%;
-    margin-top: 0%;  
-  }
-  .inputCheckbox {
-    text-align: left;
-    padding-left:0%;
-    margin-left:0%;
-    margin-right: 0%;
-  }
-  
-  .labelShowPassword{
-    padding-left:2%;
-    margin-left:0%;
-  } 
-  .mistakeArea {
-    margin:0%;
-    padding:0%;
-  }
-  .mistakeMessage {
-    margin:0%;
-    padding:0%;
-    padding-left:3%
-  }
-  .newUser,
-  .newUserEmail,
-  .newUserPassword,
-  .newUserPasswordRepeat
-   {
-    padding-top 0%;
-    margin-top: 0%;
-    padding-bottom: 0%;
-    margin-bottom: 0%;  
-  }
-   
-input[type='email']:invalid + .mistakeMessage::before {
-    content: 'Please, enter a valid email.'
-}
-input[name='newUsernameInput']:invalid + .mistakeMessage::before {
-    content: 'Please, fill at least X signs'
-}
-input[name='password1']:invalid + .mistakeMessage::before {
-    content: 'Please, fill at least XXX signs'
+.mainConteiner {
+   display: flex;
+   justify-content: center;
+   padding: 20px;
 }
 
-input[name='password2']:invalid + .mistakeMessage::before {
-    content: 'Please enter the same Password as above'
+.formContainer {
+   padding: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-  
+.newAccount {
+   text-align: center;
+   margin-bottom: 15px;
+   max-width: 200px;
+}
+
+.registerForm {
+   max-width: 440px;
+   width: 100%;
+   border: 1px solid var(--border-unfocused);
+   border-radius: 8px;
+   background: var(--primary-white);
+}
+
+.buttonCreateAccount {
+   display: flex;
+   justify-content: center;
+   padding: 0;
+   margin: 30px;
+}
+
+.checkbox {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.inputCheckbox {
+   border: 1px solid black;
+   text-align: center;
+}
+
+.labelShowPassword {
+   padding-left: 3px;
+   color: var(--primary-blue);
+}
+
+.containerRegister {
+   text-align: center;
+}
