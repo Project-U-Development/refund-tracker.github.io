@@ -48,6 +48,39 @@ button {
   .labelShowPassword{
     padding-left:2%;
     margin-left:0%;
+  } 
+  .mistakeArea {
+    margin:0%;
+    padding:0%;
   }
+  .mistakeMessage {
+    margin:0%;
+    padding:0%;
+    padding-left:3%
+  }
+  .newUser,
+  .newUserEmail,
+  .newUserPassword,
+  .newUserPasswordRepeat
+   {
+    padding-top 0%;
+    margin-top: 0%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;  
+  }
+   
+input[type='email']:invalid + .mistakeMessage::before {
+    content: 'Please, enter a valid email.'
+}
+input[name='newUsernameInput']:invalid + .mistakeMessage::before {
+    content: 'Please, fill at least X signs'
+}
+input[name='password1']:invalid + .mistakeMessage::before {
+    content: 'Please, fill at least XXX signs'
+}
+
+input[name='password2']:invalid + .mistakeMessage::before {
+    content: 'Please enter the same Password as above'
+}
 
   

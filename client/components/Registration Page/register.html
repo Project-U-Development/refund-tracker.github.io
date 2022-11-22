@@ -1,87 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration page</title>
-    <link rel="stylesheet" href="./register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Registration page</title>
+   <link rel="stylesheet" href="./register.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <form class="registerForm" action="" method="post">
-    <div class="newAccount heading-h2">Create new account</div>
-    <fieldset class="input-fieldset" id="fieldName">
-        <i class="fa fa-user icon"></i>
-          <input 
-          class="input heading-h5" 
-          id="newUserName" 
-          type="text" 
-          name="newUsernameInput" 
-          minlength="1" 
-          maxlength="125"
-          placeholder="Your name" 
-          required>
-      </fieldset>
-      <fieldset class="input-fieldset" id="fieldEmail">
-        <i class="fa fa-envelope icon"></i>
-          <input 
-          class="input heading-h5" 
-          id="eMail" 
-          type="email" 
-          name="emailInput" 
-          maxlength="125" 
-          placeholder="Your E-mail"
-          title="This is not a valid e-mail address"
-          required>
-      </fieldset>
-      <fieldset class="input-fieldset" id="fieldPassword">
-        <i class="fa fa-key icon"></i>
-          <input 
-          class="input heading-h5" 
-          id="password1" 
-          type="password" 
-          name="password1" 
-          min="8" 
-          max="45" 
-          placeholder="Choose your password" 
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-          title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
-          onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number' : ''); if(this.checkValidity()) form.password2.pattern = this.value;"
-          required>
-      </fieldset>
-      <fieldset class="input-fieldset" id="fieldPasswordVerify">
-        <i class="fa fa-key icon"></i>
-          <input 
-          class="input heading-h5" 
-          id="password2" 
-          type="password" 
-          name="password2" 
-          min="8" 
-          max="45" 
-          placeholder="Verify your password" 
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-          title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
-          onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
-          required>
-      </fieldset>
-      <div class="checkbox">
-        <input
-          class="inputCheckbox heading-h5" 
-          type="checkbox"
-          id="showPassword"
-          name="showThePassword"
-          onclick="showPasswordFunction()"/>
-        <label class="labelShowPassword" for="showThePassword">Show password</label>
-      </div>
-      <br>
-      <button class="button primary heading-h5" id="createAccount" type="submit">Create account</button>
-  
-  <div class="containerRegister heading-h5">
-    <p>Already have an account? <br>
-      <a href="#">Sign in</a></p>
-  </div>
-</form>
+   <div class="mainConteiner">
+      <form class="registerForm" action="" method="post">
+         <div class="formContainer">
+            <div class="newAccount heading-h2">Create new account</div>
+            <fieldset class="input-fieldset" id="fieldName">
+               <!-- <i class="fa fa-user icon"></i> -->
+               <i class="icon iconUser"></i>
+               <input class="input inputNoLabel heading-h5 registerFormInput" id="newUserName" type="text"
+                  name="newUsernameInput" minlength="1" maxlength="125" placeholder="Your name" required>
+            </fieldset>
+            <fieldset class="input-fieldset" id="fieldEmail">
+               <i class="icon iconEmail"></i>
+               <input class="input inputNoLabel heading-h5 registerFormInput" id="eMail" type="email" name="emailInput"
+                  maxlength="125" placeholder="Your E-mail" title="This is not a valid e-mail address" required>
+            </fieldset>
+            <fieldset class="input-fieldset" id="fieldPassword">
+               <i class=" icon iconPassword"></i>
+               <input class="input inputNoLabel heading-h5 registerFormInput" id="password1" type="password"
+                  name="password1" min="8" max="45" placeholder="Choose your password"
+                  title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
+                  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number' : ''); if(this.checkValidity()) form.password2.pattern = this.value;"
+                  required>
+            </fieldset>
+            <fieldset class="input-fieldset" id="fieldPasswordVerify">
+               <i class=" icon iconPassword"></i>
+               <input class="input inputNoLabel heading-h5 registerFormInput" id="password2" type="password"
+                  name="password2" min="8" max="45" placeholder="Verify your password"
+                  title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
+                  onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+                  required>
+            </fieldset>
+            <div class="checkbox">
+               <input class="inputCheckbox heading-h5" type="checkbox" id="showPassword" name="showThePassword"
+                  onclick="showPasswordFunction()" />
+               <label class="labelShowPassword" for="showThePassword">Show password</label>
+            </div>
+            <div class="buttonCreateAccount">
+               <button class="button primary heading-h5" id="createAccount" type="submit" disabled>Create
+                  account</button>
+            </div>
+            <div class="containerRegister heading-h5">
+               <p>Already have an account? <br>
+                  <a href="#">Sign in</a>
+               </p>
+            </div>
+         </div>
+      </form>
+   </div>
 </body>
 <script src="./register.mjs"></script>
+
 </html>
