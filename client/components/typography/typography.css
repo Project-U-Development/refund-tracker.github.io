@@ -12,6 +12,7 @@ body {
     line-height: 44px;
     letter-spacing: 0em;  
     color: var(--primary-dark);
+    caret-color: transparent;
 }
 
 .heading-h3 {
@@ -20,6 +21,7 @@ body {
     line-height: 34px;
     letter-spacing: 0em;
     color: var(--primary-dark);
+    caret-color: transparent;
 }
 
 .heading-h5 {   /* for button text, input text and table column headers*/
@@ -28,6 +30,7 @@ body {
     line-height: 28px;
     letter-spacing: 0em;
     font-family: inherit;
+    caret-color: transparent;
 }
 
 .input::placeholder {
