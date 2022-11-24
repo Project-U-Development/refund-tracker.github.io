@@ -24,7 +24,11 @@
    border: 1px solid var(--invalid-red);
    background-repeat: no-repeat;
    background-position: 95% 50%;
+  
 }
+.helpMistakeMessage { 
+   color:var(--invalid-red);
+ }
 
 .input-fieldset:enabled:valid {
    background: var(--primary-white);
