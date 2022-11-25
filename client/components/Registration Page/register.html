@@ -19,29 +19,49 @@
                <!-- <i class="fa fa-user icon"></i> -->
                <i class="icon iconUser"></i>
                <input class="input inputNoLabel heading-h5 registerFormInput" id="newUserName" type="text"
-                  name="newUsernameInput" minlength="1" maxlength="125" placeholder="Your name" required>
+                  name="newUsernameInput" minlength="1" maxlength="125" placeholder="Your name" title="Enter your name" required>
             </fieldset>
+
+            <div class="input-label mistakeMessage" id="messageRedUser">
+               <span class="helpMistakeMessage" id="invalidUser">Enter your name</span>
+             </div>
+         
             <fieldset class="input-fieldset" id="fieldEmail">
                <i class="icon iconEmail"></i>
                <input class="input inputNoLabel heading-h5 registerFormInput" id="eMail" type="email" name="emailInput"
-                  maxlength="125" placeholder="Your E-mail" title="This is not a valid e-mail address" required>
+                  maxlength="125" placeholder="Your E-mail" title="Enter a valid e-mail address" required>
             </fieldset>
+
+            <div class="input-label mistakeMessage" id="messageRedEmail">
+               <span class="helpMistakeMessage" id="invalidEmail">Enter valid e-mail</span>
+             </div>
+            
             <fieldset class="input-fieldset" id="fieldPassword">
                <i class=" icon iconPassword"></i>
                <input class="input inputNoLabel heading-h5 registerFormInput" id="password1" type="password"
                   name="password1" min="8" max="45" placeholder="Choose your password"
-                  title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
+                  title="Here should be a pattern for password"
                   onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number' : ''); if(this.checkValidity()) form.password2.pattern = this.value;"
                   required>
             </fieldset>
+
+            <div class="input-label mistakeMessage" id="messageRedPassword1">
+               <span class="helpMistakeMessage" id="invalidPassword1">Enter password</span>
+             </div>
+
             <fieldset class="input-fieldset" id="fieldPasswordVerify">
                <i class=" icon iconPassword"></i>
                <input class="input inputNoLabel heading-h5 registerFormInput" id="password2" type="password"
                   name="password2" min="8" max="45" placeholder="Verify your password"
-                  title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
+                  title="Please enter the same Password as above"
                   onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
                   required>
             </fieldset>
+
+            <div class="input-label mistakeMessage" id="messageRedPassword2">
+               <span class="helpMistakeMessage" id="invalidPassword2">Please enter the same Password as above</span>
+             </div>
+
             <div class="checkbox">
                <input class="inputCheckbox heading-h5" type="checkbox" id="showPassword" name="showThePassword"
                   onclick="showPasswordFunction()" />
