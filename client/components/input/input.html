@@ -10,40 +10,65 @@
 </head>
 
 <body>
+   <div class="input-container"> 
    <fieldset class="input-fieldset" id="fieldText">
       <label class="input-label" for="text">Label text
          <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
             placeholder="Text" required="">
       </label>
    </fieldset>
+   <div class="input-label mistakeMessage" id="">
+      <span class="helpMistakeMessage" id="">Your text of error/mistake</span>
+    </div>
+   </div>
 
+   <div class="input-container"> 
    <fieldset class="input-fieldset" id="fieldNumber">
       <label class="input-label" for="number">Label text
          <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
             step=".01" placeholder="Number" required="">
       </label>
    </fieldset>
+   <div class="input-label mistakeMessage" id="">
+      <span class="helpMistakeMessage" id="">Your text of error/mistake</span>
+    </div>
+   </div>
 
-   <!-- New inputs with icons especially for user, e-mail and password -->
+   <!-- New inputs with icons especially for user, e-mail and password with ERROR message-->
+   <div class="input-container"> 
    <fieldset class="input-fieldset" id="fieldName">
       <i class="icon iconUser"></i>
       <input class="input inputNoLabel heading-h5" id="newUserName" type="text" name="newUsernameInput" minlength="1"
          maxlength="125" placeholder="Your name" required="">
    </fieldset>
+   <div class="input-label mistakeMessage" id="">
+      <span class="helpMistakeMessage" id="">Your text of error/mistake</span>
+    </div>
+   </div>
 
+   <div class="input-container"> 
    <fieldset class="input-fieldset" id="fieldEmail">
       <i class="icon iconEmail"></i>
       <input class="input inputNoLabel heading-h5" id="eMail" type="email" name="emailInput" maxlength="125"
          placeholder="Your E-mail" title="This is not a valid e-mail address" required="">
    </fieldset>
+   <div class="input-label mistakeMessage" id="">
+      <span class="helpMistakeMessage" id="">Your text of error/mistake</span>
+    </div>
+   </div>
 
+   <div class="input-container"> 
    <fieldset class="input-fieldset" id="fieldPassword">
       <i class=" icon iconPassword"></i>
       <input class="input inputNoLabel heading-h5" id="password123" type="password" name="password1" min="8" max="45"
          placeholder="Choose your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
          title="Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number" required="">
    </fieldset>
+   <div class="input-label mistakeMessage" id="">
+      <span class="helpMistakeMessage" id="">Your text of error/mistake</span>
+    </div>
+   </div>
 
 </body>
-
+<script src="./input.mjs"></script>
 </html>

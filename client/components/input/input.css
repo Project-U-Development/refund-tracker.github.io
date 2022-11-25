@@ -135,3 +135,14 @@
 .iconPassword {
    background-image: url('../icons/password.svg');
 }
+
+.helpMistakeMessage { 
+   color:var(--invalid-red);
+   padding-left: 10%;
+   margin-top:0%;
+   margin-bottom: 0%;
+   display:none; 
+ }
+ .mistakeMessage {
+   position:absolute;
+ }
