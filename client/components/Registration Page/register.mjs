@@ -1,3 +1,5 @@
+import {checkInputValidation} from '../input/input.mjs'
+
 function showPasswordFunction() {
    const inputPasswordFirst = document.getElementById("password1");
    const inputPasswordSecond = document.getElementById("password2");
@@ -8,20 +10,13 @@ function showPasswordFunction() {
 
 
 const inputs = document.getElementsByClassName('registerFormInput');
+const button = document.getElementById('createAccount');
+
 for (let item of inputs) {
-   item.addEventListener('change', checkInputValidation)
+   item.addEventListener('change', checkInputValidation(inputs,button))
 }
 
-function checkInputValidation() {
-   let validate = true;
-   for (let item of inputs) {
-      if (!item.checkValidity()) {
-         validate = false;
-      }
-   }
-   (validate) ? document.getElementById('createAccount').disabled = false : document.getElementById('createAccount').disabled = true;
-}
-// Validation message function//
+//Validation message function//
 
 // One function variant
 document.querySelectorAll('.input-container input').forEach(element => {

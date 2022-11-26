@@ -1,3 +1,14 @@
+// disable/enable button after validation of all inputs on page 
+export function checkInputValidation(inputsList, disabledButton) {
+  let validate = true;
+  for (let item of inputsList) {
+     if (!item.checkValidity()) {
+        validate = false;
+     }
+  }
+  disabledButton.disabled = !validate;
+};
+
 // Mistake validation message function//
 
 // One function variant
