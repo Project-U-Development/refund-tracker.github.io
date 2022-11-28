@@ -1,50 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="datapicker.css" />
+<link rel="stylesheet" href="datapicker.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat&family=IBM+Plex+Sans:wght@600&family=Luckiest+Guy&display=swap"
-      rel="stylesheet"
-    />
     <title>Data picker</title>
   </head>
   <body>
-    <div class="container calendar-box">
-      <label for="DuedateId">
-        Due date
-        <br />
-        <input class="block" name="Duedate" id="DuedateId" type="text" />
-      </label>
-      <div class="calendar" f>
-        <div class="month">
-          <i class="fas fa-angle-left prev"></i>
-          <div class="date">
-            <h1></h1>
+    <div class="dropdown">
+      <button name="buttonSubmit" id="buttonSubmitId" class="forbutton" onclick="ShowmyDropdown()"></button>
+       <label for="DuedateId">
+            Due date
+            <br />
+            <input class="forinput" name="Duedate" id="DuedateId" type="text" maxlength="10" />
+          </label>
+      <div class="calendar" id ="myDropdown" name="calendarName" hidden>
+            <div class="month heading-h5">
+              <i class="fas fa-angle-left prev"></i>
+              <div class="date">
+                <h1></h1>
+              </div>
+              <i class="fas fa-angle-right next"></i>
+            </div>
+        <div class="line"></div>
+            <div class="weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="days"></div>
           </div>
-          <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="days"></div>
-      </div>
     </div>
-    <div class="out"></div>
     <script src="datapicker.mjs"></script>
   </body>
 </html>
