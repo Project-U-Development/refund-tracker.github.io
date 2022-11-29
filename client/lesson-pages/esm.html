@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES Modules</title>
+
+  <link rel="stylesheet" href="../components/components.css">
+</head>
+
+<body>
+  <a href="/">Home</a>
+  <h2 class="heading-h2">Convert hours to seconds</h1>
+    <form id="timeConverter">
+      <fieldset class="input-fieldset" id="fieldText">
+        <label class="input-label" for="text">Hours
+          <input class="input heading-h5" id="text" type="number" name="hours" minlength="1">
+        </label>
+      </fieldset>
+      <p id="seconds" class="heading-h5"></p>
+      <button class="button primary heading-h5" id="convert" type="submit">Convert</button>
+    </form>
+</body>
+<script src="./hoursToSeconds.mjs" type="module"></script>
+
+</html>

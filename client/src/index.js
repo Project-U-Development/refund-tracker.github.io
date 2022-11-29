@@ -1,3 +1,2 @@
 import { useButton } from '../components/button/button.mjs';
-
-useButton();
+import '../lesson-pages/hoursToSecondsNpm.mjs';
