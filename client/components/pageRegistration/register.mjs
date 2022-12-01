@@ -16,16 +16,16 @@ function checkInputValidation() {
 }
 
 function checkPasswords(item) {
-   const passwordVarification = document.getElementById('password2');
-   (item.value != '') ? passwordVarification.setAttribute('pattern', item.value) : passwordVarification.setAttribute('pattern', '');
+   const passwordVerification = document.getElementById('password2');
+   (item.value != '') ? passwordVerification.setAttribute('pattern', item.value) : passwordVerification.setAttribute('pattern', '');
 }
 
 inputListener('inputCheckbox', 'input', showPassword);
 function showPassword() {
    const inputPasswordFirst = document.getElementById("password1");
    const inputPasswordSecond = document.getElementById("password2");
-   const Status = (input) => (input.type === 'password') ? 'text' : 'password';
-   inputPasswordFirst.type = Status(inputPasswordFirst);
-   inputPasswordSecond.type = Status(inputPasswordSecond);
+   const getNewType = (input) => (input.type === 'password') ? 'text' : 'password';
+   inputPasswordFirst.type = getNewType(inputPasswordFirst);
+   inputPasswordSecond.type = getNewType(inputPasswordSecond);
 }
 
