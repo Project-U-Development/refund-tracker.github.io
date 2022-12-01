@@ -1,87 +1,155 @@
 @import '../typography/typography.css';
 
+.input-container {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 5px;
+   max-width: 548px;
+   width: 100%;
+}
+
+.input-container:has(fieldset:focus-within) {
+   padding: 3px;
+}
+
 .input-fieldset,
 .input-fieldset:disabled,
 .input-fieldset:has(input:disabled):valid {
-  display: flex;
-  margin: 5px;
-  border: 1px solid var(--border-unfocused);
-  border-radius: 8px;
-  outline: none;
-  max-width: 544px;
-  background: var(--primary-white);
-  padding: 0;
+   display: flex;
+   margin: 0;
+   border: 1px solid var(--border-unfocused);
+   border-radius: 8px;
+   outline: none;
+   max-width: 544px;
+   width: 100%;
+   background: var(--primary-white);
+   padding: 0;
 }
 
 .input-fieldset:has(input:invalid:placeholder-shown):enabled {
-  border: 1px solid var(--border-unfocused);
-  background: var(--primary-white);
+   border: 1px solid var(--border-unfocused);
+   background: var(--primary-white);
 }
 
 .input-fieldset:has(input:invalid):enabled {
-  background-image: url('../icons/warning32x32.svg');
-  border: 1px solid var(--invalid-red);
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
+   background-image: url('../icons/warning32x32.svg');
+   border: 1px solid var(--invalid-red);
+   background-repeat: no-repeat;
+   background-position: 95% 50%;
+
 }
 
 .input-fieldset:enabled:valid {
-  background: var(--primary-white);
-  background-image: url('../icons/checkmark32x32.svg');
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
+   background: var(--primary-white);
+   background-image: url('../icons/checkmark32x32.svg');
+   background-repeat: no-repeat;
+   background-position: 95% 50%;
 }
 
 .input-fieldset:has(input:enabled):hover:enabled {
-  border: 1px solid var(--primary-blue);
+   border: 1px solid var(--primary-blue);
 }
 
 .input-fieldset:has(input:enabled):focus-within:enabled {
-  border: 3px solid var(--border-focused);
+   border: 3px solid var(--border-focused);
 }
 
 .input-label {
-  display: flex;
-  flex-wrap: wrap;
-  color: var(--primary-blue);
-  width: 100%;
-  padding: 8px 50px 8px 16px;
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   padding: 8px 55px 8px 16px;
+   caret-color: transparent;
 }
 
 .input-label:has(input:disabled) {
-  color: var(--button-disabled);
+   color: var(--button-disabled);
 }
 
 .input-label:has(input:invalid:placeholder-shown:enabled) {
-  color: var(--primary-blue);
+   color: var(--primary-blue);
 }
 
 .input-label:has(input:invalid:enabled) {
-  color: var(--invalid-red);
+   color: var(--invalid-red);
 }
 
 .input {
-  outline: none;
-  border: none;
-  color: var(--primary-dark);
-  caret-color: var(--primary-blue);
-  background: none;
-  width: 100%;
-  padding: 4px 0px 0px 0px;
+   outline: none;
+   border: none;
+   color: var(--primary-dark);
+   background: none;
+   width: 100%;
+   padding: 4px 0px 0px 0px;
+   margin: 0;
 }
 
 .input:focus::placeholder {
-  color: transparent;
+   color: transparent;
+}
+
+.input:focus {
+   caret-color: var(--primary-blue);
+}
+
+.inputNoLabel {
+   padding: 18px 60px 18px 0px;
 }
 
 .input[type="number"]::-webkit-outer-spin-button,
 .input[type="number"]::-webkit-inner-spin-button,
 .input[type="number"] {
-  -webkit-appearance: none;
-  margin: 0;
-  -moz-appearance: textfield;
+   -webkit-appearance: none;
+   margin: 0;
+   -moz-appearance: textfield;
+}
+
+.input::-webkit-contacts-auto-fill-button {
+   visibility: hidden;
+   position: absolute;
+   right: 0;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+   box-shadow: 0 0 0 50px white inset !important;
+   border-radius: 8px;
 }
 
 .input:hover {
-  cursor: default;
+   cursor: default;
+}
+
+.icon {
+   width: 40px;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding: 10px;
+   caret-color: transparent;
+}
+
+.iconUser {
+   background-image: url('../icons/user.svg');
+}
+
+.iconEmail {
+   background-image: url('../icons/email.svg');
+}
+
+.iconPassword {
+   background-image: url('../icons/password.svg');
+}
+
+.mistakeMessage,
+.input-fieldset:has(input:invalid:placeholder-shown):enabled+div.mistakeMessage {
+   padding: 8px 0px 0px 0px;
+   max-width: 544px;
+   width: auto;
+   display: none;
+}
+
+fieldset.input-fieldset:has(input:invalid):enabled+div.mistakeMessage {
+   display: flex;
 }
