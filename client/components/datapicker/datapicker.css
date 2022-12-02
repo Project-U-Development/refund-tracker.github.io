@@ -24,16 +24,12 @@ body {
 
 label {
   border: 1px solid;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary-blue);
   border-color: var(--border-unfocused);
   border-radius: 8px;
   padding: 1em;
   display: inline-block;
   font-family: "IBM Plex Sans";
   font-style: normal;
-  line-height: 16px;
   box-sizing: border-box;
   width: 448px;
   height: 64px;
@@ -42,16 +38,12 @@ label {
 input {
   border: none;
   height: 25px;
-  font-size: 16px;
   width: 300px;
   outline: none;
   appearance: none;
   background-color: var(--primaty-white);
   caret-color: var(--primary-blue);
   color: var(--primary-dark);
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 600;
 }
 
 .calendar {
@@ -88,8 +80,6 @@ input {
 }
 
 .month h1 {
-  font-size: 18px;
-  font-weight: 600;
   color: var(--primary-dark);
 }
 
@@ -112,14 +102,13 @@ hr {
 }
 
 .weekdays div {
-  font-size: 14px;
-  font-weight: 400;
   width: calc(312px / 7);
   padding: 0px;
   height: 16px;
   display: flex;
   justify-content: center;
   align-content: center;
+  color: var(--primary-dark);
 }
 
 .days {
@@ -131,14 +120,13 @@ hr {
 }
 
 .days div {
-  font-size: 14px;
-  line-height: 24px;
   margin: 1px;
   width: calc(300px / 7);
   gap: 12px;
   display: flex;
   justify-content: center;
   align-self: center;
+  color: var(--primary-dark);
 }
 
 .days div:hover:not(.today) {

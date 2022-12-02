@@ -8,21 +8,21 @@
   <body>
     <div class="dropdown">
       <button name="buttonSubmit" id="buttonSubmitId" class="forbutton" onclick="ShowmyDropdown()"></button>
-       <label for="DuedateId">
+       <label class="input-label" for="DuedateId">
             Due date
             <br />
-            <input class="forinput" name="Duedate" id="DuedateId" type="text" maxlength="10" />
+            <input class="forinput heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" />
           </label>
       <div class="calendar" id ="myDropdown" name="calendarName" hidden>
-            <div class="month heading-h5">
+            <div class="month">
               <i class="fas fa-angle-left prev"></i>
               <div class="date">
-                <h1></h1>
+                <h1 class="heading-h5"></h1>
               </div>
               <i class="fas fa-angle-right next"></i>
             </div>
         <div class="line"></div>
-            <div class="weekdays">
+            <div class="weekdays table-data">
               <div>Sun</div>
               <div>Mon</div>
               <div>Tue</div>
@@ -31,7 +31,7 @@
               <div>Fri</div>
               <div>Sat</div>
             </div>
-            <div class="days"></div>
+            <div class="days table-data"></div>
           </div>
     </div>
     <script src="datapicker.mjs"></script>
