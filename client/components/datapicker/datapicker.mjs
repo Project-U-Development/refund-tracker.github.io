@@ -1,8 +1,13 @@
 const date = new Date();
+const calendarBox = document.querySelector(".dropdown");
+const dropdown = document.getElementById("myDropdown");
+const monthDays = document.querySelector(".days");
+const nonActiveInput = document.querySelector(".calendar-input-label")
+
 
 function renderCalendar() {
   date.setDate(1);
-  const monthDays = document.querySelector(".days");
+
   const lastDay = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
@@ -94,16 +99,18 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 renderCalendar();
 
-const calendarBox = document.querySelector(".dropdown");
+
 function ShowmyDropdown() {
   document.getElementById("myDropdown").classList.toggle("show");
   calendarBox.classList.toggle("hilighted");
+  nonActiveInput.classList.add("activated-input-label")
+
 }
 
 function hide() {
-  const dropdown = document.getElementById("myDropdown");
   dropdown.classList.remove("show");
   calendarBox.classList.remove("hilighted");
+  nonActiveInput.classList.remove("activated-input-label")
 }
 
 function addZero(d) {

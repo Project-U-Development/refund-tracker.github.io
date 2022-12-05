@@ -31,6 +31,12 @@
   height: 64px;
 }
 
+.activated-input-label {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-unfocused);
+}
+
 .forinput {
   border: none;
   height: 25px;
@@ -136,9 +142,9 @@ hr {
   opacity: 0.5;
 }
 
-.prev, 
+.prev,
 .next {
-color: var(--primary-blue);
+  color: var(--primary-blue);
 }
 
 .today {

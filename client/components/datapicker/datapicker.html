@@ -1,39 +1,38 @@
 <link rel="stylesheet" href="datapicker.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-    <title>Data picker</title>
-  </head>
-  <body>
-    <div class="dropdown">
-      <button name="buttonSubmit" id="buttonSubmitId" class="forbutton" onclick="ShowmyDropdown()"></button>
-       <label class=" input-label calendar-input-label" for="DuedateId">
-            Due date
-            <br />
-            <input class="forinput heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" />
-          </label>
-      <div class="calendar" id ="myDropdown" name="calendarName" hidden>
-            <div class="month">
-              <i class="fas fa-angle-left prev"></i>
-              <div class="date">
-                <h1 class="heading-h5"></h1>
-              </div>
-              <i class="fas fa-angle-right next"></i>
-            </div>
-        <div class="line"></div>
-            <div class="weekdays input-label">
-              <div>Su</div>
-              <div>Mo</div>
-              <div>Tu</div>
-              <div>We</div>
-              <div>Th</div>
-              <div>Fr</div>
-              <div>Sa</div>
-            </div>
-            <div class="days table-data"></div>
-          </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+<title>Data picker</title>
+</head>
+
+<body>
+  <div class="dropdown">
+    <button name="buttonSubmit" id="buttonSubmitId" class="forbutton" onclick="ShowmyDropdown()"></button>
+    <label class=" input-label calendar-input-label" for="DuedateId">
+      Due date
+      <br />
+      <input class="forinput heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" />
+    </label>
+    <div class="calendar" id="myDropdown" name="calendarName" hidden>
+      <div class="month">
+        <i class="fas fa-angle-left prev"></i>
+        <div class="date">
+          <h1 class="heading-h5"></h1>
+        </div>
+        <i class="fas fa-angle-right next"></i>
+      </div>
+      <div class="line"></div>
+      <div class="weekdays input-label">
+        <div>Su</div>
+        <div>Mo</div>
+        <div>Tu</div>
+        <div>We</div>
+        <div>Th</div>
+        <div>Fr</div>
+        <div>Sa</div>
+      </div>
+      <div class="days table-data"></div>
     </div>
-    <script src="datapicker.mjs"></script>
-  </body>
+  </div>
+  <script src="datapicker.mjs"></script>
+</body>
+
 </html>
