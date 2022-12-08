@@ -1,20 +1,28 @@
-.table-cell-head, .table-cell {
-    background: white;
-    border: 1px solid black;
-	padding: 3px;
-	margin: px;
-	width: 20%;
-	height: 20px;
-	text-align: center;
-}
-	
-.table-black-and-white {
+@import '../typography/typography.css';
+@import '../typography/color.css';
+
+.table-refund {
     width: 90%;
 	border-collapse: collapse;
-	margin: 30px 70px 30px 30px; 
-	
+	margin: 30px 70px 30px 30px;
+    border: 1px solid #CCDFFF;	
 }	
+
+.table-cell-head {
+    background: white;
+	padding: 3px;
+	width: 20%;
+	height: 60px;
+	text-align: center;
+	border: 1px solid #CCDFFF;
+}
 	
 .table-cell {
+    background: white;
+	padding: 3px;
+	width: 20%;
+	height: 56px;
+	text-align: center;
+	border: 1px solid #CCDFFF;
 }
 	
