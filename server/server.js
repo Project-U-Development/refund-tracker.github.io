@@ -5,7 +5,7 @@ fastify.register(require('./routes/routeVersion'))
 
 const server = async () => {
    try {
-      const port = 3000;
+      const port = 80;
       await fastify.listen({ port: port });
       console.info(`Server FASTIFY is working on port ${port}...`);
    }
