@@ -1,91 +1,98 @@
 @import "../typography/typography.css";
 @import "../typography/color.css";
 
-.selectors-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.selector-group {
-  margin-right: 24px;
-  margin-bottom: 24px;
-}
-.selector-block {
-  position: relative;
-  width: 290px;
-  height: 64px;
-  border: 1px solid var(--border-unfocused);
-  border-radius: 8px;
-}
-
-.selector-block-highlighted {
-  position: relative;
-  width: 290px;
-  height: 64px;
-  border: 3px solid var(--border-focused);
-  border-radius: 8px 8px 0 0;
-  border-bottom: 1px solid var(--border-unfocused);
-}
-
-.selector-label {
-  display: block;
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-.dropdown-button {
-  display: block;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  background-color: var(--primary-white);
-  border: none;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29289 10.7929C6.68342 10.4024 7.31658 10.4024 7.70711 10.7929L16 19.0858L24.2929 10.7929C24.6834 10.4024 25.3166 10.4024 25.7071 10.7929C26.0976 11.1834 26.0976 11.8166 25.7071 12.2071L16.7071 21.2071C16.3166 21.5976 15.6834 21.5976 15.2929 21.2071L6.29289 12.2071C5.90237 11.8166 5.90237 11.1834 6.29289 10.7929Z' fill='%230061FF'/%3e%3c/svg%3e");
-}
-.dropdown-input {
-  position: absolute;
-  top: 28px;
-  width: 200px;
-  left: 16px;
-  border: none;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
-  background-color: var(--primary-white);
-}
-
-.dropdown-list {
-  display: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid var(--border-unfocused);
-  border-radius: 8px;
-  width: 290px;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 28px;
-}
-.dropdown-list-highlighted {
-  display: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border: 3px solid var(--border-focused);
-  border-radius: 0 0 8px 8px;
-  width: 290px;
-  border-top: 0;
-}
-.dropdown-list-visible {
-  display: block;
-}
-.dropdown-list-item {
-  padding: 16px 0 0px 16px;
-  cursor: pointer;
-}
-.dropdown-list-item:last-child {
-  padding-bottom: 16px;
-}
+.select-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .select-group {
+    margin-right: 24px;
+    margin-bottom: 24px;
+  }
+  .select-block {
+    position: relative;
+    width: 290px;
+    height: 64px;
+    border: 1px solid var(--border-unfocused); 
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .select-block-highlighted {
+    position: relative;
+    box-sizing: border-box;
+    width: 290px;
+    height: 64px;
+    border: 3px solid var(--border-focused); 
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid  var(--border-unfocused); 
+  }
+  
+  .select-label {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .dropdown-button {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-white);
+    border: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.29289 10.7929C6.68342 10.4024 7.31658 10.4024 7.70711 10.7929L16 19.0858L24.2929 10.7929C24.6834 10.4024 25.3166 10.4024 25.7071 10.7929C26.0976 11.1834 26.0976 11.8166 25.7071 12.2071L16.7071 21.2071C16.3166 21.5976 15.6834 21.5976 15.2929 21.2071L6.29289 12.2071C5.90237 11.8166 5.90237 11.1834 6.29289 10.7929Z' fill='%230061FF'/%3e%3c/svg%3e");
+  }
+  .dropdown-input {
+    position: absolute;
+    top: 28px;
+    width: 200px;
+    left: 16px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    background-color: var(--primary-white);
+  }
+  
+  .select-options {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid  var(--border-unfocused); 
+    border-radius: 8px;
+    width: 290px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .select-options-highlighted {
+    box-sizing: border-box;
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 3px solid var(--border-focused); 
+    border-radius: 0 0 8px 8px;
+    width: 290px;
+    border-top: 0;
+  }
+  .select-options-visible {
+    display: block;
+  }
+  .select-option-item {
+    padding: 16px 0 0px 16px;
+    cursor: pointer;
+  }
+  .select-option-item:last-child {
+    padding-bottom: 16px;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }  
