@@ -4,23 +4,23 @@
 </head>
 
 <body>
-  <div class="dropdown">
-    <button name="buttonSubmit" id="buttonSubmitId" class="forbutton" onclick="ShowmyDropdown()"></button>
-    <label class=" input-label calendar-input-label" for="DuedateId">
+  <div class="datepicker">
+    <button name="buttonSubmit" id="buttonSubmitId" class="datepicker-button" onclick="ShowMyDatepicker()"></button>
+    <label class=" input-label datepicker-label" for="DuedateId">
       Due date
       <br />
-      <input class="forinput heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" />
+      <input class="datepicker-input heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" />
     </label>
-    <div class="calendar" id="myDropdown" name="calendarName" hidden>
-      <div class="month">
+    <div class="datepicker-calendar" id="myCalendar" name="calendarName" hidden>
+      <div class="datepicker-month">
         <i class="fas fa-angle-left prev"></i>
-        <div class="date">
+        <div class="datepicker-date">
           <h1 class="heading-h5"></h1>
         </div>
         <i class="fas fa-angle-right next"></i>
       </div>
-      <div class="line"></div>
-      <div class="weekdays input-label">
+      <div class="datepicker-line"></div>
+      <div class="datepicker-weekdays input-label">
         <div>Su</div>
         <div>Mo</div>
         <div>Tu</div>
@@ -29,10 +29,10 @@
         <div>Fr</div>
         <div>Sa</div>
       </div>
-      <div class="days table-data"></div>
+      <div class="datepicker-days table-data"></div>
     </div>
   </div>
-  <script src="datapicker.mjs"></script>
+  <script src="datapicker.js"></script>
 </body>
 
 </html>

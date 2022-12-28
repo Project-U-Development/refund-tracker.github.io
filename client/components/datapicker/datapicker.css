@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.forbutton {
+.datepicker-button {
   border: none;
   position: absolute;
   right: 18px;
@@ -18,9 +18,7 @@
   background-repeat: no-repeat;
 }
 
-
-
-.calendar-input-label {
+.datepicker-label {
   border: 1px solid;
   border-color: var(--border-unfocused);
   border-radius: 8px;
@@ -37,7 +35,7 @@
   border-bottom: 1px solid var(--border-unfocused);
 }
 
-.forinput {
+.datepicker-input {
   border: none;
   height: 25px;
   width: 300px;
@@ -49,7 +47,7 @@
   color: var(--primary-dark);
 }
 
-.calendar {
+.datepicker-calendar {
   width: 448px;
   height: 244px;
   display: none;
@@ -57,7 +55,7 @@
   z-index: 1;
 }
 
-.hilighted {
+.datepicker-hilighted {
   border: 3px solid;
   border-color: var(--border-focused);
   border-radius: 8px;
@@ -65,7 +63,7 @@
   height: 356px;
 }
 
-.month {
+.datepicker-month {
   width: 448px;
   height: 48px;
   top: 64px;
@@ -76,17 +74,17 @@
   text-align: center;
 }
 
-.month i {
+.datepicker-month i {
   width: 5.5px;
   height: 10px;
   cursor: pointer;
 }
 
-.month h1 {
+.datepicker-month h1 {
   color: var(--primary-dark);
 }
 
-.line {
+.datepicker-line {
   border-top: solid 1px var(--border-unfocused);
   width: 416px;
   margin: 0px 16px 0px 16px;
@@ -96,7 +94,7 @@ hr {
   background-color: var(--border-unfocused);
 }
 
-.weekdays {
+.datepicker-weekdays {
   width: 312px;
   padding: 12px 68px 0px 68px;
   align-items: center;
@@ -104,17 +102,15 @@ hr {
   grid-template-columns: repeat(7, 1fr);
 }
 
-.weekdays div {
+.datepicker-weekdays div {
   width: calc(312px / 7);
   padding: 0px;
-  /* height: 16px; */
   display: flex;
   justify-content: center;
-  /* align-content: center; */
   color: var(--primary-dark);
 }
 
-.days {
+.datepicker-days {
   width: 312px;
   height: 196px;
   display: grid;
@@ -122,7 +118,7 @@ hr {
   padding: 12px 68px 24px 68px;
 }
 
-.days div {
+.datepicker-days div {
   margin: 1px;
   width: calc(300px / 7);
   gap: 12px;
@@ -132,7 +128,7 @@ hr {
   color: var(--primary-dark);
 }
 
-.days div:hover:not(.today) {
+.datepicker-days div:hover:not(.today) {
   background-color: var(--border-unfocused);
   cursor: pointer;
 }
@@ -147,15 +143,15 @@ hr {
   color: var(--primary-blue);
 }
 
-.today {
+.datepicker-today {
   background-color: var(--border-unfocused);
 }
 
-.dropdown {
+.datepicker {
   position: relative;
   display: inline-block;
 }
 
-.show {
+.datepicker-show {
   display: block;
 }

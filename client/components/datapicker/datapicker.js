@@ -1,8 +1,8 @@
 const date = new Date();
-const calendarBox = document.querySelector(".dropdown");
-const dropdown = document.getElementById("myDropdown");
-const monthDays = document.querySelector(".days");
-const nonActiveInput = document.querySelector(".calendar-input-label")
+const calendarBox = document.querySelector(".datepicker");
+const calendar = document.getElementById("myCalendar");
+const monthDays = document.querySelector(".datepicker-days");
+const nonActiveInput = document.querySelector(".datepicker-label")
 
 
 function renderCalendar() {
@@ -46,7 +46,7 @@ function renderCalendar() {
 
   const year = date.getFullYear();
 
-  document.querySelector(".date h1").innerHTML =
+  document.querySelector(".datepicker-date h1").innerHTML =
     months[date.getMonth()] + " " + year;
   let days = "";
   for (let x = firstDayIndex; x > 0; x--) {
@@ -58,7 +58,7 @@ function renderCalendar() {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class='today'>${i}</div>`;
+      days += `<div class='datepicker-today'>${i}</div>`;
     } else {
       days += `<div class='curDay'>${i}</div>`;
     }
@@ -100,16 +100,16 @@ document.querySelector(".next").addEventListener("click", () => {
 renderCalendar();
 
 
-function ShowmyDropdown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  calendarBox.classList.toggle("hilighted");
+function ShowMyDatepicker() {
+  document.getElementById("myCalendar").classList.toggle("datepicker-show");
+  calendarBox.classList.toggle("datepicker-hilighted");
   nonActiveInput.classList.add("activated-input-label")
 
 }
 
 function hide() {
-  dropdown.classList.remove("show");
-  calendarBox.classList.remove("hilighted");
+  calendar.classList.remove("datepicker-show");
+  calendarBox.classList.remove("datepicker-hilighted");
   nonActiveInput.classList.remove("activated-input-label")
 }
 
@@ -130,7 +130,7 @@ function setDueDate(dueDate) {
 }
 listenToClick();
 
-const elements = document.getElementsByClassName("calendar");
+const elements = document.getElementsByClassName("datepicker-calendar");
 for (i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", showDatapicker);
 }
