@@ -33,3 +33,4 @@ Key combination: `Ctrl + C`
 ### Links
 Home page of main application: `http://localhost:3000`
 Help page to see list of components: `http://localhost:3000/components`
+Test
