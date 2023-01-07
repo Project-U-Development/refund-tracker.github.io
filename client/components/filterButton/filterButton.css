@@ -1,0 +1,26 @@
+.filter-btn {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 16px;
+   position: absolute;
+   width: 77px;
+   height: 48px;
+   right: 260px;
+   top: 182px;
+   border: 1px solid #0061FF;
+   border-radius: 8px;
+   background: white;
+   font-family: 'IBM Plex Sans';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 28px;
+   text-align: center;
+   color: #0061FF;
+   flex: none;
+   order: 0;
+   flex-grow: 0;
+   }
