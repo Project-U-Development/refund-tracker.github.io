@@ -1,8 +1,5 @@
-import { inputListener } from '../input/input.mjs';
+const inputEmail = document.querySelector('#eMail');
+inputEmail.addEventListener('input', (event) => {
+    document.querySelector('#buttonEnterEmail').disabled = !event.target.checkValidity();
+})
 
-inputListener('inputNoLabel', 'input', checkInputValidation);
-
-function checkInputValidation() {
-    const input = document.querySelector('#eMail');
-    document.querySelector('#buttonEnterEmail').disabled = !input.checkValidity();
-}
