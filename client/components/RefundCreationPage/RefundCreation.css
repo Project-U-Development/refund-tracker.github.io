@@ -63,7 +63,7 @@ a {
     letter-spacing: 0em;
 }
 
-.primary {
+.prim {
     background-color: var(--button-disabled);
     color: var(--primary-white);
     border-radius: 8px;
