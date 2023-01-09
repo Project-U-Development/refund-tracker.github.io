@@ -1,7 +1,7 @@
 
 document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
-    const dropdownButton = dropdownWrapper.querySelector(".dropdown-button");
-    const rotateButton = dropdownWrapper.querySelector(".dropdown-button");
+    const dropdownButton = dropdownWrapper.querySelector(".select-button");
+    const rotateButton = dropdownWrapper.querySelector(".select-button");
      const dropdownList = dropdownWrapper.querySelector(".select-options");
     const dropdownInput = dropdownWrapper.querySelector(".dropdown-input");
     const dropdownListItem = dropdownWrapper.querySelectorAll(
@@ -48,3 +48,5 @@ document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
            }
     });
   });
+  
+  

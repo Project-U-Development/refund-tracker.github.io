@@ -34,8 +34,10 @@
     position: absolute;
     top: 8px;
     left: 16px;
+    top: 8px;
+    
   }
-  .dropdown-button {
+  .select-button {
     display: block;
     position: absolute;
     top: 16px;
@@ -89,7 +91,15 @@
   .select-option-item {
     padding: 16px 0 0px 16px;
     cursor: pointer;
+    color: var(--primary-dark);
+    
   }
+
+  .select-option-item:hover{
+    background-color: var(--border-focused);
+  
+  } 
+
   .select-option-item:last-child {
     padding-bottom: 16px;
   }
