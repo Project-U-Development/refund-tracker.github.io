@@ -30,8 +30,8 @@
 }
 
 .activated-input-label {
-  border-radius: 0;
-  border: none;
+  border-radius: 8px;
+  /* border: none; */
   border-bottom: 1px solid var(--border-unfocused);
 }
 
@@ -154,4 +154,7 @@ hr {
 
 .datepicker-show {
   display: block;
+}
+.selected{
+  background: red;
 }

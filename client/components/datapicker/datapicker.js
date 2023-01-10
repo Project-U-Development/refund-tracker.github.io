@@ -2,7 +2,8 @@ const date = new Date();
 const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
-const nonActiveInput = document.querySelector(".datepicker-label")
+const nonActiveInput = document.querySelector(".datepicker-label");
+
 
 
 function renderCalendar() {
@@ -20,14 +21,14 @@ function renderCalendar() {
     0
   ).getDate();
 
-  const firstDayIndex = date.getDay();
+  const firstDayIndex = (date.getDay() - 1);
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
-  ).getDay();
+  ).getDay() - 1;
 
-  const nextDays = 7 - lastDayIndex - 1;
+  const nextDays = 7 - lastDayIndex -1;
 
   const months = [
     "January",
@@ -62,7 +63,6 @@ function renderCalendar() {
     } else {
       days += `<div class='curDay'>${i}</div>`;
     }
-    monthDays.innerHTML = days;
   }
 
   for (let j = 1; j <= nextDays; j++) {
@@ -78,15 +78,22 @@ function listenToClick() {
   }
 }
 
+function backColor () {
+  const selectedDates = document.getElementsByClassName('.curDay');
+  selectedDates.style.backgroundColor = 'red';
+}
+
+
 function clickHandler(event) {
   const year = date.getFullYear();
   const monthIndex = date.getMonth() + 1;
   const pickedDate = getTime(
-    new Date(year + "-" + monthIndex + "-" + event.target.innerText)
+  new Date(year + "-" + monthIndex + "-" + event.target.innerText)
   );
   setDueDate(pickedDate);
   hide();
 }
+
 
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
@@ -100,11 +107,11 @@ document.querySelector(".next").addEventListener("click", () => {
 renderCalendar();
 
 
+
 function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
-  nonActiveInput.classList.add("activated-input-label")
-
+  nonActiveInput.classList.add("activated-input-label");
 }
 
 function hide() {
@@ -127,6 +134,7 @@ const curDate = getTime(new Date());
 setDueDate(curDate);
 function setDueDate(dueDate) {
   document.getElementById("DuedateId").value = dueDate;
+  
 }
 listenToClick();
 
