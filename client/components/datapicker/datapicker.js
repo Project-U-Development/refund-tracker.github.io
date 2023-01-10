@@ -7,7 +7,7 @@ const nonActiveInput = document.querySelector(".datepicker-label");
 
 
 function renderCalendar() {
-  date.setDate(1);
+  date.setDate(7);
 
   const lastDay = new Date(
     date.getFullYear(),
@@ -21,7 +21,7 @@ function renderCalendar() {
     0
   ).getDate();
 
-  const firstDayIndex = (date.getDay() - 1);
+  const firstDayIndex = date.getDay();
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
@@ -105,8 +105,6 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 renderCalendar();
-
-
 
 function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
