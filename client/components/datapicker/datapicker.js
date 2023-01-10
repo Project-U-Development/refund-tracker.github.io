@@ -53,6 +53,7 @@ function renderCalendar() {
   for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class='prev-date'>${prevLastDay - x + 1}</div>`;
   }
+ 
 
   for (let i = 1; i <= lastDay; i++) {
     if (
@@ -63,10 +64,13 @@ function renderCalendar() {
     } else {
       days += `<div class='curDay'>${i}</div>`;
     }
+    // monthDays.innerHTML = days;
   }
 
   for (let j = 1; j <= nextDays; j++) {
+    if (nextDays < 7) {
     days += `<div class='next-date'>${j}</div>`;
+    } 
   }
   monthDays.innerHTML = days;
 }
@@ -76,11 +80,12 @@ function listenToClick() {
   for (const el of elements) {
     el.addEventListener("click", clickHandler);
   }
+  
 }
 
 function backColor () {
-  const selectedDates = document.getElementsByClassName('.curDay');
-  selectedDates.style.backgroundColor = 'red';
+  const selectedDates = document.querySelectorAll('.curDay');
+  selectedDates.classList.add('selected');
 }
 
 
@@ -110,6 +115,7 @@ function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
   nonActiveInput.classList.add("activated-input-label");
+  // backColor();
 }
 
 function hide() {
