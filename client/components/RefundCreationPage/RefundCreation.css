@@ -1,13 +1,13 @@
 @import '../typography/typography.css';
 @import '../typography/color.css';
 
-.heading-h3 {
+/* .heading-h3 {
     font-weight: 600;
     font-size: 24px;
     line-height: 34px;
     letter-spacing: 0em;
     color: var(--primary-dark);
-}
+} */
 
 h3 {
     padding-top: 40px;
@@ -21,32 +21,42 @@ body {
     width: 1440px;
     height: 900px;
     font-family: IBM Plex Sans;
-    margin-left: 260px;
-    margin-top: 80px;
+    /* margin-left: 260px;
+    margin-top: 80px; */
 }
 
 .container {
     height: 86px;
     left: 260px;
-    margin-top: 80px;
+    margin-top: 80px; 
 }
 
 h2 {
     display: flex;
-    align-items: center;
-    font-weight: 600;
+    align-items: center; 
+    /* align-content: space-between; */
+    /* justify-content: center; */
+    width: 920px;
+    height: 86px;
+    /* font-weight: 600;
     font-size: 34px;
     line-height: 44px;
-    color: var(--primary-dark);
+    color: var(--primary-dark); */
 }
 
 .buttons {
-    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 186px;
+    margin-top: 16px;
+    /* gap: 30px; */
+    /* padding-top: 16px;
     font-size: 18px;
-    font-family: inherit;
+    font-family: inherit; */
 }
 
-a {
+/* a {
     text-decoration: none;
     color: var(--primary-blue);
     padding: 10px 16px;
@@ -54,16 +64,16 @@ a {
     border-radius: 8px;
     border: 1px solid var(--primary-blue);
     margin-right: 12px;
-}
+} */
 
-.heading-h5 {
+/* .heading-h5 {
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
     letter-spacing: 0em;
-}
+} */
 
-.prim {
+/* .prim {
     background-color: var(--button-disabled);
     color: var(--primary-white);
     border-radius: 8px;
@@ -71,7 +81,7 @@ a {
     padding: 10px 16px;
     border: none;
     margin-left: 12px;
-}
+} */
 
 .details-grid {
     width: 920px;

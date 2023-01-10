@@ -1,0 +1,30 @@
+@import '../typography/typography.css';
+@import '../typography/color.css';
+
+body {
+    width: 1440px;
+    height: 900px;
+    font-family: IBM Plex Sans;
+}
+
+.container {
+    height: 86px;
+    left: 260px;
+    margin-top: 80px; 
+}
+
+h2 {
+    display: flex;
+    align-items: center; 
+    width: 920px;
+    height: 86px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 186px;
+    margin-top: 16px;
+    box-sizing: border-box;
+}
