@@ -1,3 +1,8 @@
+@import "./button/button.css";
+@import "./input/input.css";
+@import "./typography/typography.css";
+@import "./typography/color.css"
+
 .search-form {
   display: inline-block;
   position: relative;
