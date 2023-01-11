@@ -2,27 +2,39 @@
 @import '../typography/color.css';
 
 .table-refund {
-    width: 90%;
+    width: 95%;
 	border-collapse: collapse;
-	margin: 30px 70px 30px 30px;
-    border: 1px solid #CCDFFF;	
+	margin: 30px 70px 70px 30px;
+    border: 1px solid var(--border-unfocused);	
 }	
 
-.table-cell-head {
-    background: white;
-	padding: 3px;
+.table-cell-head,  .table-cell, .table-1cell-head {
+    background: var(--primary-white);
+	flex-direction: row;
+	align-items: flex-start;
 	width: 20%;
-	height: 60px;
-	text-align: center;
-	border: 1px solid #CCDFFF;
+	text-align: left;
+	box-sizing: border-box;
+	border-width: 1px 0px 0px 1px;
+	border-style: solid;
+	border-color: var(--border-unfocused);
+	flex: none;
+	align-self: stretch;
+	flex-grow: 0;
+}
+
+.table-cell-head,  .table-cell {
+	padding: 16px;
+}
+
+.table-1cell-head {
+	padding: 16px 16px 16px 64px;
+}
+	
+.table-cell-head {	
+	height: 60px;		
 }
 	
 .table-cell {
-    background: white;
-	padding: 3px;
-	width: 20%;
 	height: 56px;
-	text-align: center;
-	border: 1px solid #CCDFFF;
 }
-	
