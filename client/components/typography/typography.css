@@ -2,53 +2,73 @@
 @import "./color.css";
 
 body {
-    font-family: "IBM Plex Sans";
-    font-style: normal;
+   font-family: "IBM Plex Sans";
+   font-style: normal;
 }
 
 .heading-h2 {
-    font-weight: 600;
-    font-size: 34px;
-    line-height: 44px;
-    letter-spacing: 0em;  
-    color: var(--primary-dark);
+   font-weight: 600;
+   font-size: 34px;
+   line-height: 44px;
+   letter-spacing: 0em;
+   color: var(--primary-dark);
+   caret-color: transparent;
 }
 
 .heading-h3 {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: 0em;
-    color: var(--primary-dark);
+   font-weight: 600;
+   font-size: 24px;
+   line-height: 34px;
+   letter-spacing: 0em;
+   color: var(--primary-dark);
+   caret-color: transparent;
 }
 
-.heading-h5 {   /* for button text, input text and table column headers*/
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    letter-spacing: 0em;
-    font-family: inherit;
+.heading-h5 {
+   /* for button text, input text and table column headers*/
+   font-size: 18px;
+   font-weight: 600;
+   line-height: 28px;
+   letter-spacing: 0em;
+   font-family: inherit;
+   caret-color: transparent;
 }
 
 .input::placeholder {
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 28px;
-    color: var(--placeholder);
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 28px;
+   color: var(--placeholder);
 }
 
 .input-label {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16px;
-    letter-spacing: 0em;
-    color: var(--primary-blue);
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 16px;
+   letter-spacing: 0em;
+   color: var(--primary-blue);
+}
+
+.error-message {
+   font-size: 14px;
+   font-weight: 600;
+   line-height: 16px;
+   letter-spacing: 0em;
+   color: var(--invalid-red);
 }
 
 .table-data {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    color: var(--primary-blue);
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 24px;
+   letter-spacing: 0em;
+   color: var(--primary-blue);
+}
+
+.checkbox-text {
+   font-size: 18px;
+   font-weight: 300;
+   line-height: 28px;
+   color: var(--primary-dark);
+   caret-color: transparent;
 }
