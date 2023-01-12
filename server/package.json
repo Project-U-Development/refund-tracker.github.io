@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "fastify": "^4.10.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "refund-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
