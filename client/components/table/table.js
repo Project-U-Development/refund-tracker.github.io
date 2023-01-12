@@ -6,6 +6,12 @@ let row_1_data_2 = document.createElement('td');
 let row_1_data_3 = document.createElement('td');
 let row_1_data_4 = document.createElement('td');
 
+row_1_data_0.classList.add("table-cell");
+row_1_data_1.classList.add("table-cell");
+row_1_data_2.classList.add("table-cell");
+row_1_data_3.classList.add("table-cell");
+row_1_data_4.classList.add("table-cell");
+
 row_1_data_0.innerHTML = "12.12.2022";
 row_1_data_1.innerHTML = "Bag";
 row_1_data_2.innerHTML = "Gucci";
@@ -19,8 +25,4 @@ row_1.appendChild(row_1_data_2);
 row_1.appendChild(row_1_data_3);
 row_1.appendChild(row_1_data_4);
 
-
 document.getElementById(tbody).appendChild(row_1);
-
-
-
