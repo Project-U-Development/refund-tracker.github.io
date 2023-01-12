@@ -1,3 +1,9 @@
+@import "./button/button.css";
+@import "./input/input.css";
+@import "./typography/typography.css";
+@import "./typography/color.css"
+
+
 label {
   display: block;
   cursor: pointer;
