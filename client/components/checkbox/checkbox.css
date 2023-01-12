@@ -3,7 +3,6 @@
 @import "./typography/typography.css";
 @import "./typography/color.css"
 
-
 label {
   display: block;
   cursor: pointer;
