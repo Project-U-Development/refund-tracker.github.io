@@ -10,3 +10,11 @@ function primaryButtonClick() {
 function ghostButtonClick() {
     console.log('Ghost button was clicked!');
 }
+
+import { inputListener } from "../input/input.mjs";
+
+inputListener('input', mistakeMessageFunction);
+
+function mistakeMessageFunction() {
+   console.log('It is a mistake message...');
+}

@@ -28,3 +28,25 @@ h2 {
     margin-top: 16px;
     box-sizing: border-box;
 }
+
+.input-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 920px;
+    height: 152px;
+    border: 1px solid red;
+}
+
+/* .refund {
+    width: 100%;
+    max-width: 448px;
+} */
+
+/* .input-fieldset,
+.input-fieldset:disabled,
+.input-fieldset:has(input:disabled):valid {
+    width: 100%;
+    max-width: 448px;
+} */
+
