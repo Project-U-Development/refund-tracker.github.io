@@ -129,7 +129,8 @@ hr {
 }
 
 .datepicker-days div:hover:not(.today) {
-  background-color: var(--border-unfocused);
+  background-color: var(--border-unfocused); 
+  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -144,7 +145,8 @@ hr {
 }
 
 .datepicker-today {
-  background-color: var(--border-unfocused);
+  background-color: var(--button-disabled); 
+  border-radius: 4px;
 }
 
 .datepicker {
@@ -155,6 +157,8 @@ hr {
 .datepicker-show {
   display: block;
 }
-.selected{
-  background: red;
+.selected {
+  border: 2px solid var(--border-unfocused);
+  border-radius: 4px;
+  
 }

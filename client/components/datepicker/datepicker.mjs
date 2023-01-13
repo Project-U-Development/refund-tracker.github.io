@@ -77,17 +77,22 @@ function renderCalendar() {
 
 function listenToClick() {
   const elements = document.querySelectorAll(".curDay");
+ 
   for (const el of elements) {
     el.addEventListener("click", clickHandler);
-  }
+     }
+     elements.forEach(item => {
+      item.addEventListener('click', function() {
+        elements.forEach(elem => elem.classList.remove('selected'));
+        this.classList.add('selected');
+       
+      });
+    });
   
 }
 
-function backColor () {
-  const selectedDates = document.querySelectorAll('.curDay');
-  selectedDates.classList.add('selected');
-}
-
+ const buttonClick = document.getElementById("buttonSubmitId");
+  buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
 
 function clickHandler(event) {
   const year = date.getFullYear();
@@ -115,7 +120,7 @@ function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
   nonActiveInput.classList.add("activated-input-label");
-  // backColor();
+ 
 }
 
 function hide() {
@@ -144,10 +149,10 @@ listenToClick();
 
 const elements = document.getElementsByClassName("datepicker-calendar");
 for (i = 0; i < elements.length; i++) {
-  elements[i].addEventListener("click", showDatapicker);
+  elements[i].addEventListener("click", showDatepicker);
 }
 
-function showDatapicker() {
+function showDatepicker() {
   if (this.children.length > 1) {
     this.children[1].style.height = "auto";
     this.children[1].style.opacity = "1";
