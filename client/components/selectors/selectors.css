@@ -96,7 +96,7 @@
   }
 
   .select-option-item:hover{
-    background-color: var(--border-focused);
+    background-color: var(--border-unfocused);
   
   } 
 
