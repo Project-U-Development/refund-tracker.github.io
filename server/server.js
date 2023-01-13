@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));
+fastify.register(require('./routes/signup'));
 
 const server = async () => {
    try {
@@ -29,6 +30,12 @@ const dataBase = mysql.createConnection({
 
 dataBase.connect((error) => {
    error ? console.log(error) : console.log('MySQL is connected!')
+   dataBase.query(
+      'SELECT * FROM `users`',
+      function (err, results, fields) {
+         console.log(results); // results contains rows returned by server
+      }
+   );
 })
 
 server();
