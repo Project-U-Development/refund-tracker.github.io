@@ -1,18 +1,15 @@
-.error {
-    
+@import '../typography/typography.css';
+
+.error-message {
     display: flex;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
     padding: 4px 8px;
     width: 49px;
     height: 24px;
-    background: #FFF2F6;
+    background: var(--invalid-background);
     border-radius: 8px;
-    font-family: 'IBM Plex Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    color: #B30038;
     border: none;
     }
     
