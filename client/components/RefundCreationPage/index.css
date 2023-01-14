@@ -38,6 +38,21 @@ h2 {
     border: 1px solid red;
 }
 
+.container2 {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    margin-right: 20px;
+}
+.container3 {
+    width: 920px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    justify-items: legacy;
+}
+
 /* .refund {
     width: 100%;
     max-width: 448px;
