@@ -2,73 +2,75 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Refund creation</title>
-  <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../button/button.css">
-  <link rel="stylesheet" href="../input/input.css">
+   <meta charset="UTF-8">
+   <title>Refund creation</title>
+   <link rel="stylesheet" href="./index.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../button/button.css">
+   <link rel="stylesheet" href="../input/input.css">
 
 </head>
 
 <body>
-  <div class="container">
-    <h2 class="heading-h2">Refund creation</h2>
-    <div class="buttons">
-      <button class="button ghost heading-h5" id="buttonGhost">Back</button>
-      <button class="button primary prim heading-h5" type="submit" id="buttonPrimary">Create</button>
-    </div>
-    <h3 class="heading-h3">Enter details</h3>
-
-    <div class="container3"> 
-      <div class="container2">
-      
-      <div class="input-container">
-          <fieldset class="input-fieldset" id="fieldText">
-             <label class="input-label" for="text">What to refund
-                <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
-                   placeholder="Text" required="">
-             </label>
-          </fieldset>
-       </div>
-    
-       <div class="input-container">
-          <fieldset class="input-fieldset" id="fieldNumber">
-             <label class="input-label" for="number">Expected money amount
-                <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
-                   step=".01" placeholder="Number" required="">
-             </label>
-          </fieldset>
-          <div class="mistakeMessage error-message">Your text of error/mistake</div>
-       </div>
+   <div class="container">
+      <h2 class="heading-h2">Refund creation</h2>
+      <div class="buttons">
+         <button class="button ghost heading-h5" id="buttonGhost">Back</button>
+         <button class="button primary prim heading-h5" type="submit" id="buttonPrimary">Create</button>
       </div>
-  
-      <div class="container2">
-              <div class="input-container">
-              <fieldset class="input-fieldset" id="fieldText">
-                 <label class="input-label" for="text">Who refunds
-                    <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1" maxlength="125"
-                       placeholder="Text" required="">
-                 </label>
-              </fieldset>
-           </div>
-        
-           <div class="input-container">
-              <fieldset class="input-fieldset" id="fieldNumber">
-                 <label class="input-label" for="number">Due date
-                    <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000" value=""
-                       step=".01" placeholder="Number" required="">
-                 </label>
-              </fieldset>
-              <div class="mistakeMessage error-message">Your text of error/mistake</div>
-           </div>
-          </div>
-</div>
+      <h3 class="heading-h3">Enter details</h3>
 
-    <script src="./index.mjs" type="module"></script>
-  <script src="../button/index.mjs" type="module"></script>
-  <script src="../input/index.mjs" type="module"></script>
+      <div class="container3">
+         <div class="container2">
+
+            <div class="input-container">
+               <fieldset class="input-fieldset" id="fieldText">
+                  <label class="input-label" for="text">What to refund
+                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
+                        maxlength="125" placeholder="Text" required="">
+                  </label>
+               </fieldset>
+            </div>
+
+            <div class="input-container">
+               <fieldset class="input-fieldset" id="fieldNumber">
+                  <label class="input-label" for="number">Expected money amount
+                     <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
+                        value="" step=".01" placeholder="Number" required="">
+                  </label>
+               </fieldset>
+               <div class="mistakeMessage error-message">Your text of error/mistake</div>
+            </div>
+         </div>
+
+         <div class="container2">
+            <div class="input-container">
+               <fieldset class="input-fieldset" id="fieldText">
+                  <label class="input-label" for="text">Who refunds
+                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
+                        maxlength="125" placeholder="Text" required="">
+                  </label>
+               </fieldset>
+            </div>
+
+            <div class="input-container">
+               <fieldset class="input-fieldset" id="fieldNumber">
+                  <label class="input-label" for="number">Due date
+                     <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
+                        value="" step=".01" placeholder="Number" required="">
+                  </label>
+               </fieldset>
+               <div class="mistakeMessage error-message">Your text of error/mistake</div>
+            </div>
+         </div>
+      </div>
+      <h3 class="heading-h3">Set reminder (optional)</h3>
+   </div>
 
 </body>
+
+<script src="./index.mjs" type="module"></script>
+<script src="../button/index.mjs" type="module"></script>
+<script src="../input/index.mjs" type="module"></script>
 
 </html>
