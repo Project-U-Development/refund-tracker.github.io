@@ -53,6 +53,14 @@ h2 {
     justify-items: legacy;
 }
 
+h3 {
+    padding-top: 40px;
+    margin-bottom: 24px;
+    display: block;
+    width: 920px;
+
+}
+
 /* .refund {
     width: 100%;
     max-width: 448px;
