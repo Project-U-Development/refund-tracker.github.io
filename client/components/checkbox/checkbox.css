@@ -38,7 +38,7 @@ label {
     top: 9px;
     width: 6px;
     height: 11px;
-    border: solid #0061FF;
+    border: solid #fff;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
 }
