@@ -8,6 +8,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
    <link rel="stylesheet" href="../button/button.css">
    <link rel="stylesheet" href="../input/input.css">
+   <link rel="stylesheet" href="../selectors/selectors.css">
+
 
 </head>
 
@@ -23,7 +25,7 @@
       <div class="container3">
          <div class="container2">
 
-            <div class="input-container">
+            <div class="input-container" id="input-container-id">
                <fieldset class="input-fieldset" id="fieldText">
                   <label class="input-label" for="text">What to refund
                      <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
@@ -32,7 +34,19 @@
                </fieldset>
             </div>
 
-            <div class="input-container">
+            <div class="input-container" id="input-container2-id">
+               <fieldset class="input-fieldset" id="fieldText">
+                  <label class="input-label" for="text">Who refunds
+                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
+                        maxlength="125" placeholder="Text" required="">
+                  </label>
+               </fieldset>
+            </div>
+         </div>
+
+         <div class="container2">
+
+            <div class="input-container" id="input-container3-id">
                <fieldset class="input-fieldset" id="fieldNumber">
                   <label class="input-label" for="number">Expected money amount
                      <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
@@ -41,19 +55,8 @@
                </fieldset>
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
             </div>
-         </div>
 
-         <div class="container2">
-            <div class="input-container">
-               <fieldset class="input-fieldset" id="fieldText">
-                  <label class="input-label" for="text">Who refunds
-                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
-                        maxlength="125" placeholder="Text" required="">
-                  </label>
-               </fieldset>
-            </div>
-
-            <div class="input-container">
+            <div class="input-container" id="input-container4-id">
                <fieldset class="input-fieldset" id="fieldNumber">
                   <label class="input-label" for="number">Due date
                      <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
@@ -65,12 +68,89 @@
          </div>
       </div>
       <h3 class="heading-h3">Set reminder (optional)</h3>
+      <div class="select-container">
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Label</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="selected-reminder"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+               disabled
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">After</li>
+             <li class="select-option-item">Each</li>
+           </ul>
+         </div>
+   
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Label</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="selected-reminder"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+               disabled
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">1</li>
+             <li class="select-option-item">2</li>
+             <li class="select-option-item">3</li>
+             <li class="select-option-item">4</li>
+             <li class="select-option-item">5</li>
+             <li class="select-option-item">6</li>
+             <li class="select-option-item">7</li>
+             <li class="select-option-item">8</li>
+             <li class="select-option-item">9</li>
+             <li class="select-option-item">10</li>
+           </ul>
+         </div>
+   
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Label</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="selected-reminder"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+               disabled
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">Day</li>
+             <li class="select-option-item">Week</li>
+             <li class="select-option-item">Month</li>
+             <li class="select-option-item">Year</li>
+           </ul>
+         </div>
+       </div>
    </div>
+
 
 </body>
 
 <script src="./index.mjs" type="module"></script>
 <script src="../button/index.mjs" type="module"></script>
 <script src="../input/index.mjs" type="module"></script>
+<script src="../selectors/selectors.mjs"></script>
+
 
 </html>

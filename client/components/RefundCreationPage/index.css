@@ -35,23 +35,43 @@ h2 {
     flex-wrap: wrap;
     width: 920px;
     height: 152px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .container2 {
-    width: 450px;
+    width: 460px;
     display: flex;
     flex-direction: column;
-    border: 2px solid red;
-    margin-right: 20px;
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+   /* justify-content: flex-start; */
+    /* margin-right: 20px; */
 }
 .container3 {
     width: 920px;
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     justify-items: legacy;
+    /* align-content: space-between; */
 }
+
+#input-container-id {
+    padding: 0px 12px 0px 0px;
+}
+
+#input-container2-id {
+    padding: 24px 12px 0px 0px;
+}
+
+#input-container3-id {
+    padding: 0px 0px 24px 12px;
+}
+
+#input-container4-id {
+    padding: 0px 0px 0px 12px;
+}
+
 
 h3 {
     padding-top: 40px;
@@ -59,6 +79,11 @@ h3 {
     display: block;
     width: 920px;
 }
+
+#select-label-id {
+padding: 0px;
+}
+
 
 /* .refund {
     width: 100%;
