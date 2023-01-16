@@ -2,6 +2,7 @@ const app = require('fastify')
 const bcrypt = require('bcrypt')
 const mysql = require('mysql2')
 
+//creating/opening pool
 const connection = mysql.createPool({
    host: process.env.DATABASE_HOST,
    user: process.env.DATABASE_USER,
@@ -10,31 +11,32 @@ const connection = mysql.createPool({
    port: process.env.DATABASE_PORT,
 });
 
-//closing pool?
-//process.on('SIGINT', async () => {
-//    await closeConnection();
-//});
+//closing pool in the end if the session
+process.on('SIGINT', async () => {
+    await closeConnection();
+});
 
-//async function closeConnection(){
-    // // Wait for all the connections to be released
-//    await pool.drain();
-    // // Close the pool
-//    pool.end();
-//    console.log('Pool closed');
- //   process.exit(0);
-//}
+async function closeConnection(){
+    // Wait for all the connections to be released
+    await pool.drain();
+     // Close the pool
+   pool.end();
+   console.log('Pool closed');
+    process.exit(0);
+}
 
+//By using prepared statements, you can avoid SQL injection attacks
 async function checkEmailExists(email, connection) {
    const [results] = await connection.execute(`SELECT 1 FROM users WHERE email = ?`, [email]);
    return results.length > 0 ? true : false;
 }
-//By using prepared statements, you can avoid SQL injection attacks
    
    async function hashPassword(password) {
    const saltRounds = 10;
    const hashedPassword = await bcrypt.hash(password, saltRounds);
    return hashedPassword;
    }
+
 app.post('/signup', async (req, res) => {
       const email = req.body.email;
       const password = req.body.password;
