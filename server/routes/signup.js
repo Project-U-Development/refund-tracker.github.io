@@ -10,6 +10,20 @@ const connection = mysql.createPool({
    port: process.env.DATABASE_PORT,
 });
 
+//closing pool?
+//process.on('SIGINT', async () => {
+//    await closeConnection();
+//});
+
+//async function closeConnection(){
+    // // Wait for all the connections to be released
+//    await pool.drain();
+    // // Close the pool
+//    pool.end();
+//    console.log('Pool closed');
+ //   process.exit(0);
+//}
+
 async function checkEmailExists(email, connection) {
    const [results] = await connection.execute(`SELECT 1 FROM users WHERE email = ?`, [email]);
    return results.length > 0 ? true : false;
