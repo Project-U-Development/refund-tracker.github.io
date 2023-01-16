@@ -1,6 +1,7 @@
-const app = require('fastify')
-const bcrypt = require('bcrypt')
-const mysql = require('mysql2')
+const app = require('fastify') //server
+const bcrypt = require('bcrypt') // crypt for password
+const mysql = require('mysql2') // database using
+const uuid = require('uuid'); // generating unique ID's for user and etc
 
 //creating/opening pool
 const connection = mysql.createPool({
@@ -40,6 +41,7 @@ async function checkEmailExists(email, connection) {
 app.post('/signup', async (req, res) => {
       const email = req.body.email;
       const password = req.body.password;
+      const newUserId = uuid.v4(); // generate a new uuid - unique user_id
       
       // if email and password were provided
       if (!email || !password) {
@@ -53,8 +55,8 @@ app.post('/signup', async (req, res) => {
       else {
         try {
       const hashedPassword = await hashPassword(password);
-      await connection.execute('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword]);
-      return res.status(201).send({ message: 'User registered successfully'});
+      await connection.execute('INSERT INTO users (user_id, email, password) VALUES (?, ?, ?)', [newUserId, email, hashedPassword]);
+      return res.status(201).send({ message: 'User registered successfully', id: newUserId, email: email });
       } 
       catch (err) {
       console.error(err);
@@ -62,6 +64,8 @@ app.post('/signup', async (req, res) => {
       }
       }
       });
+
+      
 
 // async function routes(fastify, option) {
 //    fastify.post('/signup', async (request, reply) => {
