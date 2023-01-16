@@ -2,6 +2,14 @@ const app = require('fastify') //server
 const bcrypt = require('bcrypt') // crypt for password
 const mysql = require('mysql2') // database using
 const uuid = require('uuid'); // generating unique ID's for user and etc
+const validator = require('validator'); //validation if the email is real
+const winston = require('winston'); //logging library
+const rateLimit = require("fastify-rate-limit"); //request limitation from 1 IP !safety!
+
+app.register(rateLimit, {
+   max: 3, // limit each IP to 3 requests per 10 minutes
+   timeWindow: "10m"
+ });
 
 //creating/opening pool
 const connection = mysql.createPool({
@@ -14,17 +22,20 @@ const connection = mysql.createPool({
 
 //closing pool in the end if the session
 process.on('SIGINT', async () => {
-    await closeConnection();
-});
-
-async function closeConnection(){
-    // Wait for all the connections to be released
-    await pool.drain();
+   await closeConnection();
+ });
+ async function closeConnection() {
+   try {
+     // Wait for all the connections to be released
+     await connection.drain();
      // Close the pool
-   pool.end();
-   console.log('Pool closed');
-    process.exit(0);
-}
+     connection.end();
+     winston.info('Pool closed'); //using logging library
+     process.exit(0);
+   } catch (err) {
+     winston.error(err);
+   }
+ }
 
 //By using prepared statements, you can avoid SQL injection attacks
 async function checkEmailExists(email, connection) {
@@ -37,17 +48,36 @@ async function checkEmailExists(email, connection) {
    const hashedPassword = await bcrypt.hash(password, saltRounds);
    return hashedPassword;
    }
+   
+   // if email and password were provided
+   function validateInput(email, password) {
+      if (!email || !password) {
+        return { status: 400, error: 'Please provide both email and password' };
+      }
+      if (!validator.isEmail(email)) {
+        return { status: 400, error: 'Please provide a valid email address' };
+      }
+      return { status: 200 };
+    }
 
-app.post('/signup', async (req, res) => {
+app.post('/signup', 
+{ 
+   preValidation: app.rateLimit({ 
+     key: "ip", 
+     message: "Too many accounts created from this IP, please try again later" 
+   }) 
+ },
+async (req, res) => {
       const email = req.body.email;
       const password = req.body.password;
       const newUserId = uuid.v4(); // generate a new uuid - unique user_id
       
       // if email and password were provided
-      if (!email || !password) {
-      return res.status(400).send({ error: 'Please provide both email and/or password' })
-      }
-      // if email exists
+      const inputValidation = validateInput(email, password);
+      if (inputValidation.status === 400) {
+         return reply.status(inputValidation.status).send({ error: inputValidation.error });
+       }
+      // if email already exists in database
       const exists = await checkEmailExists(email, connection);
       if (exists) {
       return res.status(400).send({ error: 'This email is already registered' });
