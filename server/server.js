@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));
 fastify.register(require('./routes/signup'));
+fastify.register(require('./routes/login'));
 
 const server = async () => {
    try {
