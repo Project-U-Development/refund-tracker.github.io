@@ -22,6 +22,7 @@ document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
       dropdownList.classList.toggle("select-options-highlighted");
       selectorBlock.classList.toggle("select-block-highlighted");
     rotateButton.classList.toggle("rotate");  
+   
        
        
     });

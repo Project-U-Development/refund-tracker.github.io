@@ -35,8 +35,11 @@
     top: 8px;
     left: 16px;
     top: 8px;
-    
+     }
+  .select-block:hover {
+    border: 1px solid var(--primary-blue);
   }
+ 
   .select-button {
     display: block;
     position: absolute;
@@ -96,7 +99,7 @@
   }
 
   .select-option-item:hover{
-    background-color: var(--border-focused);
+    background-color: var(--border-unfocused);
   
   } 
 
