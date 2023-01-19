@@ -5,12 +5,16 @@ body {
     width: 1440px;
     height: 900px;
     font-family: IBM Plex Sans;
+    /* width: 100%;
+    display: flex;
+    height: 100%; */
 }
 
 .container {
     height: 86px;
     left: 260px;
     margin-top: 80px; 
+    /* box-sizing: border-box; */
 }
 
 h2 {
@@ -26,7 +30,7 @@ h2 {
     justify-content: space-between;
     width: 186px;
     margin-top: 16px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .input-block {
@@ -35,23 +39,50 @@ h2 {
     flex-wrap: wrap;
     width: 920px;
     height: 152px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .container2 {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid red;
-    margin-right: 20px;
+    width: 460px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    position: relative;
+    box-sizing: border-box;
+    margin-left: -6px;
+    /* flex-wrap: wrap; */
+    /* border: 2px solid red; */
+   /* justify-content: flex-start; */
+    /* margin-right: 20px; */
 }
 .container3 {
     width: 920px;
     display: flex;
-    flex-direction: row;
-    border: 2px solid green;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* border: 2px solid green; */
     justify-items: legacy;
+    /* flex-wrap: wrap-reverse; */
+    /* box-sizing: border-box;
+    position: relative; */
+    /* align-content: space-between; */
 }
+
+#input-container-id {
+    margin: 0px 12px 0px 0px;
+}
+
+#input-container2-id {
+    margin: 12px 12px 0px 0px;
+}
+
+#input-container3-id {
+    margin: 0px 0px 12px 12px;
+}
+
+#input-container4-id {
+    margin: 0px 0px 0px 12px;
+}
+
 
 h3 {
     padding-top: 40px;
@@ -59,6 +90,21 @@ h3 {
     display: block;
     width: 920px;
 }
+
+#select-label-id {
+padding: 0px;
+}
+
+/* .input-container {
+    position: absolute;
+} */
+
+
+/* .input-fieldset:has(input:enabled):focus-within:enabled {
+    /* position: relative;
+    box-sizing: border-box; */
+
+ /* } */ */
 
 /* .refund {
     width: 100%;
