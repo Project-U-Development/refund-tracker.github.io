@@ -109,3 +109,7 @@
   .rotate {
     transform: rotate(180deg);
   }  
+  input::placeholder {
+    font-size: 18px;
+    font-weight: 300;
+  }
