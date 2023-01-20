@@ -1,10 +1,11 @@
 const fastify = require('fastify')({ logger: true });
-const mysql = require('mysql2');
-const dotenv = require('dotenv');
+
 
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));
-fastify.register(require('./routes/signup'));
+fastify.register(require('./routes/usersRoutes'));
+// fastify.register(require('./routes/usersRoutesTmp'));
+
 
 const server = async () => {
    try {
@@ -17,25 +18,5 @@ const server = async () => {
       process.exit(1);
    }
 };
-
-dotenv.config({ path: './.env' });
-
-const dataBase = mysql.createConnection({
-   host: process.env.DATABASE_HOST,
-   user: process.env.DATABASE_USER,
-   password: process.env.DATABASE_PASSWORD,
-   database: process.env.DATABASE,
-   port: process.env.DATABASE_PORT,
-})
-
-dataBase.connect((error) => {
-   error ? console.log(error) : console.log('MySQL is connected!')
-   dataBase.query(
-      'SELECT * FROM `users`',
-      function (err, results, fields) {
-         console.log(results); // results contains rows returned by server
-      }
-   );
-})
 
 server();
