@@ -30,7 +30,7 @@
 }
 
 .datepicker-label:hover {
-  border: 1px solid (var--primary-blue);
+  border: 1px solid var(--primary-blue);
 }
 .activated-input-label {
   border-radius: 8px;
