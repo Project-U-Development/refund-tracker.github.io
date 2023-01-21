@@ -17,8 +17,8 @@
    <div class="container">
       <h2 class="heading-h2">Refund creation</h2>
       <div class="buttons">
-         <button class="button ghost heading-h5" id="buttonGhost">Back</button>
-         <button class="button primary prim heading-h5" type="submit" id="buttonPrimary">Create</button>
+         <button class="button ghost heading-h5" id="buttonGhost" onclick="window.location = 'path-here';">Back</button>
+         <button class="button primary prim heading-h5" type="submit" id="buttonPrimary" disabled>Create</button>
       </div>
       <h3 class="heading-h3">Enter details</h3>
 
@@ -27,8 +27,8 @@
             <div class="input-container" id="input-container-id">
                <fieldset class="input-fieldset" id="fieldText">
                   <label class="input-label" for="text">What to refund
-                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
-                        maxlength="125" placeholder="Text" required="">
+                     <input class="input heading-h5" id="text1" type="text" name="textInput" minlength="1"
+                        maxlength="125" placeholder="Text" required="" onchange="inputButton()">
                   </label>
                </fieldset>
             </div>
@@ -36,8 +36,8 @@
             <div class="input-container" id="input-container2-id">
                <fieldset class="input-fieldset" id="fieldText">
                   <label class="input-label" for="text">Who refunds
-                     <input class="input heading-h5" id="text" type="text" name="textInput" minlength="1"
-                        maxlength="125" placeholder="Text" required="">
+                     <input class="input heading-h5" id="text2" type="text" name="textInput" minlength="1"
+                        maxlength="125" placeholder="Text" required="" onchange="inputButton()">
                   </label>
                </fieldset>
             </div>
@@ -48,8 +48,8 @@
             <div class="input-container" id="input-container3-id">
                <fieldset class="input-fieldset" id="fieldNumber">
                   <label class="input-label" for="number">Expected money amount
-                     <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
-                        value="" step=".01" placeholder="Number" required="">
+                     <input class="input heading-h5" id="number1" type="number" name="numberInput" min="0" max="99000"
+                        value="" step=".01" placeholder="Number" required="" onchange="inputButton()">
                   </label>
                </fieldset>
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
@@ -58,8 +58,8 @@
             <div class="input-container" id="input-container4-id">
                <fieldset class="input-fieldset" id="fieldNumber">
                   <label class="input-label" for="number">Due date
-                     <input class="input heading-h5" id="number" type="number" name="numberInput" min="0" max="99000"
-                        value="" step=".01" placeholder="Number" required="">
+                     <input class="input heading-h5" id="number2" type="number" name="numberInput" min="0" max="99000"
+                        value="" step=".01" placeholder="Number" required="" onchange="inputButton()">
                   </label>
                </fieldset>
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
