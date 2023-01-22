@@ -20,6 +20,13 @@ button {
   border-radius: 8px;
 }
 
+.button-link {
+  text-decoration: none;
+  padding: 10px 16px;
+  height: 48px;
+  border-radius: 8px;
+}
+
 .primary {
   background: var(--primary-blue);
   color: var(--primary-white);
