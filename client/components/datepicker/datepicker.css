@@ -29,6 +29,9 @@
   height: 64px;
 }
 
+.datepicker-label:hover {
+  border: 1px solid var(--primary-blue);
+}
 .activated-input-label {
   border-radius: 8px;
   /* border: none; */
@@ -90,9 +93,9 @@
   margin: 0px 16px 0px 16px;
 }
 
-hr {
+/* hr {
   background-color: var(--border-unfocused);
-}
+} */
 
 .datepicker-weekdays {
   width: 312px;
@@ -137,6 +140,7 @@ hr {
 .prev-date,
 .next-date {
   opacity: 0.5;
+ 
 }
 
 .prev,

@@ -1,10 +1,11 @@
+import { isPast, isValid } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 const date = new Date();
 const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
 
-
+console.log(isPast(new Date('2023-01-15')));
 
 function renderCalendar() {
   date.setDate(7);
@@ -148,7 +149,7 @@ function setDueDate(dueDate) {
 listenToClick();
 
 const elements = document.getElementsByClassName("datepicker-calendar");
-for (i = 0; i < elements.length; i++) {
+for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", showDatepicker);
 }
 
