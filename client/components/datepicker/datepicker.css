@@ -28,16 +28,10 @@
   width: 448px;
   height: 64px;
 }
-
-.datepicker-label:hover {
-  border: 1px solid var(--primary-blue);
-}
 .activated-input-label {
   border-radius: 8px;
-  /* border: none; */
   border-bottom: 1px solid var(--border-unfocused);
 }
-
 .datepicker-input {
   border: none;
   height: 25px;
@@ -59,13 +53,13 @@
 }
 
 .datepicker-hilighted {
-  border: 3px solid;
-  border-color: var(--border-focused);
-  border-radius: 8px;
-  width: 454px;
-  height: 356px;
-}
 
+  border: 3px solid var(--border-focused);
+  border-radius: 8px;
+  width: 450px;
+  height: 356px;
+  box-sizing: border-box;
+}
 .datepicker-month {
   width: 448px;
   height: 48px;
@@ -75,6 +69,7 @@
   align-items: center;
   padding: 20px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .datepicker-month i {
@@ -92,11 +87,6 @@
   width: 416px;
   margin: 0px 16px 0px 16px;
 }
-
-/* hr {
-  background-color: var(--border-unfocused);
-} */
-
 .datepicker-weekdays {
   width: 312px;
   padding: 12px 68px 0px 68px;
@@ -156,8 +146,17 @@
 .datepicker {
   position: relative;
   display: inline-block;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
+.datepicker:hover {
+  border: 1px solid var(--primary-blue);
 
+}
+.datepicker.datepicker-hilighted:hover {
+  border: 3px solid var(--border-focused);
+  
+  }
 .datepicker-show {
   display: block;
 }
