@@ -4,22 +4,24 @@ const uuid = require('uuid');
 const validator = require('validator');
 
 const signup = async (request, reply) => {
-   const { user_mail, user_password } = request.body;
+   const { userMail, userPassword } = request.body;
    try {
-      const validationBody = checkBody(user_mail, user_password);
+      const validationBody = checkBody(userMail, userPassword);
       if (validationBody.status === 400) {
          reply.status(400).send(validationBody.err);
       }
       await excuteQuery(
          'INSERT INTO users(user_id, user_mail, user_password) VALUES (?,?,?)',
-         [uuid.v4(), user_mail, await hashPassword(user_password)]);
-      reply.status(200).send({
-         message: `User ${user_mail} is registered`,
-         mail: user_mail
+         [uuid.v4(), userMail, await hashPassword(userPassword)]);
+      reply.status(201).send({
+         message: `User ${userMail} is registered`,
+         mail: userMail
       });
    }
    catch (err) {
-      reply.status(400).send(err);
+      err.code === 'ER_DUP_ENTRY' ? reply.status(403).send({
+         message: `An Email |${userMail}| is already in use. Please, provide email not registered before`
+      }) : reply.status(400).send(err);
    }
 }
 
@@ -27,20 +29,20 @@ async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
 }
 
-function checkBody(user_mail, user_password) {
-   if (!user_mail || !user_password) {
+function checkBody(userMail, userPassword) {
+   if (!userMail || !userPassword) {
       return {
          status: 400,
          err: 'Please, provide both email and password'
       }
    }
-   if (!validator.isEmail(user_mail)) {
+   if (!validator.isEmail(userMail)) {
       return {
          status: 400,
          err: 'Please, provide a valid email address'
       }
    }
-   return { status: 200 }
+   return { status: 202 }
 }
 
 module.exports = { signup };
