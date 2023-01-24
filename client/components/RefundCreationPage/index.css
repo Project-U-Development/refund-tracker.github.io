@@ -36,7 +36,7 @@ h2 {
 .input-block {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 920px;
     height: 152px;
     /* border: 1px solid red; */
@@ -46,7 +46,7 @@ h2 {
     width: 460px;
     /* display: flex; */
     /* flex-direction: column; */
-    position: relative;
+    /* position: relative; */
     box-sizing: border-box;
     margin-left: -6px;
     /* flex-wrap: wrap; */
