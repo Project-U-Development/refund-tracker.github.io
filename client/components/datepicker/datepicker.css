@@ -29,7 +29,10 @@
   height: 64px;
 }
 .activated-input-label {
-  border-radius: 8px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
   border-bottom: 1px solid var(--border-unfocused);
 }
 .datepicker-input {
@@ -151,7 +154,6 @@
 }
 .datepicker:hover {
   border: 1px solid var(--primary-blue);
-
 }
 .datepicker.datepicker-hilighted:hover {
   border: 3px solid var(--border-focused);

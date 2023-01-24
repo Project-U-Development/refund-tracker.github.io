@@ -4,6 +4,7 @@ const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
+const pickerBorder = document.getElementsByClassName(".datepicker-label")
 
 console.log(isPast(new Date('2023-01-15')));
 
@@ -121,7 +122,8 @@ function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
   calendarBox.classList.toggle("datepicker-calendar-hilighted");
-  nonActiveInput.classList.add("activated-input-label");
+  nonActiveInput.classList.toggle("activated-input-label");
+  pickerBorder.classList.toggle("datepicker-label");
  
 }
 
@@ -129,7 +131,9 @@ function hide() {
   calendar.classList.remove("datepicker-show");
   calendarBox.classList.remove("datepicker-hilighted");
   calendarBox.classList.remove("datepicker-calendar-hilighted");
-  nonActiveInput.classList.remove("activated-input-label")
+  nonActiveInput.classList.remove("activated-input-label");
+   pickerBorder.classList.add("datepicker-label");
+  
 }
 
 function addZero(d) {
