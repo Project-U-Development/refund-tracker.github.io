@@ -17,9 +17,6 @@
   background-repeat: no-repeat;
 }
 .datepicker-label {
-  /* border: 1px solid;
-  border-color: var(--border-unfocused);
-  border-radius: 8px; */
   padding: 1em;
   display: inline-block;
   box-sizing: border-box;
@@ -160,10 +157,6 @@
 .datepicker:hover {
   border: 1px solid var(--primary-blue);
 }
-/* .datepicker.datepicker-hilighted:hover {
-  border: 3px solid var(--border-focused);
-  
-  } */
 .datepicker-show {
   display: block;
 }

@@ -4,7 +4,6 @@ const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
-// const pickerBorder = document.getElementsByClassName(".datepicker-label")
 
 function renderCalendar() {
   date.setDate(7);
@@ -121,18 +120,14 @@ renderCalendar();
 function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
-  // calendarBox.classList.toggle("datepicker-calendar-hilighted");
   nonActiveInput.classList.toggle("activated-input-label");
-  // pickerBorder.classList.toggle("datepicker-label");
   calendarBox.classList.toggle("datepicker");
 }
 
 function hide() {
   calendar.classList.remove("datepicker-show");
   calendarBox.classList.remove("datepicker-hilighted");
-  // calendarBox.classList.remove("datepicker-calendar-hilighted");
   nonActiveInput.classList.remove("activated-input-label");
-  // pickerBorder.classList.add("datepicker-label");
   calendarBox.classList.add("datepicker");
 }
 
