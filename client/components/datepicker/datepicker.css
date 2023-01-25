@@ -19,9 +19,9 @@
 }
 
 .datepicker-label {
-  border: 1px solid;
+  /* border: 1px solid;
   border-color: var(--border-unfocused);
-  border-radius: 8px;
+  border-radius: 8px; */
   padding: 1em;
   display: inline-block;
   box-sizing: border-box;
@@ -56,7 +56,7 @@
 }
 
 .datepicker-hilighted {
-
+  position: relative;
   border: 3px solid var(--border-focused);
   border-radius: 8px;
   width: 450px;
@@ -151,14 +151,16 @@
   display: inline-block;
   border-radius: 8px;
   box-sizing: border-box;
+  border: 1px solid;
+  border-color: var(--border-unfocused);
 }
 .datepicker:hover {
   border: 1px solid var(--primary-blue);
 }
-.datepicker.datepicker-hilighted:hover {
+/* .datepicker.datepicker-hilighted:hover {
   border: 3px solid var(--border-focused);
   
-  }
+  } */
 .datepicker-show {
   display: block;
 }
