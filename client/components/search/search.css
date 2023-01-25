@@ -1,6 +1,9 @@
+@import "./typography/typography.css";
+@import "./typography/color.css"
+
 .search-form {
   left: 6px;
-top: 10px;
+top: 8px;
  display: inline-block;
  position: relative;
 }
@@ -26,10 +29,10 @@ font-size: 18px;
 }
 
 .search-form-input:focus {
-border: 3px solid #00E4CA; 
+border: 1px solid #00E4CA; 
 }
 
-.search-form-input:hover {
+/*.search-form-input:hover {
 border: 1px solid #0061FF; 
  display: flex;
 flex-direction: column;
@@ -42,29 +45,29 @@ width: 318px;
 height: 502px;
 left: 57px;
 top: 440px;
-}
+}*/
 
 .search-form-btn {
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  display: flex;
+ justify-content: center;
+ align-items: center;
+ vertical-align: middle;
+ display: flex;
 flex-direction: column;
 align-items: flex-start;
-  position: absolute;
-  right: 30px; 
-  top: 13px;
-  width: 21px;
-  height: 21px;
-  line-height: 24px;
-  font-weight: bold;      
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 2px;
-  background-color: transparent;
-  text-align: center;
-  cursor: pointer;
+ position: absolute;
+ right: 30px; 
+ top: 13px;
+ width: 21px;
+ height: 21px;
+ line-height: 24px;
+ font-weight: bold;      
+ margin: 0;
+ padding: 0;
+ border: 0;
+ border-radius: 2px;
+ background-color: transparent;
+ text-align: center;
+ cursor: pointer;
 }
 
 svg path {
@@ -73,11 +76,7 @@ svg path {
    }
 
 .btn1 {
- /* primary / blue / 100 */
-
 background: #F2F7FF;
-/* accent / mint / 400 */
-
 border: 1px solid #00E4CA;
 border-radius: 8px;
 }
