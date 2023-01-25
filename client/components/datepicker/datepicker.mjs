@@ -1,12 +1,10 @@
-import { isPast, isValid } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
+import {  isValid } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 const date = new Date();
 const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
 const pickerBorder = document.getElementsByClassName(".datepicker-label")
-
-console.log(isPast(new Date('2023-01-15')));
 
 function renderCalendar() {
   date.setDate(7);
@@ -55,18 +53,19 @@ function renderCalendar() {
   for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class='prev-date'>${prevLastDay - x + 1}</div>`;
   }
- 
-
-  for (let i = 1; i <= lastDay; i++) {
+   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
       days += `<div class='datepicker-today'>${i}</div>`;
-    } else {
-      days += `<div class='curDay'>${i}</div>`;
+    } else  if (i <= new Date().getDate() &&
+    date.getMonth() === new Date().getMonth()
+  ) {
+       days += `<div class='datepicker-before-today'>${i}</div>`;
+        } else {
+       days += `<div class='curDay'>${i}</div>`;
     }
-    // monthDays.innerHTML = days;
   }
 
   for (let j = 1; j <= nextDays; j++) {
@@ -95,6 +94,7 @@ function listenToClick() {
 
  const buttonClick = document.getElementById("buttonSubmitId");
   buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
+  
 
 function clickHandler(event) {
   const year = date.getFullYear();
@@ -121,36 +121,34 @@ renderCalendar();
 function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
   calendarBox.classList.toggle("datepicker-hilighted");
-  calendarBox.classList.toggle("datepicker-calendar-hilighted");
   nonActiveInput.classList.toggle("activated-input-label");
-  pickerBorder.classList.toggle("datepicker-label");
+  calendarBox.classList.toggle("datepicker");
  
 }
 
 function hide() {
   calendar.classList.remove("datepicker-show");
   calendarBox.classList.remove("datepicker-hilighted");
-  calendarBox.classList.remove("datepicker-calendar-hilighted");
   nonActiveInput.classList.remove("activated-input-label");
-   pickerBorder.classList.add("datepicker-label");
-  
+  calendarBox.classList.add("datepicker");
 }
 
 function addZero(d) {
   return d < 10 ? "0" + d : d;
 }
+
 function getTime(t) {
   let Y = t.getFullYear();
   let M = addZero(t.getMonth() + 1);
   let D = addZero(t.getDate());
   return `${D}-${M}-${Y}`;
 }
-const curDate = getTime(new Date());
 
+const curDate = getTime(new Date());
 setDueDate(curDate);
+
 function setDueDate(dueDate) {
   document.getElementById("DuedateId").value = dueDate;
-  
 }
 listenToClick();
 
