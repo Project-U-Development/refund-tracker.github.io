@@ -4,7 +4,7 @@
 .select-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
   .select-group {
     margin-right: 24px;

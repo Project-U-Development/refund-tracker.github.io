@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="../button/button.css">
    <link rel="stylesheet" href="../input/input.css">
    <link rel="stylesheet" href="../selectors/selectors.css">
+   <link rel="stylesheet" href="../datepicker/datepicker.css">
 
 
 </head>
@@ -56,7 +57,7 @@
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
             </div>
 
-            <div class="input-container" id="input-container4-id">
+<!-- <div class="input-container" id="input-container4-id">
                <fieldset class="input-fieldset" id="fieldNumber">
                   <label class="input-label" for="number">Due date
                      <input class="input heading-h5" id="number" type="number" name="dueDate" min="0" max="99000"
@@ -64,7 +65,38 @@
                   </label>
                </fieldset>
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
-            </div>
+            </div> -->
+
+            <div class="datepicker" id="input-container4-id">
+               <button name="buttonSubmit" id="buttonSubmitId" class="datepicker-button" ></button> 
+                   <label class="input-label datepicker-label" for="DuedateId">
+                 Due date
+                 <br />
+                 <input class="datepicker-input heading-h5" name="Duedate" id="DuedateId" type="text" maxlength="10" readonly />
+               </label>
+               <div class="datepicker-calendar" id="myCalendar" name="calendarName" hidden>
+                 <div class="datepicker-month">
+                   <i class="fas fa-angle-left prev"></i>
+                   <div class="datepicker-date">
+                     <h1 class="heading-h5"></h1>
+                   </div>
+                   <i class="fas fa-angle-right next"></i>
+                 </div>
+                 <div class="datepicker-line"></div>
+                 <div class="datepicker-weekdays input-label">
+                   
+                   <div>Mo</div>
+                   <div>Tu</div>
+                   <div>We</div>
+                   <div>Th</div>
+                   <div>Fr</div>
+                   <div>Sa</div>
+                   <div>Su</div>
+                 </div>
+                 <div class="datepicker-days table-data"></div>
+               </div>
+             </div>
+            
          </div>
       </div></form>
       <h3 class="heading-h3">Set reminder (optional)</h3>
@@ -151,6 +183,7 @@
 <script src="../button/index.mjs" type="module"></script>
 <script src="../input/index.mjs" type="module"></script>
 <script src="../selectors/selectors.mjs"></script>
+<script  src="../datepicker/datepicker.mjs" type="module"></script>
 
 
 </html>
