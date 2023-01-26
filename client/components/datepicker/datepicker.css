@@ -1,0 +1,167 @@
+@import "../typography/typography.css";
+
+* {
+  box-sizing: border-box;
+  }
+.datepicker-button {
+  border: none;
+  position: absolute;
+  right: 18px;
+  padding: 0;
+  top: 18px;
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+  background-color: var(--primary-white);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18 12.5C18 13.3284 17.3284 14 16.5 14C15.6716 14 15 13.3284 15 12.5C15 11.6716 15.6716 11 16.5 11C17.3284 11 18 11.6716 18 12.5Z' fill='%230061FF'/%3e%3cpath d='M21.5 14C22.3284 14 23 13.3284 23 12.5C23 11.6716 22.3284 11 21.5 11C20.6716 11 20 11.6716 20 12.5C20 13.3284 20.6716 14 21.5 14Z' fill='%230061FF'/%3e%3cpath d='M18 17.5C18 18.3284 17.3284 19 16.5 19C15.6716 19 15 18.3284 15 17.5C15 16.6716 15.6716 16 16.5 16C17.3284 16 18 16.6716 18 17.5Z' fill='%230061FF'/%3e%3cpath d='M21.5 19C22.3284 19 23 18.3284 23 17.5C23 16.6716 22.3284 16 21.5 16C20.6716 16 20 16.6716 20 17.5C20 18.3284 20.6716 19 21.5 19Z' fill='%230061FF'/%3e%3cpath d='M8 17.5C8 18.3284 7.32843 19 6.5 19C5.67157 19 5 18.3284 5 17.5C5 16.6716 5.67157 16 6.5 16C7.32843 16 8 16.6716 8 17.5Z' fill='%230061FF'/%3e%3cpath d='M11.5 19C12.3284 19 13 18.3284 13 17.5C13 16.6716 12.3284 16 11.5 16C10.6716 16 10 16.6716 10 17.5C10 18.3284 10.6716 19 11.5 19Z' fill='%230061FF'/%3e%3cpath d='M8 22.5C8 23.3284 7.32843 24 6.5 24C5.67157 24 5 23.3284 5 22.5C5 21.6716 5.67157 21 6.5 21C7.32843 21 8 21.6716 8 22.5Z' fill='%230061FF'/%3e%3cpath d='M11.5 24C12.3284 24 13 23.3284 13 22.5C13 21.6716 12.3284 21 11.5 21C10.6716 21 10 21.6716 10 22.5C10 23.3284 10.6716 24 11.5 24Z' fill='%230061FF'/%3e%3cpath d='M18 22.5C18 23.3284 17.3284 24 16.5 24C15.6716 24 15 23.3284 15 22.5C15 21.6716 15.6716 21 16.5 21C17.3284 21 18 21.6716 18 22.5Z' fill='%230061FF'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 0.25C6.41421 0.25 6.75 0.585786 6.75 1V2H21.25V1C21.25 0.585786 21.5858 0.25 22 0.25C22.4142 0.25 22.75 0.585786 22.75 1V2H24C26.2091 2 28 3.79086 28 6V24C28 26.2091 26.2091 28 24 28H4C1.79086 28 0 26.2091 0 24V6C0 3.79086 1.79086 2 4 2H5.25V1C5.25 0.585786 5.58579 0.25 6 0.25ZM2 6C2 4.89543 2.89543 4 4 4H24C25.1046 4 26 4.89543 26 6V7H2V6ZM2 9V24C2 25.1046 2.89543 26 4 26H24C25.1046 26 26 25.1046 26 24V9H2Z' fill='%230061FF'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+}
+.datepicker-label {
+  /* padding: 1em; */
+  display: inline-block;
+  box-sizing: border-box;
+  width: 448px;
+  height: 64px;
+}
+.activated-input-label {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-unfocused);
+  width: 442.5px;
+  display: block;
+  }
+.datepicker-input {
+  border: none;
+  height: 25px;
+  width: 300px;
+  outline: none;
+  appearance: none;
+  font-family: inherit;
+  background-color: var(--primaty-white);
+  caret-color: var(--primary-blue);
+  color: var(--primary-dark);
+}
+.datepicker-calendar {
+  width: 448px;
+  height: 244px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+.datepicker-hilighted {
+  position: relative;
+  position: relative;
+  border: 3px solid var(--border-focused);
+  border-radius: 8px;
+  width: 448px;
+  height: 356px;
+  box-sizing: border-box;
+}
+.datepicker-month {
+  width: 448px;
+  height: 48px;
+  top: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.datepicker-month i {
+  width: 5.5px;
+  height: 10px;
+  cursor: pointer;
+}
+.datepicker-month h1 {
+  color: var(--primary-dark);
+}
+.datepicker-line {
+  border-top: solid 1px var(--border-unfocused);
+  width: 416px;
+  margin: 0px 16px 0px 16px;
+}
+.datepicker-weekdays {
+  width: 312px;
+  padding: 12px 68px 0px 68px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.datepicker-weekdays div {
+  width: calc(312px / 7);
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  color: var(--primary-dark);
+}
+.datepicker-days {
+  width: 312px;
+  height: 196px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 12px 68px 24px 68px;
+}
+.datepicker-days div {
+  margin: 1px;
+  width: calc(300px / 7);
+  gap: 12px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+.datepicker-days div.prev-date:hover:not(.today),
+.datepicker-days div.next-date:hover:not(.today),
+.datepicker-before-today:hover {
+  background-color: transparent;
+  cursor: not-allowed;
+}
+.prev,
+.next {
+  color: var(--primary-blue);
+}
+.datepicker-today {
+  background-color: var(--button-disabled); 
+  border-radius: 4px;
+  
+}
+.datepicker-before-today{
+  background-color: transparent;
+  cursor: not-allowed;
+  color: var(--primary-dark);
+  opacity: 0.5;
+}
+.curDay:hover {
+  background-color: var(--border-unfocused); 
+  border-radius: 4px;
+  cursor: pointer;
+}
+.datepicker {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: var(--border-unfocused);
+  border: 1px solid;
+  border-color: var(--border-unfocused);
+}
+.datepicker:hover {
+  border: 1px solid var(--primary-blue);
+}
+.datepicker-show {
+  display: block;
+}
+.selected {
+  border: 2px solid var(--border-unfocused);
+  border-radius: 4px;
+  box-sizing: content-box;
+}

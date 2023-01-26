@@ -13,7 +13,7 @@ document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
         dropdownList.classList.remove("select-options-highlighted");
         rotateButton.classList.remove("rotate");  
     }
-    // клик по кнопке открывает и закрывает дропдаун
+
     selectorBlock.addEventListener("click", function () {
      
         dropdownList.classList.toggle("select-options-visible");
@@ -21,14 +21,13 @@ document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
         selectorBlock.classList.toggle("select-block-highlighted");
         rotateButton.classList.toggle("rotate");  
     });
-    // выбирает значение дропдауна для инпута и закрывает дропдаун
+
     dropdownListItem.forEach((listItem) => {
         listItem.addEventListener("click", function () {
         dropdownInput.value = this.innerText;
         closeSelect();
        });
     });
-    //   Клик снаружи дропдауна закрывает его
     document.addEventListener("click", (e) => {
     // convertation from collection to html array
         const children = Array.from(selectorBlock.children);
@@ -38,7 +37,7 @@ document.querySelectorAll(".select-group").forEach((dropdownWrapper) => {
         closeSelect(); 
        }
     });
-    // Клик на Tab или Escape закрывает дропдаун
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Tab" || e.key === "Escape") {
         closeSelect();
