@@ -1,12 +1,16 @@
 @import "../typography/typography.css";
 @import "../typography/color.css";
-
+@import "../typography/zIndex.css";
 .select-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
   .select-group {
+    margin-right: 24px;
+    margin-bottom: 24px;
+  }
+    .select-group {
     margin-right: 24px;
     margin-bottom: 24px;
   }
@@ -17,8 +21,15 @@
     border: 1px solid var(--border-unfocused); 
     border-radius: 8px;
     box-sizing: border-box;
+    background: var(--primary-white);
   }
-  
+  .select-block:hover {
+    border: 1px solid var(--primary-blue);
+  }
+  .select-block.select-block-highlighted:hover {
+    border: 3px solid var(--border-focused); 
+    border-bottom: 1px solid var(--border-unfocused);
+  }
   .select-block-highlighted {
     position: relative;
     box-sizing: border-box;
@@ -62,6 +73,7 @@
     font-size: 18px;
     line-height: 28px;
     background-color: var(--primary-white);
+    
   }
   
   .select-options {
@@ -76,6 +88,8 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 28px;
+    z-index: var(--zIndexSelectDropDown);
+    background:var(--primary-white);
   }
   .select-options-highlighted {
     box-sizing: border-box;
@@ -110,6 +124,7 @@
     transform: rotate(180deg);
   }  
   input::placeholder {
-    font-size: 18px;
-    font-weight: 300;
+   font-size: 18px;
+   font-weight: 300;
   }
+  
