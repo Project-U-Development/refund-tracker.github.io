@@ -13,12 +13,21 @@
   text-align: center;
   color: #0061ff;
   font-family: inherit;
+  
+}
+
+#sort-select {
+outline: none;
+
 }
 
 #sort-select:hover {
   border: 1px solid var(--primary-blue);
-}
+  }
 
+#sort-select:focus {
+  border: 3px solid var(--border-focused)
+}
 
 #sort-select-highlighted {
   position: relative;

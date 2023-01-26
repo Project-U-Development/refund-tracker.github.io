@@ -9,16 +9,16 @@
   </head>
 
   <body>
-    <form class="sort__select">
-      <select class="heading-h5" name="sort" id="sort-select">
+    <div class="sort__select">
+      <select class="heading-h5 select" name="sort" id="sort-select">
         <option class="input-label" value="">--Please Sort by--</option>
-        <option value="date">Create Date</option>
-        <option value="name">What</option>
-        <option value="debtor">Who</option>
-        <option value="amout">How much</option>
-        <option value="dueDate">Due date</option>
+        <option value="0">Create Date</option>
+        <option value="1">What</option>
+        <option value="2">Who</option>
+        <option value="3">How much</option>
+        <option value="4">Due date</option>
       </select>
-    </form>
-    <script src="sortSelect.mjs"></script>
+    </div>
+    <script src="sortSelect.mjs" type="module"></script>
   </body>
 </html>
