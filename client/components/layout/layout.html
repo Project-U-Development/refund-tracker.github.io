@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Search</title>
+  <link rel="stylesheet" href="../search/search.css">
+  <link rel="stylesheet" href="../sortSelect/sortSelect.css">
+  <link rel="stylesheet" href="../button/button.css">
+  <link rel="stylesheet" href="./layout.css">
+
+</head>
+<header class="header">
+ <body>
+             <h1>Refund tracker</h1>
+         <div class="container">
+         <a class="button-link primary heading-h5" href="/">Create Refund</a>
+        <form action="" class="search-form" method="GET" >
+      <input type="search" id="search1" class="search-form-input" placeholder="Search" />
+      <button type="submit" id="btn1" class="search-form-btn" placeholder="">
+     <svg class="icon" focusable="false" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" style="fill:#0044B3;"></path></svg>
+      </button>
+    </form>
+           <div class="sort__select">
+          <select class="heading-h5 select" name="sort" id="sort-select">
+            <option class="input-label" value="">--Please Sort by--</option>
+            <option value="0">Create Date</option>
+            <option value="1">What</option>
+            <option value="2">Who</option>
+            <option value="3">How much</option>
+            <option value="4">Due date</option>
+          </select>
+        </div>
+        <script src="../../sortSelect/sortSelect.mjs" type="module"></script>
+    </div>
