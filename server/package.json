@@ -6,8 +6,6 @@
       "fastify": "^4.10.2",
       "jsonwebtoken": "^8.5.1",
       "mysql2": "^2.3.3",
-      "passport": "^0.6.0",
-      "passport-jwt": "^4.0.1",
       "uuid": "^9.0.0",
       "validator": "^13.7.0"
    },

@@ -27,31 +27,7 @@ const getUserById = async (request, reply) => {
 }
 
 dotenv.config({ path: '../.env' });
-const login = async (request, reply) => {
-   try {
-      const userMail = request.body.mail;
-      const userPassword = request.body.user_password;
-      const candidateUser = await checkUserExist(userMail);
-      if (candidateUser === undefined) {
-         reply.status(404).send({
-            'err': `There is no user ${userMail}`
-         });
-      };
-      if (!await checkUserPassword(userPassword, candidateUser.user_password)) {
-         reply.status(401).send({
-            'err': `Password is not correct for user ${userMail}`
-         });
-      }
-      const accessToken = await tokenGenerator({
-         user_id: candidateUser.user_id,
-         user_mail: candidateUser.user_mail
-      });
-      reply.status(202).send({ accessToken: `Bearer ${accessToken}` });
-   }
-   catch (err) {
-      reply.status(500).send(err);
-   }
-}
+
 
 
 const updateUser = async (request, reply) => {
@@ -83,25 +59,12 @@ async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
 }
 
-async function checkUserExist(mail) {
-   const [result] = await excuteQuery('SELECT * FROM users WHERE user_mail = ?', [mail]);
-   return result;
-}
 
-async function checkUserPassword(inputPassword, dbPassword) {
-   return bcrypt.compareSync(inputPassword, dbPassword)
-}
-
-async function tokenGenerator(payload) {
-   const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY, { expiresIn: process.env.JWT_ACCESS_EXPIRE });
-   return accessToken;
-}
 
 
 module.exports = {
    getAllUsers,
    getUserById,
-   login,
    updateUser,
    deleteUserById
 };
