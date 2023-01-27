@@ -1,9 +1,10 @@
-import {  isValid } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
+import {  isValid, isPast } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 const date = new Date();
 const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
+
 
 function renderCalendar() {
   date.setDate(7);
@@ -49,18 +50,20 @@ function renderCalendar() {
   document.querySelector(".datepicker-date h1").innerHTML =
     months[date.getMonth()] + " " + year;
   let days = "";
+  // let elem = document.querySelectorAll("days");
+  let result = isPast(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+  console.log(result);
+  
   for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class='prev-date'>${prevLastDay - x + 1}</div>`;
   }
    for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
+      date.getMonth() === new Date().getMonth() && date.getFullYear() === new Date().getFullYear()
     ) {
       days += `<div class='datepicker-today'>${i}</div>`;
-    } else  if (i <= new Date().getDate() &&
-    date.getMonth() === new Date().getMonth()
-  ) {
+    } else  if (result === true) {
        days += `<div class='datepicker-before-today'>${i}</div>`;
         } else {
        days += `<div class='curDay'>${i}</div>`;
@@ -74,6 +77,7 @@ function renderCalendar() {
   }
   monthDays.innerHTML = days;
 }
+
 
 function listenToClick() {
   const elements = document.querySelectorAll(".curDay");
