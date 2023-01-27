@@ -2,7 +2,7 @@
 
 .input-container {
    display: flex;
-   flex-wrap: wrap;
+   flex-direction: column;
    padding: 5px;
    max-width: 548px;
    width: 100%;
@@ -21,7 +21,7 @@
    border-radius: 8px;
    outline: none;
    max-width: 544px;
-   width: 100%;
+
    background: var(--primary-white);
    padding: 0;
 }
@@ -55,8 +55,6 @@
 }
 
 .input-label {
-   display: flex;
-   flex-wrap: wrap;
    width: 100%;
    padding: 8px 55px 8px 16px;
    caret-color: transparent;
@@ -146,7 +144,6 @@
 .input-fieldset:has(input:invalid:placeholder-shown):enabled+div.mistakeMessage {
    padding: 8px 0px 0px 0px;
    max-width: 544px;
-   width: auto;
    display: none;
 }
 

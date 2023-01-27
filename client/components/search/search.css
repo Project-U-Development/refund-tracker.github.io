@@ -1,0 +1,79 @@
+.search-form {
+  left: 6px;
+top: 8px;
+ display: inline-block;
+ position: relative;
+}
+
+.search-form-input {
+ width: 318px;
+height: 48px;
+ line-height: 28px;
+ margin: 0;
+ padding: 10px 16px 10px 16px;
+border: 1px solid #CCDFFF;
+ padding-top: 7px;
+ padding-bottom: 8px;
+ border-radius: 8px;
+ background-color: white;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+ outline: none;
+}
+
+.search-form-input:focus {
+border: 1px solid #00E4CA; 
+}
+
+/*.search-form-input:hover {
+border: 1px solid #0061FF; 
+ display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+background: #F2F7FF;
+position: absolute;
+width: 318px;
+height: 502px;
+left: 57px;
+top: 440px;
+}*/
+
+.search-form-btn {
+ justify-content: center;
+ align-items: center;
+ vertical-align: middle;
+ display: flex;
+flex-direction: column;
+align-items: flex-start;
+ position: absolute;
+ right: 30px; 
+ top: 13px;
+ width: 21px;
+ height: 21px;
+ line-height: 24px;
+ font-weight: bold;      
+ margin: 0;
+ padding: 0;
+ border: 0;
+ border-radius: 2px;
+ background-color: transparent;
+ text-align: center;
+ cursor: pointer;
+}
+
+svg path {
+   stroke:inherit;
+   stroke-width:inherit;
+   }
+
+.btn1 {
+background: #F2F7FF;
+border: 1px solid #00E4CA;
+border-radius: 8px;
+}
