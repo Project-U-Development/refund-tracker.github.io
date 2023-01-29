@@ -1,23 +1,7 @@
-import { useButton } from "../button/button.mjs";
-
-useButton('buttonPrimary', primaryButtonClick);
-useButton('buttonGhost', ghostButtonClick);
-
-function primaryButtonClick() {
-    console.log('Primary button was clicked!');
-}
-
-function ghostButtonClick() {
-    console.log('Ghost button was clicked!');
-}
-
-import { inputListener } from "../input/input.mjs";
-
-inputListener('input', mistakeMessageFunction);
-
-function mistakeMessageFunction() {
-   console.log('It is a mistake message...');
-}
+import  "../datepicker/datepicker.mjs";
+import  "../button/button.mjs";
+import  "../input/input.mjs";
+import  "../selectors/selectors.mjs";
 
 const form = document.getElementById('formForInputValueId');
 form.oninput = function(){
@@ -27,15 +11,13 @@ form.oninput = function(){
   const whoRefundValue = formData.get("whoRefunds");
   const expectedMoneyValue = formData.get("expectedMoney");
   const dueDateValue = formData.get("dueDate");
-  // console.log(emailValue, passwordValue);
-  if(whatRefundValue.length > 5 && whoRefundValue.length > 5 ) 
-//   && expectedMoneyValue.length > 0  && dueDateValue.length > 0
+  
+  if(whatRefundValue.length > 5 && whoRefundValue.length > 5 && expectedMoneyValue.length > 0 ) 
+//    && isValid(dueDateValue)
   {
-    console.log("disabledFalse");
      btnActive.removeAttribute('disabled');
   } else {
-    //  console.log("disabledTrue");
-    btnActive.setAttribute('disabled', true);
+     btnActive.setAttribute('disabled', true);
   }
 }
 
@@ -43,3 +25,5 @@ form.oninput = function(){
 document.getElementById('buttonGhost').onclick = function() {
     window.location.href = 'redirect-url';
   };
+
+  

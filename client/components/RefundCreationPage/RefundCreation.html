@@ -5,11 +5,7 @@
    <meta charset="UTF-8">
    <title>Refund creation</title>
    <link rel="stylesheet" href="./RefundCreation.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-   <link rel="stylesheet" href="../button/button.css">
-   <link rel="stylesheet" href="../input/input.css">
-   <link rel="stylesheet" href="../selectors/selectors.css">
-   <link rel="stylesheet" href="../datepicker/datepicker.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
 
 </head>
@@ -26,7 +22,7 @@
       <div class="container3">
          
          <div class="container2">
-            <div class="input-container" id="input-container-id">
+            <div class="input-container" id="input-container1-id">
                <fieldset class="input-fieldset" id="fieldText">
                   <label class="input-label" for="text">What to refund
                      <input class="input heading-h5" id="text" type="text" name="whatToRefund" minlength="1"
@@ -56,16 +52,6 @@
                </fieldset>
                <div class="mistakeMessage error-message">Your text of error/mistake</div>
             </div>
-
-<!-- <div class="input-container" id="input-container4-id">
-               <fieldset class="input-fieldset" id="fieldNumber">
-                  <label class="input-label" for="number">Due date
-                     <input class="input heading-h5" id="number" type="number" name="dueDate" min="0" max="99000"
-                        value="" step=".01" placeholder="Number" required="" >
-                  </label>
-               </fieldset>
-               <div class="mistakeMessage error-message">Your text of error/mistake</div>
-            </div> -->
 
             <div class="datepicker" id="input-container4-id">
                <button name="buttonSubmit" id="buttonSubmitId" class="datepicker-button" ></button> 
@@ -180,11 +166,5 @@
 </body>
 
 <script src="./RefundCreation.mjs" type="module"></script>
-<script src="../button/index.mjs" type="module"></script>
-<script src="../input/index.mjs" type="module"></script>
-<script src="../input/input.mjs" type="module"></script>
-<script src="../selectors/selectors.mjs"></script>
-<script  src="../datepicker/datepicker.mjs" type="module"></script>
-
 
 </html>
