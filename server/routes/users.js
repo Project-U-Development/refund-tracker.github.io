@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const excuteQuery = require('../db/db');
 const uuid = require('uuid');
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
 
 const signup = async (request, reply) => {
    const { userMail, userPassword } = request.body;
@@ -25,6 +26,33 @@ const signup = async (request, reply) => {
    }
 }
 
+const login = async (request, reply) => {
+   const { userMail, userPassword } = request.body;
+   try {
+      const isBodyValid = checkBody(userMail, userPassword);
+      if (isBodyValid.status != 202) {
+         reply.send(isBodyValid);
+      }
+      const dataRows = await excuteQuery(
+         'Select * from users where user_mail = ?',
+         [userMail]);
+      if (dataRows.length==0) {
+         reply.status(404).send({message:`User ${userMail} not found`})
+      } else {
+         let user = dataRows[0];
+         let isPasswordValid = await bcrypt.compare(userPassword, user.user_password);
+         if (isPasswordValid) {
+            
+         } else {
+            reply.status(401).send({message:`Incorrect password`});
+         }
+      }
+   }
+   catch (err) {
+      reply.status(400).send(err);
+   }
+}
+
 async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
 }
@@ -45,4 +73,4 @@ function checkBody(userMail, userPassword) {
    return { status: 202 }
 }
 
-module.exports = { signup };
+module.exports = { signup, login };
