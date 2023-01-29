@@ -128,11 +128,6 @@
    font-weight: 300;
   }
   
-=========
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 .select-group {
   margin-right: 24px;
   margin-bottom: 24px;
@@ -240,4 +235,3 @@ input::placeholder {
   font-size: 18px;
   font-weight: 300;
 }
->>>>>>>>> Temporary merge branch 2
