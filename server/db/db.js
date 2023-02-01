@@ -26,7 +26,7 @@ async function closeConnection() {
    process.exit(0);
 }
 
-const excuteQuery = (query, arrayParam) => {
+const executeQuery = (query, arrayParam) => {
    return new Promise((resolve, reject) => {
       try {
          dataBase.query(
@@ -40,4 +40,11 @@ const excuteQuery = (query, arrayParam) => {
    })
 }
 
-module.exports = excuteQuery;
+// const getUserByEmail = async (email) => {
+//    const user = await executeQuery('select * from users where user_mail=?', [email]);
+// }
+
+module.exports = {
+   executeQuery
+  // ,getUserByEmail
+};
