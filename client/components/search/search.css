@@ -1,3 +1,6 @@
+@import "../typography/typography.css";
+@import "../typography/color.css";
+
 .search-form {
  left: 6px;
  top: 8px;
@@ -11,11 +14,11 @@
  line-height: 28px;
  margin: 0;
  padding: 10px 16px 10px 16px;
- border: 1px solid #CCDFFF;
+ border: 1px solid var (--border-unfocused);
  padding-top: 7px;
  padding-bottom: 8px;
  border-radius: 8px;
- background-color: white;
+ background-color: var(--primary-white);
  -moz-box-sizing: border-box;
  box-sizing: border-box;
  font-family: 'IBM Plex Sans';
@@ -26,7 +29,7 @@
 }
 
 .search-form-input:focus {
- border: 1px solid #00E4CA; 
+ border: 1px solid var(--border-focused);
 }
 
 .search-form-btn {
@@ -57,7 +60,7 @@ svg path {
 }
 
 .btn1 {
- background: #F2F7FF;
- border: 1px solid #00E4CA;
+ background: var(--modes-background);
+ border: 1px solid var(--border-focused);
  border-radius: 8px;
 }
