@@ -5,6 +5,34 @@ const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
 
+export default function initDatepicker() {
+  const buttonClick = document.getElementById("buttonSubmitId");
+  buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
+  
+   document.querySelector(".prev").addEventListener("click", () => {
+   date.setMonth(date.getMonth() - 1);
+   renderCalendar();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  renderCalendar();
+});
+renderCalendar();
+const curDate = getTime(new Date());
+setDueDate(curDate);
+listenToClick();
+
+const elements = document.getElementsByClassName("datepicker-calendar");
+for (let i = 0; i < elements.length; i++) {
+  elements[i].addEventListener("click", showDatepicker);
+}
+const datepicker = document.getElementById("DuedateId");
+datepicker.onkeypress = (event) => {
+  allowOnlyDigits(event);
+  insertDash(event);
+};
+}
 function renderCalendar() {
   date.setDate(7);
 
@@ -91,8 +119,7 @@ function listenToClick() {
   
 }
 
- const buttonClick = document.getElementById("buttonSubmitId");
-  buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
+
   
 
 function clickHandler(event) {
@@ -106,16 +133,6 @@ function clickHandler(event) {
 }
 
 
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
-
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
-renderCalendar();
 
 function ShowMyDatepicker() {
   document.getElementById("myCalendar").classList.toggle("datepicker-show");
@@ -142,18 +159,15 @@ function getTime(t) {
   return `${D}-${M}-${Y}`;
 }
 
-const curDate = getTime(new Date());
-setDueDate(curDate);
+
 
 function setDueDate(dueDate) {
-  document.getElementById("DuedateId").value = dueDate;
+   const input = document.getElementById("DuedateId");
+   input.value=dueDate;
+  const inputEvent = new Event("input", {bubbles: true}); 
+  input.dispatchEvent(inputEvent);
 }
-listenToClick();
 
-const elements = document.getElementsByClassName("datepicker-calendar");
-for (let i = 0; i < elements.length; i++) {
-  elements[i].addEventListener("click", showDatepicker);
-}
 
 function showDatepicker() {
   if (this.children.length > 1) {
@@ -165,7 +179,7 @@ function showDatepicker() {
 }
 
 //function validate
-const datepicker = document.getElementById("DuedateId");
+
 
 function allowOnlyDigits(event) {
   const isDigit = /^\d$/.test(event.key);
@@ -182,7 +196,4 @@ function insertDash(event) {
   }
 }
 
-datepicker.onkeypress = (event) => {
-  allowOnlyDigits(event);
-  insertDash(event);
-};
+
