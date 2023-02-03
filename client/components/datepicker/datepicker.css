@@ -52,11 +52,10 @@
 }
 .datepicker-hilighted {
   position: relative;
-  position: relative;
   border: 3px solid var(--border-focused);
   border-radius: 8px;
   width: 448px;
-  height: 356px;
+  /* height: 356px; */
   box-sizing: border-box;
 }
 .datepicker-month {
@@ -149,8 +148,6 @@
   display: inline-block;
   border-radius: 8px;
   box-sizing: border-box;
-  border: 1px solid;
-  border-color: var(--border-unfocused);
   border: 1px solid;
   border-color: var(--border-unfocused);
 }
