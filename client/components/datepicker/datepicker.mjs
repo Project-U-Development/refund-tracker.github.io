@@ -129,6 +129,7 @@ function clickHandler(event) {
   new Date(year + "-" + monthIndex + "-" + event.target.innerText)
   );
   setDueDate(pickedDate);
+  console.log(pickedDate);
   hide();
 }
 

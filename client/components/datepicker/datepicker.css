@@ -44,19 +44,22 @@
   color: var(--primary-dark);
 }
 .datepicker-calendar {
-  width: 448px;
-  height: 244px;
+  /* width: 448px; */
+   /* height: 244px; */
   display: none;
   position: absolute;
   z-index: 1;
+  background-color: var(--primary-white);
 }
 .datepicker-hilighted {
   position: relative;
-  position: relative;
-  border: 3px solid var(--border-focused);
+  border-color: var(--border-focused);
+  border-width: 3px;
+  border-style: solid;
+   /* border-color: 3px solid var(--border-focused); */
   border-radius: 8px;
-  width: 448px;
-  height: 356px;
+  /* width: 448px; */
+   /* height: 356px; */
   box-sizing: border-box;
 }
 .datepicker-month {
@@ -151,8 +154,7 @@
   box-sizing: border-box;
   border: 1px solid;
   border-color: var(--border-unfocused);
-  border: 1px solid;
-  border-color: var(--border-unfocused);
+  
 }
 .datepicker:hover {
   border: 1px solid var(--primary-blue);
