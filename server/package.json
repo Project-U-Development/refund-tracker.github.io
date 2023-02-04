@@ -10,7 +10,7 @@
       "validator": "^13.7.0"
    },
    "scripts": {
-      "start": "nodemon server.js",
+      "start": "NODE_ENV=local nodemon server.js",
       "start:prod": "sudo node server.js"
    },
    "name": "refund-server",
