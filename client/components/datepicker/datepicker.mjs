@@ -8,11 +8,20 @@ const nonActiveInput = document.querySelector(".datepicker-label");
 export default function initDatepicker() {
   const buttonClick = document.getElementById("buttonSubmitId");
   buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
-  
-   document.querySelector(".prev").addEventListener("click", () => {
-   date.setMonth(date.getMonth() - 1);
-   renderCalendar();
-});
+
+  const prev = document.querySelector(".prev");
+  prev.addEventListener("click", () => {
+    const selectedmonth = date.getMonth();
+    const currentMonth = new Date().getMonth();
+    console.log(selectedmonth, currentMonth);
+    if(selectedmonth > currentMonth) {
+    date.setMonth(selectedmonth - 1);
+    prev.removeAttribute('disabled');
+    } else{
+      prev.setAttribute( 'disabled', true)
+    };
+    renderCalendar();
+  });
 
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
