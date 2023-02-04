@@ -4,6 +4,9 @@ const dotenv = require('dotenv');
 if (process.env.NODE_ENV === 'local') {
    dotenv.config({ path: './.env-local' });
 }
+else {
+   dotenv.config({ path: './.env' });
+}
 
 const dataBase = mysql.createPool({
    host: process.env.DATABASE_HOST,

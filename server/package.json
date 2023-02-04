@@ -11,7 +11,7 @@
    },
    "scripts": {
       "start": "NODE_ENV=local nodemon server.js",
-      "start:prod": "node server.js"
+      "start:prod": "sudo node server.js"
    },
    "name": "refund-server",
    "version": "1.0.0",
