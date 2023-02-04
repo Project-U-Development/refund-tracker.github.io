@@ -10,8 +10,8 @@
       "validator": "^13.7.0"
    },
    "scripts": {
-      "start": "node server.js",
-      "dev": "nodemon server.js"
+      "start": "NODE_ENV=local nodemon server.js",
+      "start:prod": "node server.js"
    },
    "name": "refund-server",
    "version": "1.0.0",
