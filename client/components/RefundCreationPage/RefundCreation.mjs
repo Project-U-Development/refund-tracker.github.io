@@ -15,15 +15,15 @@ form.oninput = function(){
   const expectedMoneyValue = formData.get("expectedMoney");
   const dueDateValue = formData.get("Duedate");
 
-   const parsedDateValues = dueDateValue ? dueDateValue.split('-') : '';
-   const year = parsedDateValues[2];
-   const month = parsedDateValues[1];
-   const day = parsedDateValues[0];
-   const dueDate = new Date(year, month, day);
-  console.log(dueDateValue);
+  const parsedDateValues = dueDateValue ? dueDateValue.split('-') : '';
+  const year = parsedDateValues[2];
+  const month = parsedDateValues[1];
+  const day = parsedDateValues[0];
+  const dueDate = new Date(year, month, day);
+
 
   if(whatRefundValue.length > 5 && whoRefundValue.length > 5 && expectedMoneyValue.length > 0
-    && dueDateValue)
+    && dueDate )
   {
      btnActive.removeAttribute('disabled');
   } else {

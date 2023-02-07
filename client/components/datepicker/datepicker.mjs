@@ -4,7 +4,7 @@ const calendarBox = document.querySelector(".datepicker");
 const calendar = document.getElementById("myCalendar");
 const monthDays = document.querySelector(".datepicker-days");
 const nonActiveInput = document.querySelector(".datepicker-label");
-
+const prev = document.querySelector(".prev");
 export default function initDatepicker() {
   const buttonClick = document.getElementById("buttonSubmitId");
   buttonClick.addEventListener( 'click', () =>  ShowMyDatepicker());
@@ -13,20 +13,26 @@ export default function initDatepicker() {
   prev.addEventListener("click", () => {
     const selectedmonth = date.getMonth();
     const currentMonth = new Date().getMonth();
+    
     console.log(selectedmonth, currentMonth);
     if(selectedmonth > currentMonth) {
     date.setMonth(selectedmonth - 1);
     prev.removeAttribute('disabled');
-    } else{
+        
+  } else {
       prev.setAttribute( 'disabled', true)
+      prev.classList.add("datepicker-before-today");
+
     };
     renderCalendar();
   });
-
+  
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
+  prev.classList.remove("datepicker-before-today");
   renderCalendar();
 });
+
 renderCalendar();
 const curDate = getTime(new Date());
 setDueDate(curDate);
@@ -149,6 +155,7 @@ function ShowMyDatepicker() {
   calendarBox.classList.toggle("datepicker-hilighted");
   nonActiveInput.classList.toggle("activated-input-label");
   calendarBox.classList.toggle("datepicker");
+  prev.classList.toggle("datepicker-before-today");
 }
 
 function hide() {

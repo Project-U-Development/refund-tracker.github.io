@@ -72,7 +72,10 @@ h3 {
 .input-label {
     width: 448px;
 }
-
+.datepicker-weekdays {
+    width: 312px;
+    padding: 12px 68px 0px 68px;
+}
 
 /* .datepicker-calendar {
     z-index: 120;
