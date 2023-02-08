@@ -9,7 +9,7 @@ const loginUserOpts = {
 
 async function routes(fastify, option) {
     fastify.post('/signup', users.signup);
-//    fastify.post('/login', users.);
+    fastify.post('/login', loginUserOpts);
 }
 
 module.exports = routes;

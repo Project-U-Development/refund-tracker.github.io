@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const excuteQuery = require('../db/db');
+const {executeQuery} = require('../db/db');
 const uuid = require('uuid');
 const validator = require('validator');
 
@@ -10,7 +10,7 @@ const signup = async (request, reply) => {
       if (validationBody.status === 400) {
          reply.status(400).send(validationBody.err);
       }
-      await excuteQuery(
+      await executeQuery(
          'INSERT INTO users(user_id, user_mail, user_password) VALUES (?,?,?)',
          [uuid.v4(), userMail, await hashPassword(userPassword)]);
       reply.status(201).send({
