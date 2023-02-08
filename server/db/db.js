@@ -40,11 +40,16 @@ const executeQuery = (query, arrayParam) => {
    })
 }
 
-// const getUserByEmail = async (email) => {
-//    const user = await executeQuery('select * from users where user_mail=?', [email]);
-// }
+function getUserByEmail(email) {
+   dataBase.query(
+      'select * from users where user_mail=?', [email],
+      (err, result) => {
+         if (err) throw err;
+         return result
+      });
+ }
+
 
 module.exports = {
    executeQuery
-  // ,getUserByEmail
 };

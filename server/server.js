@@ -1,7 +1,7 @@
 const fastify = require('fastify')({ logger: true });
 
-const verifyToken = require('./controllers/auth/auth');
-fastify.decorate('verifyToken', verifyToken);
+// const verifyToken = require('./controllers/auth/auth');
+// fastify.decorate('verifyToken', verifyToken);
 
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));

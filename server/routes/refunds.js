@@ -1,28 +1,20 @@
-// const {
-//   createRefundSchema
-// } = require('../controllers/schemas/refunds.js');
+const {
+  createRefundSchema
+} = require('../controllers/schemas/refunds.js');
 
-// const {
-//   createRefundHandler
-// } = require('../controllers/handlers/refunds.js');
+const {
+  createRefundHandler
+} = require('../controllers/handlers/refunds.js');
 
-// const createRefundOpts = {
-//   schema: createRefundSchema,
-//   handler: createRefundHandler,
-// };
+const createRefundOpts = {
+  schema: createRefundSchema,
+  handler: createRefundHandler,
+};
 
-// const refundRoutes = (fastify, opyions, done) => {
-//   fastify
-//     .register(require('fastify-auth'))
-//     .after(() => privatePostRoutes(fastify));
+const refundRoutes =  async (fastify, options, done) => {
+    fastify.post('/refund', async (request, reply) => {
+      reply.send('Hello  world')
+    });
+  };
 
-//     done();
-//   };
-
-//   const privateRefundRoutes = (fastify) => {
-//     fastify.post('/refund', {
-//       preHandler: fastify.auth([fastify.verifyToken]),
-//       ...createRefundOpts});
-//   };
-
-//   module.exports = { refundRoutes , privateRefundRoutes };
+  module.exports =  refundRoutes;
