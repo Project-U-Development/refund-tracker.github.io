@@ -1,7 +1,12 @@
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: './.env-local' });
+if (process.env.NODE_ENV === 'local') {
+   dotenv.config({ path: './.env-local' });
+}
+else {
+   dotenv.config({ path: './.env' });
+}
 
 const dataBase = mysql.createPool({
    host: process.env.DATABASE_HOST,

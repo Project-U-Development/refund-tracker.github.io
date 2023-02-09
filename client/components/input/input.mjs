@@ -1,5 +1,4 @@
-export function inputListener(className, listenType, inputFunction) {
-   const inputs = document.getElementsByClassName(className);
+export function inputListener(inputs, listenType, inputFunction) {
    for (let item of inputs) {
       item.addEventListener(listenType, inputFunction)
    };

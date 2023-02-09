@@ -1,10 +1,11 @@
 const fastify = require('fastify')({ logger: true });
 
+
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));
 fastify.register(require('./routes/usersRoutes'));
-fastify.register(require('./routes/refoundsRoutes'));
-fastify.register(require('./routes/usersRoutesTmp'));
+
+
 
 const server = async () => {
    try {

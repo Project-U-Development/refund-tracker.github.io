@@ -23,7 +23,7 @@ const signup = async (request, reply) => {
       });
    }
    catch (err) {
-      err.code === 'ER_DUP_ENTRY' ? reply.status(409).send({
+      err.code === 'ER_DUP_ENTRY' ? reply.status(403).send({
          message: `An Email |${userMail}| is already in use. Please, provide email not registered before`
       }) : reply.status(400).send(err);
    }
