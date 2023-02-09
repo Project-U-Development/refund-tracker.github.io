@@ -50,10 +50,11 @@ const login = async (request, reply) => {
       await excuteQuery(
          `UPDATE users SET user_reset_password_code=? WHERE user_id=?`,
          [resetPasswordCode, candidateUser.user_id]);
-      const accessToken = await tokenGenerator({
+      const payload = {
          userId: candidateUser.user_id,
          userMail: candidateUser.user_mail
-      });
+      }
+      const accessToken = await tokenGenerator(payload, process.env.JWT_ACCESS_SECRET_KEY, process.env.JWT_ACCESS_EXPIRE);
       reply.status(202).send({ accessToken: `Bearer ${accessToken}` });
    }
    catch (err) {
@@ -71,7 +72,12 @@ const forgetPassword = async (request, reply) => {
          });
       };
       const resetPasswordCode = uuid.v1();
-      const sendMailStatus = await sendResetPassCodeMail(userMail, resetPasswordCode);
+      const payload = {
+         userMail: candidateUser.user_mail,
+         resetPasswordCode: resetPasswordCode
+      }
+      const resetPasswordToken = await tokenGenerator(payload, process.env.JWT_RESETPASS_SEKRET_KEY, process.env.JWT_RESETPASS_EXPIRE);
+      const sendMailStatus = await sendResetPassCodeMail(userMail, resetPasswordToken);
       if (sendMailStatus !== undefined) {
          reply.status(400).send(sendMailStatus)
       };
@@ -80,9 +86,7 @@ const forgetPassword = async (request, reply) => {
          [resetPasswordCode, candidateUser.user_id]);
 
       reply.status(202).send({
-         message: `Reset password code was sent to ${userMail} successfully`,
-         mail: userMail,
-         url: ``
+         message: `Reset password code was sent to ${userMail} successfully`
       });
    }
    catch {
@@ -92,25 +96,49 @@ const forgetPassword = async (request, reply) => {
 
 const resetPassword = async (request, reply) => {
    try {
-      let { resetPasswordCode, userEmail, newPassword } = request.body;
-      const validationBody = checkResetPassBody(resetPasswordCode, newPassword);
-      if (validationBody.status === 400) {
-         reply.status(400).send(validationBody.err);
+      const payload = await varifyResetPasswordToken(request, reply);
+      if (!request.body.newPassword) {
+         reply.status(400).send({
+            status: 400,
+            err: 'Please, provide new password'
+         })
       }
-      const resPassCodeUser = await varifyResetPassCode(userEmail, resetPasswordCode);
+      const newPassword = request.body.newPassword;
+      const resPassCodeUser = await varifyResetPassCode(payload.userMail, payload.resetPasswordCode);
       if (resPassCodeUser.status === 400) {
          reply.status(400).send(resPassCodeUser.err);
       }
-      resetPasswordCode = null;
       await excuteQuery(
          `UPDATE users SET user_password=?, user_reset_password_code=? WHERE user_id=?`,
-         [await hashPassword(newPassword), resetPasswordCode, resPassCodeUser.userId]);
-      reply.status(202).send({ message: `The password for user ${userEmail} was changed` });
+         [await hashPassword(newPassword), null, resPassCodeUser.userId]);
+      reply.status(202).send({ message: `The password for user ${payload.userMail} was changed` });
    }
    catch (err) {
       reply.status(500).send(err);
    }
 }
+
+// const resetPassword = async (request, reply) => {
+//    try {
+//       let { resetPasswordCode, userEmail, newPassword } = request.body;
+//       const validationBody = checkResetPassBody(resetPasswordCode, newPassword);
+//       if (validationBody.status === 400) {
+//          reply.status(400).send(validationBody.err);
+//       }
+//       const resPassCodeUser = await varifyResetPassCode(userEmail, resetPasswordCode);
+//       if (resPassCodeUser.status === 400) {
+//          reply.status(400).send(resPassCodeUser.err);
+//       }
+//       resetPasswordCode = null;
+//       await excuteQuery(
+//          `UPDATE users SET user_password=?, user_reset_password_code=? WHERE user_id=?`,
+//          [await hashPassword(newPassword), resetPasswordCode, resPassCodeUser.userId]);
+//       reply.status(202).send({ message: `The password for user ${userEmail} was changed` });
+//    }
+//    catch (err) {
+//       reply.status(500).send(err);
+//    }
+// }
 
 async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
@@ -132,21 +160,8 @@ function checkSignupBody(userMail, userPassword) {
    return { status: 200 }
 }
 
-function checkResetPassBody(resetPasswordCode, newPassword) {
-   if (!resetPasswordCode || !newPassword) {
-      return {
-         status: 400,
-         err: 'Please, provide both: reset password code and new password'
-      }
-   }
-   return { status: 200 }
-}
-
 async function varifyResetPassCode(userEmail, resetPasswordCode) {
    const userData = await excuteQuery('SELECT * FROM users WHERE user_mail = ?', [userEmail]);
-   console.log('USER EMAIL', userEmail);
-   console.log('REQUEST', resetPasswordCode);
-   console.log('DATABASE', userData[0].user_reset_password_code);
    if (userData[0].user_reset_password_code !== resetPasswordCode) {
       return {
          status: 400,
@@ -168,8 +183,8 @@ async function checkUserPassword(inputPassword, dbPassword) {
    return bcrypt.compareSync(inputPassword, dbPassword)
 }
 
-async function tokenGenerator(payload) {
-   const accessToken = jwt.sign(payload, process.env.JWT_ACCESS_SECRET_KEY, { expiresIn: process.env.JWT_ACCESS_EXPIRE });
+async function tokenGenerator(payload, sekretKey, expireTime) {
+   const accessToken = jwt.sign(payload, sekretKey, { expiresIn: expireTime });
    return accessToken;
 }
 
@@ -188,7 +203,17 @@ async function varifyAccessToken(request, reply) {
    }
 }
 
-async function sendResetPassCodeMail(mail, resetPasswordCode) {
+async function varifyResetPasswordToken(request, reply) {
+   try {
+      const verify = jwt.verify(request.body.resPassToken, process.env.JWT_RESETPASS_SEKRET_KEY);
+      return verify;
+   }
+   catch (err) {
+      reply.status(401).send(err);
+   }
+}
+
+async function sendResetPassCodeMail(mail, resetPasswordToken) {
    try {
       const transporter = nodemailer.createTransport({
          host: process.env.EMAIL_HOST,
@@ -199,6 +224,7 @@ async function sendResetPassCodeMail(mail, resetPasswordCode) {
             pass: process.env.EMAIL_PASS
          }
       });
+      const url = `localhost:80/resetpassword/:${resetPasswordToken}`;
       const options = {
          from: process.env.EMAIL_USER,
          to: mail,
@@ -208,7 +234,7 @@ async function sendResetPassCodeMail(mail, resetPasswordCode) {
       <br>
       <p>You recently requested to reset your password for your Refund Tracker account.</p>
       <p>Use the code below to reset it.</p>
-      <h4>Reset password code: ${resetPasswordCode}</h4>`
+      <h4>Reset password link: ${url}</h4>`
       }
       await transporter.sendMail(options);
    }
