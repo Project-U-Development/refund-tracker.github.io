@@ -1,0 +1,48 @@
+@import "../typography/typography.css";
+@import "../typography/color.css";
+@import "../typography/zIndex.css";
+
+#sort-select {
+  position: relative;
+  width: 290px;
+  height: 64px;
+  border: 1px solid var(--border-unfocused);
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: var(--primary-white);
+  text-align: center;
+  color: #0061ff;
+  font-family: inherit;
+  
+}
+
+#sort-select {
+outline: none;
+
+}
+
+#sort-select:hover {
+  border: 1px solid var(--primary-blue);
+  }
+
+#sort-select:focus {
+  border: 3px solid var(--border-focused)
+}
+
+#sort-select-highlighted {
+  position: relative;
+  box-sizing: border-box;
+  width: 290px;
+  height: 64px;
+  border: 3px solid var(--border-focused);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid var(--border-unfocused);
+}
+
+option {
+  color:black;
+}
+
+.imput-label {
+  color: var(--button-disabled);
+}
