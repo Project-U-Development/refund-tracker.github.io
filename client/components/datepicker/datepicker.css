@@ -1,4 +1,5 @@
 @import "../typography/typography.css";
+@import "../typography/zIndex.css";
 
 * {
   box-sizing: border-box;
@@ -29,6 +30,7 @@
   border-top: none;
   border-radius: 0;
   border-bottom: 1px solid var(--border-unfocused);
+  width: 442.5px;
   display: block;
   }
 .datepicker-input {
@@ -43,21 +45,25 @@
   color: var(--primary-dark);
 }
 .datepicker-calendar {
-  width: 448px;
+  width: 442px;
    /* height: 244px; */
   display: none;
-  position: absolute;
-  z-index: 1;
+  z-index: var(--zIndexSelectDropDown);
   background-color: var(--primary-white);
+  border-radius: 8px;
+  position: relative;
+   /* position: absolute; */
 }
  .datepicker-hilighted {
-  position: relative;
+  position: absolute;
   border-color: var(--border-focused);
   border-width: 3px;
   border-style: solid;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
   width: 448px; 
   box-sizing: border-box;
+  background-color: var(--primary-white);
+  z-index: var(--zIndexSelectDropDown);
 } 
 .datepicker-month {
   width: 442px;
@@ -161,17 +167,7 @@
   display: block;
  
 }
-.datepicker-calendar.datepicker-show {
-  position: absolute;
-  border-color: var(--border-focused);
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 0 0 8px 8px;
-  border-top: none;
-  width: 448px;
-  box-sizing: border-box;
-  left: -3px;
-}
+
 .selected {
   border: 2px solid var(--border-unfocused);
   border-radius: 4px;
