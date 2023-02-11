@@ -44,6 +44,7 @@ const user = {
       user_id: stringType,
       user_mail: stringType,
       user_password: stringType,
+      user_reset_password_code: stringType,
    }
 }
 
