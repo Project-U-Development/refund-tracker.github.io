@@ -75,7 +75,7 @@ async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
 }
 
-function checkEmail(userMail, userPassword) {
+function checkEmail(userMail) {
    if (!validator.isEmail(userMail)) {
       return {
          status: 400,
@@ -85,9 +85,22 @@ function checkEmail(userMail, userPassword) {
    return { status: 200 }
 }
 
-async function checkUserExist(mail) {
-   const [result] = await excuteQuery('SELECT * FROM users WHERE user_mail = ?', [mail]);
-   return result;
+async function checkUserExist(userMail) {
+   const [result] = await excuteQuery('SELECT * FROM users WHERE user_mail = ?', [userMail]);
+   if (result === undefined) {
+      return {
+         status: 404,
+         data: result,
+         message: `There is no user ${userMail}`
+      }
+   }
+   else {
+      return {
+         status: 200,
+         data: result,
+         message: `The user ${userMail} has been found successfully`
+      }
+   }
 }
 
 async function checkUserPassword(inputPassword, dbPassword) {
