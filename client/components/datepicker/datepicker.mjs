@@ -11,20 +11,27 @@ export default function initDatepicker() {
 
   const prev = document.querySelector(".prev");
     prev.addEventListener("click", () => {
-      const selectedmonth = date.getMonth();
+      const selectedMonth = date.getMonth();
       const currentMonth = new Date().getMonth();
-      if(selectedmonth > currentMonth) {
-        date.setMonth(selectedmonth - 1);
+      const selectedYear = date.getFullYear();
+      const currentYear = new Date().getFullYear();      
+      console.log(selectedYear, currentYear);
+      if(selectedMonth > currentMonth)
+       {
+        date.setMonth(selectedMonth - 1);
            
      }   
-    controlPrevButton(date.getMonth());
+    controlPrevButton(date.getMonth(), date.getFullYear());
     renderCalendar();
   });
    
 
 document.querySelector(".next").addEventListener("click", () => {
+  const selectedYear = date.getFullYear();
+  const currentYear = new Date().getFullYear();      
+  console.log(selectedYear, currentYear);
   date.setMonth(date.getMonth() + 1);
-  controlPrevButton(date.getMonth());
+  controlPrevButton(date.getMonth(), date.getFullYear());
   renderCalendar();
 });
 
@@ -93,11 +100,11 @@ function renderCalendar() {
    for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
+      date.getMonth() === new Date().getMonth() && date.getFullYear() ===new Date().getFullYear()
     ) {
       days += `<div class='datepicker-today'>${i}</div>`;
     } else  if (i <= new Date().getDate() &&
-    date.getMonth() === new Date().getMonth()
+    date.getMonth() === new Date().getMonth() && date.getFullYear() ===new Date().getFullYear()
   ) {
        days += `<div class='datepicker-before-today'>${i}</div>`;
         } else {
@@ -201,13 +208,14 @@ function insertDash(event) {
   }
 }
 
-function controlPrevButton(selectedmonth){
+function controlPrevButton(selectedMonth, selectedYear){
   const prev = document.querySelector(".prev");
    
     const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
     
-    console.log("prev sel "+selectedmonth, currentMonth);
-    if(selectedmonth > currentMonth) {
+      if(selectedMonth > currentMonth) 
+      {
    
      prev.removeAttribute('disabled');
      prev.classList.remove("datepicker-before-today");      
