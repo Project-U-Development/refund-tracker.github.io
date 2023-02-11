@@ -49,6 +49,36 @@ const loginUserHandler = async (request, reply) => {
    }
 }
 
+const forgetPasswordHandler = async (request, reply) => {
+   try {
+      const userMail = request.body.userMail;
+      const candidateUser = await checkUserExist(userMail);
+      if (candidateUser.status === 404) {
+         reply.status(404).send(candidateUser.message);
+      };
+      const resetPasswordCode = uuid.v1();
+      const payload = {
+         userMail: userMail,
+         resetPasswordCode: resetPasswordCode
+      }
+      // const resetPasswordToken = await tokenGenerator(payload, process.env.JWT_RESETPASS_SEKRET_KEY, process.env.JWT_RESETPASS_EXPIRE);
+      // const sendMailStatus = await sendResetPassCodeMail(userMail, resetPasswordToken);
+      // if (sendMailStatus !== undefined) {
+      //    reply.status(400).send(sendMailStatus)
+      // };
+      // await excuteQuery(
+      //    `UPDATE users SET user_reset_password_code=? WHERE user_id=?`,
+      //    [resetPasswordCode, candidateUser.user_id]);
+
+      // reply.status(202).send({
+      //    message: `Reset password code was sent to ${userMail} successfully`
+      // });
+   }
+   catch {
+      reply.status(400).send(err);
+   }
+}
+
 
 const getAllUsersHandler = async (request, reply) => {
    try {
@@ -75,7 +105,7 @@ async function hashPassword(password) {
    return await bcrypt.hash(password, 10);
 }
 
-function checkEmail(userMail) {
+function checkEmail(userMail, userPassword) {
    if (!validator.isEmail(userMail)) {
       return {
          status: 400,
@@ -116,5 +146,6 @@ module.exports = {
    getAllUsersHandler,
    getUserById,
    addUserHandler,
-   loginUserHandler
+   loginUserHandler,
+   forgetPasswordHandler
 }
