@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 dotenv.config({ path: '.env-local' });
 
-async function varifyToken(token, secretKey) {
+async function verifyToken(token, secretKey) {
    try {
       const verify = jwt.verify(token, secretKey);
       return {
@@ -22,5 +22,5 @@ async function varifyToken(token, secretKey) {
 }
 
 module.exports = {
-   varifyToken
+   verifyToken
 }

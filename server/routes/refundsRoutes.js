@@ -1,11 +1,11 @@
-const refundsShemas = require('../controllers/schemas/refundsShemas');
+const refundsSchemas = require('../controllers/schemas/refundsSchemas');
 const refundsHandlers = require('../controllers/handlers/refundsHandlers');
 
 
 async function routes(fastify, option) {
    fastify.get('/refoundsList', {
-      schema: refundsShemas.getRefoundsListSchema,
-      handler: refundsHandlers.getRefoundsListHendler
+      schema: refundsSchemas.getRefundsListSchema,
+      handler: refundsHandlers.getRefundsListHandler
    })
 
 }

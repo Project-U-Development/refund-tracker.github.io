@@ -31,7 +31,7 @@ async function closeConnection() {
    process.exit(0);
 }
 
-const excuteQuery = (query, arrayParam) => {
+const executeQuery = (query, arrayParam) => {
    return new Promise((resolve, reject) => {
       try {
          dataBase.query(
@@ -45,4 +45,4 @@ const excuteQuery = (query, arrayParam) => {
    })
 }
 
-module.exports = excuteQuery;
+module.exports = executeQuery;

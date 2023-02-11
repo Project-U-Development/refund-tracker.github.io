@@ -1,22 +1,22 @@
-const usersShema = require('../controllers/schemas/usersShemas');
+const usersSchema = require('../controllers/schemas/usersSchemas');
 const usersHandler = require('../controllers/handlers/usersHandlers');
 
 
 async function routes(fastify, option) {
    fastify.get('/users', {
-      schema: usersShema.getAllUsersShema,
+      schema: usersSchema.getAllUsersShema,
       handler: usersHandler.getAllUsersHandler
    });
    fastify.get('/user/:id', {
-      schema: usersShema.getUserByIdShema,
+      schema: usersSchema.getUserByIdShema,
       handler: usersHandler.getUserById
    });
    fastify.post('/signup', {
-      schema: usersShema.addUserSchema,
+      schema: usersSchema.addUserSchema,
       handler: usersHandler.addUserHandler
    });
    fastify.post('/login', {
-      schema: usersShema.loginUserSchema,
+      schema: usersSchema.loginUserSchema,
       handler: usersHandler.loginUserHandler
    });
 

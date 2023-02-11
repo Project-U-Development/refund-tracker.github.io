@@ -1,10 +1,10 @@
-const excuteQuery = require('../../db/db');
+const executeQuery = require('../../db/db');
 const dotenv = require('dotenv');
 const { varifyToken } = require('../authorization/verifyToken');
 
 dotenv.config({ path: '.env-local' });
 
-const getRefoundsListHendler = async (request, reply) => {
+const getRefundsListHandler = async (request, reply) => {
    const token = request.headers['authorization'].split(' ')[1];
    const payload = await varifyToken(token, process.env.JWT_ACCESS_SECRET_KEY);
    if (payload.status === 401) {
@@ -12,7 +12,7 @@ const getRefoundsListHendler = async (request, reply) => {
    }
    const userId = payload.data.userId;
    try {
-      let data = await excuteQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
+      let data = await executeQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
       if (data.length > 0) {
          reply.status(200).send(data);
       }
@@ -27,5 +27,5 @@ const getRefoundsListHendler = async (request, reply) => {
 }
 
 module.exports = {
-   getRefoundsListHendler
+   getRefundsListHandler
 }

@@ -3,7 +3,7 @@ const uuid = require('uuid');
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
 const dotenv = require('dotenv');
-const excuteQuery = require('../../db/db');
+const executeQuery = require('../../db/db');
 
 dotenv.config({ path: '.env-local' });
 
@@ -14,7 +14,7 @@ const addUserHandler = async (request, reply) => {
       if (validationEmail.status === 400) {
          return reply.status(400).send(validationEmail.err);
       }
-      await excuteQuery(
+      await executeQuery(
          'INSERT INTO users(user_id, user_mail, user_password) VALUES (?,?,?)',
          [uuid.v4(), userMail, await hashPassword(userPassword)]);
       return reply.status(201).send(`User ${userMail} is registered`);

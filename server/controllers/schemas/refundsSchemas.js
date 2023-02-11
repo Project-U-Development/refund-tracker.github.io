@@ -35,7 +35,7 @@ const headerRefundsSchema = {
 };
 
 
-const getRefoundsListSchema = {
+const getRefundsListSchema = {
    headers: headerRefundsSchema,
    response: {
       200: {
@@ -48,5 +48,5 @@ const getRefoundsListSchema = {
 };
 
 module.exports = {
-   getRefoundsListSchema
+   getRefundsListSchema
 }
