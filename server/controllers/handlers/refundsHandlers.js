@@ -1,12 +1,12 @@
 const executeQuery = require('../../db/db');
 const dotenv = require('dotenv');
-const { varifyToken } = require('../authorization/verifyToken');
+const { verifyToken } = require('../authorization/verifyToken');
 
 dotenv.config({ path: '.env-local' });
 
 const getRefundsListHandler = async (request, reply) => {
    const token = request.headers['authorization'].split(' ')[1];
-   const payload = await varifyToken(token, process.env.JWT_ACCESS_SECRET_KEY);
+   const payload = await verifyToken(token, process.env.JWT_ACCESS_SECRET_KEY);
    if (payload.status === 401) {
       reply.status(401).send({ message: payload.message, error: payload.data })
    }
@@ -18,7 +18,7 @@ const getRefundsListHandler = async (request, reply) => {
       }
       else {
          console.log(`There is no any records!`)
-         reply.status(202).send(`There is no any records!`);
+         reply.status(202).send(`There is no records!`);
       }
    }
    catch (err) {

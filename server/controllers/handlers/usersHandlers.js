@@ -12,7 +12,7 @@ const addUserHandler = async (request, reply) => {
    try {
       const validationEmail = checkEmail(userMail, userPassword);
       if (validationEmail.status === 400) {
-         return reply.status(400).send(validationEmail.err);
+         return reply.status(400).send(validationEmail.message);
       }
       await executeQuery(
          'INSERT INTO users(user_id, user_mail, user_password) VALUES (?,?,?)',
@@ -52,7 +52,7 @@ const loginUserHandler = async (request, reply) => {
 
 const getAllUsersHandler = async (request, reply) => {
    try {
-      let userData = await excuteQuery('SELECT * FROM `users`', []);
+      let userData = await executeQuery('SELECT * FROM `users`', []);
       reply.status(200).send(userData);
    }
    catch (err) {
@@ -63,7 +63,7 @@ const getAllUsersHandler = async (request, reply) => {
 const getUserById = async (request, reply) => {
    const idUser = request.params.id;
    try {
-      let userData = await excuteQuery('SELECT * FROM users WHERE user_id=?', [idUser]);
+      let userData = await executeQuery('SELECT * FROM users WHERE user_id=?', [idUser]);
       reply.status(200).send(userData[0]);
    }
    catch (err) {
@@ -79,14 +79,14 @@ function checkEmail(userMail) {
    if (!validator.isEmail(userMail)) {
       return {
          status: 400,
-         err: 'Please, provide a valid email address'
+         message: 'Please, provide a valid email address'
       }
    }
    return { status: 200 }
 }
 
 async function checkUserExist(userMail) {
-   const [result] = await excuteQuery('SELECT * FROM users WHERE user_mail = ?', [userMail]);
+   const [result] = await executeQuery('SELECT * FROM users WHERE user_mail = ?', [userMail]);
    if (result === undefined) {
       return {
          status: 404,
