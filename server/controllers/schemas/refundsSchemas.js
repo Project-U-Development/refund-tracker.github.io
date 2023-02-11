@@ -43,6 +43,13 @@ const getRefundsListSchema = {
          items: refunds
       },
       100: stringType,
+      401: {
+         type: 'object',
+         properties: {
+            message: stringType,
+            error: stringType
+         }
+      },
       500: stringType
    }
 };

@@ -20,8 +20,12 @@ async function routes(fastify, option) {
       handler: usersHandler.loginUserHandler
    });
    fastify.post('/forgetpassword', {
-      schema: usersShema.forgetPasswordSchema,
+      schema: usersSchema.forgetPasswordSchema,
       handler: usersHandler.forgetPasswordHandler
+   });
+   fastify.post('/resetpassword', {
+      schema: usersSchema.resetPasswordSchema,
+      handler: usersHandler.resetPasswordHandler
    });
 }
 
