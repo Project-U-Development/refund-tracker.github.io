@@ -1,9 +1,15 @@
-const secret = 'refunds_tracker_jwt_secret'
+const jwt = require('jsonwebtoken');
 
 const verifyToken = (request, reply, done) => {
-    const { token } = request.headers;
+    const { authorization } = request.headers;
+    if (authorization.slice(0,6) != 'Bearer') {
+        done(new Error('Unauthorized'));
+    };
   
-    jwt.verify(token, secret, (err, decoded) => {
+    let token = authorization.split(' ');
+
+    jwt.verify(token[0], 'refunds_tracker_jwt_secret', (err, decoded) => {
+        reply.send(err);
         if (err) {
             done(new Error('Unauthorized'));
         }

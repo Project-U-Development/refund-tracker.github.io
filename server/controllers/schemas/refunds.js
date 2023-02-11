@@ -32,13 +32,14 @@ const refund = {
 
 const headerSchema = {
     type: 'object',
-    required: ['token'],
+    required: ['authorization'],
     properties: {
-      token: typeString,
+      authorization: typeString,
     },
   };
 
 const createRefundSchema = {
+    headers: headerSchema,
     body: {
         type: 'object',
         required: ['product_name', 'debtor','amount','due_date'],
@@ -52,8 +53,7 @@ const createRefundSchema = {
             },
             due_date: { 
                 type : 'string',
-                format: 'date', 
-                formatMaximum: '2020-01-01' 
+                format: 'date'
             }
         },
     },

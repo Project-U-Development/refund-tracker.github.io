@@ -5,6 +5,7 @@ const {
 const {
   createRefundHandler
 } = require('../controllers/handlers/refunds.js');
+const { verifyToken } = require('../controllers/auth/auth.js');
 
 const createRefundOpts = {
   schema: createRefundSchema,
@@ -12,9 +13,20 @@ const createRefundOpts = {
 };
 
 const refundRoutes =  async (fastify, options, done) => {
-    fastify.post('/refund', async (request, reply) => {
-      reply.send('Hello  world')
-    });
-  };
+  
+  fastify
+    .register(require('@fastify/auth'))
+    .after(() => privateRefundRoutes(fastify)); 
 
-  module.exports =  refundRoutes;
+  done();
+};
+
+const privateRefundRoutes = (fastify) => {
+  // create refund
+  fastify.post('/refund', {createRefundOpts});
+   // preHandler: fastify.auth([verifyToken]),
+  //  ...
+
+};
+ 
+ module.exports =  refundRoutes;
