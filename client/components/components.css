@@ -6,5 +6,7 @@
 @import "./button/button.css";
 @import "./input/input.css";
 @import "./table/table.css";
-@import "./typography/typography.css";
-@import "./typography/color.css"
+@import "./checkbox/checkbox.css";
+@import "./search/search.css";
+@import "./typtableography/typography.css";
+@import "./typography/color.css";
