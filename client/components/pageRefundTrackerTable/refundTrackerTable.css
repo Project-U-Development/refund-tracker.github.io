@@ -1,0 +1,71 @@
+@import '../components.css';
+
+.title-refund-tracker{
+	width: 95%;
+	height: 40px;
+	align-items: center;
+	vertical-align: middle;
+	margin: 30px 0px 0px 30px;
+}
+
+.buttons-and-search{
+	width: 95%;
+	height: 48px;
+	align-items: center;
+	margin: 30px 0px 0px 30px;
+	display: flex;
+    justify-content: space-between;
+	flex-direction: row;
+}
+
+.search-and-filter{
+	width: 40%;
+	display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-data{
+	width: 60%;
+	display: flex;
+    justify-content: space-between;
+	flex-direction: row;	
+}
+
+/*.table-refund {
+    width: 95%;
+	border-collapse: collapse;
+	margin: 30px 70px 70px 30px;
+    border: 1px solid var(--border-unfocused);	
+}	
+
+.table-cell-head,  .table-cell, .table-1cell-head {
+    background: var(--primary-white);
+	flex-direction: row;
+	align-items: flex-start;
+	width: 20%;
+	text-align: left;
+	box-sizing: border-box;
+	border-width: 1px 0px 0px 1px;
+	border-style: solid;
+	border-color: var(--border-unfocused);
+	flex: none;
+	align-self: stretch;
+	flex-grow: 0;
+}
+
+.table-cell-head,  .table-cell {
+	padding: 16px;
+}
+
+.table-1cell-head {
+	padding: 16px 16px 16px 64px;
+}
+	
+.table-cell-head {	
+	height: 60px;		
+}
+	
+.table-cell {
+	height: 56px;
+}
+*/
