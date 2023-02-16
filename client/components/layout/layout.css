@@ -3,21 +3,15 @@
 @import "../typography/zIndex.css";
 
 .container {
-    display: flex;
-    gap: 0 20px;
-  }
+  display: flex;
+  gap: 0 20px;
+}
 
 h1 {
-  margin-left: 260px;
   margin-bottom: 30px;
-}
-button {
-  margin-left: 216px;
- 
 }
 
 h2 {
-color: #847E7E;
-
-margin-top: 100px;
+  color: #847e7e;
+  margin-top: 100px;
 }
