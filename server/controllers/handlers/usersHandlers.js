@@ -8,7 +8,12 @@ const nodemailer = require('nodemailer');
 const { resPassEmailMessage } = require('./resPassEmailMessages');
 const { verifyToken } = require('../authorization/verifyToken');
 
-dotenv.config({ path: '.env-local' });
+if (process.env.NODE_ENV === 'local') {
+   dotenv.config({ path: './.env-local' });
+}
+else {
+   dotenv.config({ path: './.env' });
+}
 
 const addUserHandler = async (request, reply) => {
    const { userMail, userPassword } = request.body;
@@ -175,7 +180,7 @@ async function sendResetPassCodeMail(userMail, resetPasswordToken) {
             pass: process.env.EMAIL_PASS
          }
       });
-      const emailMessage = resPassEmailMessage(`${process.env.LINK_RESETPASS_MAIL}${resetPasswordToken}`);
+      const emailMessage = resPassEmailMessage(`${process.env.LINK_RESETPASS_MAIL}#${resetPasswordToken}`);
       const options = {
          from: process.env.EMAIL_USER,
          to: userMail,

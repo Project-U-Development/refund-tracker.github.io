@@ -2,7 +2,12 @@ const executeQuery = require('../../db/db');
 const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
 
-dotenv.config({ path: '.env-local' });
+if (process.env.NODE_ENV === 'local') {
+   dotenv.config({ path: './.env-local' });
+}
+else {
+   dotenv.config({ path: './.env' });
+}
 
 const getRefundsListHandler = async (request, reply) => {
    try {
