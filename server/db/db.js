@@ -25,7 +25,6 @@ async function closeConnection() {
 }
 
 const executeQuery = (query, arrayParam) => {
-const executeQuery = (query, arrayParam) => {
    return new Promise((resolve, reject) => {
       try {
          dataBase.query(
