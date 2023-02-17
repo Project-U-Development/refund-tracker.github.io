@@ -7,6 +7,17 @@
     gap: 0 20px;
   }
 
-a {
-    text-decoration: none;
+h1 {
+  margin-left: 260px;
+  margin-bottom: 30px;
+}
+button {
+  margin-left: 216px;
+ 
+}
+
+h2 {
+color: #847E7E;
+
+margin-top: 100px;
 }
