@@ -1,12 +1,5 @@
 const mysql = require('mysql2');
-const dotenv = require('dotenv');
-
-if (process.env.NODE_ENV === 'local') {
-   dotenv.config({ path: './.env-local' });
-}
-else {
-   dotenv.config({ path: './.env' });
-}
+const uuid = require('uuid');
 
 const dataBase = mysql.createPool({
    host: process.env.DATABASE_HOST,
@@ -46,13 +39,20 @@ const executeQuery = (query, arrayParam) => {
    })
 }
 
-async function getUserByEmail(email) {
-   const [user] = await executeQuery('SELECT * FROM users WHERE user_mail = ?', [email]);
-   return user;
- }
+const createRefund = async (body) => {
+   let res = await executeQuery(
+      `insert into refunds 
+         (refund_id,creation_time,product_name,debtor,amount$,currency,
+            due_date, user_id, if_completed)
+      values (?,?,?,?,?,?,?,?,?)`,
+      [uuid.v4(), new Date(), body.product_name, body.debtor, body.amount,
+      body.currency || 'EUR', body.due_date, body.user_id, 'no']);
+   return res;
+}
+
 
 
 module.exports = {
-   getUserByEmail
-   , executeQuery
-};
+   executeQuery,
+   createRefund
+}

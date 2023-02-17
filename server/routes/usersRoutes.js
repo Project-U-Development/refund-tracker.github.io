@@ -1,11 +1,6 @@
 const usersSchema = require('../controllers/schemas/usersSchemas');
 const usersHandler = require('../controllers/handlers/usersHandlers');
 
-const loginUserOpts = {
-    schema: loginUserSchema,
-    handler: loginUserHandler,
- };
-
 async function routes(fastify, option) {
    fastify.get('/users', {
       schema: usersSchema.getAllUsersShema,
