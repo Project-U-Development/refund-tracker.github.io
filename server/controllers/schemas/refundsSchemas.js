@@ -54,6 +54,32 @@ const getRefundsListSchema = {
    }
 };
 
+const createRefundSchema = {
+   headers: headerRefundsSchema,
+   body: {
+       type: 'object',
+       required: ['product_name', 'debtor','amount','due_date'],
+       properties: {
+           product_name: stringType,
+           debtor: stringType,
+           amount: { type:'number' },
+           currency: {
+               type: 'string',
+               enum: ['USD', 'EUR', 'GBP','UAH'],
+           },
+           due_date: { 
+               type : 'string',
+               format: 'date'
+           }
+       },
+   },
+   response: {
+       201: stringType 
+   },
+};
+
+
 module.exports = {
-   getRefundsListSchema
+   getRefundsListSchema,
+   createRefundSchema
 }

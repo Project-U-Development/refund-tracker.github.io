@@ -1,12 +1,20 @@
+const dotenv = require('dotenv');
 const fastify = require('fastify')({ logger: true });
 
+if (process.env.NODE_ENV === 'local') {
+   dotenv.config({ path: './.env-local' });
+}
+else {
+   dotenv.config({ path: './.env' });
+}
+
+const {verifyJWT} = require('./controllers/authorization/auth');
+fastify.decorate('verifyJWT', verifyJWT);
 
 fastify.register(require('./routes/home'));
 fastify.register(require('./routes/version'));
 fastify.register(require('./routes/usersRoutes'));
 fastify.register(require('./routes/refundsRoutes'));
-
-
 
 const server = async () => {
    try {

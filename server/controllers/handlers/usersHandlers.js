@@ -2,10 +2,7 @@ const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
-const dotenv = require('dotenv');
-const executeQuery = require('../../db/db');
-
-dotenv.config({ path: '.env-local' });
+const {executeQuery} = require('../../db/db');
 
 const addUserHandler = async (request, reply) => {
    const { userMail, userPassword } = request.body;
