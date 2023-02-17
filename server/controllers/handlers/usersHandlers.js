@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'local') {
    dotenv.config({ path: './.env-local' });
 }
 else {
-   dotenv.config({ path: './.env' });
+   dotenv.config({ path: './.env-prod' });
 }
 
 const addUserHandler = async (request, reply) => {
