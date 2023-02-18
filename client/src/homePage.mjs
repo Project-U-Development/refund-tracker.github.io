@@ -1,7 +1,5 @@
 import {  format } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 
-
-
 function createTableRow(row, table) {
   let tr = document.createElement("tr");
   let date_due=row.due_date.split('-');
