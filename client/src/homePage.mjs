@@ -1,9 +1,21 @@
+import {  format } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
+
+
+
 function createTableRow(row, table) {
   let tr = document.createElement("tr");
-  let date = new Date(row.creation_time * 1);
+  let date_due=row.due_date.split('-');
   tr.innerHTML =
-    `<td>${date.toLocaleString()}</td>` +
-    `<td>${product_name}</td><td>${row.debtor}</td><td>${row.amount$}</td><td>${row.due_date}</td>`;
+    `<td class="table-cell">
+
+					<input class="checkbox checkbox-label" type="checkbox" />
+					<span class="checkbox-new"></span>
+
+				<span class="table-data">${format(new Date(row.creation_time),'dd-MM-yyyy')}</span>`+
+    `<td class="table-cell table-data">${row.product_name}</td>`+
+    `<td class="table-cell table-data">${row.debtor}</td>`+
+    `<td class="table-cell table-data">${row.amount$}</td>`+
+    `<td class="table-cell table-data">${date_due[2]}-${date_due[1]}-${date_due[0]}</td>`;
   table.appendChild(tr);
 
 }
@@ -25,6 +37,7 @@ async function getRefundList() {
     },
   });
   const json = await response.json();
+  console.log(json);
   return json;
 }
 
@@ -33,7 +46,8 @@ async function getRefundList() {
   const result = await getRefundList();
   const list = document.getElementById('tbody');
   list.replaceChildren(); // removes all children (list items) from list, before adding freshly acquired ones
-  result.Items.forEach((item) => createTableRow(item, list));
+  console.log(result);
+  result.forEach((item) => createTableRow(item, list));
 
 
 // // --------------POST
