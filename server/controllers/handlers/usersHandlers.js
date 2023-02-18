@@ -24,7 +24,7 @@ const addUserHandler = async (request, reply) => {
       const accessToken = await tokenGenerator(payload, secretKey, tokenExpiresIn);
       return reply.status(201).send({
          message: `User ${userMail} is registered`,
-         accessToken: accessToken
+         accessToken: `Bearer ${accessToken}`
       });
    }
    catch (err) {
