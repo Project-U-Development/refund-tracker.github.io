@@ -24,13 +24,6 @@ form.oninput = function () {
 
     const dueDate = changeStringToDate(dueDateValue);
 
-    // const parsedDateValues = dueDateValue ? dueDateValue.split('-') : '';
-    // const year = parsedDateValues[2];
-    // const month = parsedDateValues[1];
-    // const day = parsedDateValues[0];
-    // const dueDate = new Date(year, month, day);
-
-
     if (whatRefundValue.length > 5 && whoRefundValue.length > 5 && expectedMoneyValue.length > 0
         && dueDate) {
         btnActive.removeAttribute('disabled');
