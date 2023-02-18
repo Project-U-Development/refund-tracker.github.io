@@ -16,7 +16,7 @@
    },
    "scripts": {
       "start": "cross-env NODE_ENV=local nodemon server.js",
-      "start:prod": "pm2 start server.js"
+      "start:prod": "sudo pm2 start server.js"
    },
    "name": "refund-server",
    "version": "1.0.0",
