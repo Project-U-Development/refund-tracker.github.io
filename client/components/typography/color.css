@@ -7,8 +7,14 @@
     --border-focused: #00E4CA;
     --button-disabled: #99C0FF;
     --secondary-blueberry: #4649D0;
+<<<<<<< HEAD
     --primary-red: #FF0050;
     --invalid-red: #B30038;
     --invalid-background:#FFF2F6;
     --modes-background:#F2F7FF;
 }
+=======
+    --body-color: #E5E5E5;
+    --error-color: #B30038;
+}
+>>>>>>> RefundCreation
