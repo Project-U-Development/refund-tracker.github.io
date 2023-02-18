@@ -1,0 +1,33 @@
+@import '../components.css';
+
+.title-refund-tracker{
+	width: 95%;
+	height: 40px;
+	align-items: center;
+	vertical-align: middle;
+	margin: 30px 0px 0px 30px;
+}
+
+.buttons-and-search{
+	width: 95%;
+	height: 48px;
+	align-items: center;
+	margin: 30px 0px 0px 30px;
+	display: flex;
+    justify-content: space-between;
+	flex-direction: row;
+}
+
+.search-and-sort-select{
+	width: 55%;
+	display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-data{
+	width: 60%;
+	display: flex;
+    justify-content: space-between;
+	flex-direction: row;	
+}
+

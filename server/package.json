@@ -6,6 +6,7 @@
       "bcryptjs": "^2.4.3",
       "cookie-parser": "^1.4.6",
       "cross-env": "^7.0.3",
+      "date-fns": "^2.29.3",
       "dotenv": "^16.0.3",
       "fastify": "^4.10.2",
       "jsonwebtoken": "^8.5.1",
