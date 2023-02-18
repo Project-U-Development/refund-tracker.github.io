@@ -2,8 +2,6 @@ const executeQuery = require('../../db/db');
 const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
 
-dotenv.config({ path: '.env-local' });
-
 const getRefundsListHandler = async (request, reply) => {
    try {
       const token = request.headers['authorization'].split(' ')[1];
@@ -27,6 +25,19 @@ const getRefundsListHandler = async (request, reply) => {
    }
 }
 
+const createRefundHandler = async (request, reply) => {
+   try {
+      let body = request.body;
+      body.user_id = request.user.id;
+      executeQuery.createRefund(body);
+      reply.status(201).send(`Refund created`);      
+   }
+   catch (err) {
+      reply.status(400).send(err);
+   }
+}
+
 module.exports = {
-   getRefundsListHandler
+   getRefundsListHandler,
+   createRefundHandler
 }
