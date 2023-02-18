@@ -28,7 +28,7 @@ const addUserHandler = async (request, reply) => {
       });
    }
    catch (err) {
-      return err.code === 'ER_DUP_ENTRY' ? reply.status(403).send(`An Email |${userMail}| is already in use. Please, provide email not registered before`) :
+      return err.code === 'ER_DUP_ENTRY' ? reply.status(400).send(`An Email |${userMail}| is already in use. Please, provide email not registered before`) :
          reply.status(400).send(err);
    }
 }

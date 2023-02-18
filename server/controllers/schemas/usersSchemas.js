@@ -17,8 +17,7 @@ const addUserSchema = {
             accessToken: stringType
          }
       },
-      400: stringType,
-      403: stringType
+      400: stringType
    }
 }
 
