@@ -7,21 +7,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Log-in page</title>
    <link rel="stylesheet" href="./components/pageLogIn/logIn.css">
-   
+
 </head>
 
 <body>
    <div class="mainConteiner">
-      <form class="logInForm" action="" method="post">
+      <form class="logInForm" action="" method="post" id="loginForm">
          <div class="formContainer">
             <div class="logInHeading heading-h2">LOG IN</div>
-            
+
             <div class="input-container">
                <fieldset class="input-fieldset" id="fieldEmailLogIn">
                   <i class="icon iconEmail"></i>
-                  <input class="input inputNoLabel heading-h5 logInFormInput" id="eMailLogIn" type="email"
-                     name="emailInput" maxlength="125" placeholder="Enter your E-mail"
-                     title="" required="">
+                  <input class="input inputNoLabel heading-h5 logInFormInput" id="eMailLogIn" type="email" name="email"
+                     maxlength="125" placeholder="Enter your E-mail" title="" required="">
                </fieldset>
                <div class="mistakeMessage error-message">Error. Wrong e-mail or password.</div>
             </div>
@@ -30,33 +29,35 @@
                <fieldset class="input-fieldset" id="fieldPasswordLogIn">
                   <i class=" icon iconPassword"></i>
                   <input class="input inputNoLabel heading-h5 logInFormInput" id="passwordLogIn" type="password"
-                     name="passwordEnter" min="8" max="45" placeholder="Enter your password"
+                     name="password" min="8" max="45" placeholder="Enter your password"
                      title="Here should be a pattern for password" required>
                </fieldset>
                <div class="mistakeMessage error-message">Error. Wrong e-mail or password.</div>
             </div>
-            </div>
-
-            <div class="checkbox">
-               <input class="inputCheckbox heading-h5" type="checkbox" id="showPasswordLogIn" name="showThePasswordLogIn" />
-               <label class="labelShowPassword" for="showThePasswordLogIn">Show password</label>
-            </div>
-
-           <div class="containerLogIn heading-h5">
-            <p><a href="./forgotPassword.html">Forgot password?</a></p>
-            </div>
-
-            <div class="buttonLogIn">
-               <button class="button primary heading-h5" id="logInButton" type="submit" disabled>LOG IN</button>
-            </div>
-
-            <div class="containerLogIn heading-h5">
-                  <p><a href="./register.html">Don't have an account yet?</a></p>
-            </div>
          </div>
-      </form>
+
+         <div class="checkbox">
+            <input class="inputCheckbox heading-h5" type="checkbox" id="showPasswordLogIn"
+               name="showThePasswordLogIn" />
+            <label class="labelShowPassword" for="showThePasswordLogIn">Show password</label>
+         </div>
+
+         <div class="containerLogIn heading-h5">
+            <p><a href="./forgotPassword.html">Forgot password?</a></p>
+         </div>
+
+         <div class="buttonLogIn">
+            <button class="button primary heading-h5" id="logInButton" type="submit" disabled>LOG IN</button>
+         </div>
+
+         <div class="containerLogIn heading-h5">
+            <p><a href="./register.html">Don't have an account yet?</a></p>
+         </div>
+   </div>
+   </form>
    </div>
 </body>
 <script src="./components/pageLogIn/logIn.mjs" type="module"></script>
+<script src="./src/login.js" type="module"></script>
 
 </html>
