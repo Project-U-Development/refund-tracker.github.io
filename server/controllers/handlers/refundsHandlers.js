@@ -29,7 +29,7 @@ const createRefundHandler = async (request, reply) => {
    try {
       let body = request.body;
       body.user_id = request.user.id;
-      executeQuery.createRefund(body);
+      await executeQuery.createRefund(body);
       reply.status(201).send(`Refund created`);      
    }
    catch (err) {
