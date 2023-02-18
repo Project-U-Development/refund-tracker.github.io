@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const verifyJWT = async (request, reply, done) => {
+const verifyJWT = (request, reply, done) => {
     const { authorization } = request.headers;
     
     let token = authorization.split(' ');
