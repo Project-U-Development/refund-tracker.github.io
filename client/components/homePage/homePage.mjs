@@ -1,32 +1,37 @@
-function createTableRow(row, table){
-    let tr = document.createElement('tr');
-    let date = new Date(row.creation_time*1);
-    tr.innerHTML = `<td>${date.toLocaleString()}</td>`+
-      `<td>${product_name}</td><td>${row.debtor}</td><td>${row.amount$}</td><td>${row.due_date}</td>`;
-          table.appendChild(tr);
-    }
+function createTableRow(row, table) {
+  let tr = document.createElement("tr");
+  let date = new Date(row.creation_time * 1);
+  tr.innerHTML =
+    `<td>${date.toLocaleString()}</td>` +
+    `<td>${product_name}</td><td>${row.debtor}</td><td>${row.amount$}</td><td>${row.due_date}</td>`;
+  table.appendChild(tr);
+}
 
-    
+let token = localStorage.getItem("token");
+const apiUrl =
+  window.origin === "http://localhost:3000"
+    ? "http://localhost:80"
+    : "http://ec2-18-197-163-2.eu-central-1.compute.amazonaws.com";
 
-// async function getRefund() {
-//   const response = await fetch('https://oijv97k0l6.execute-api.eu-central-1.amazonaws.com/test/refunds', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-//   const json = await response.json();
-//   return json;
-// }
+async function getRefundList() {
+  const response = await fetch(`${apiUrl}/refoundsList`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json", 
+      "Authorization": token
+    },
+  });
+  const json = await response.json();
+  return json;
+}
 
-// // 
-// const getRefundButton = document.getElementById('getRefund');
-// getRefundButton.onclick = async () => {
-//   const result = await getRefund();
-//   const list = document.getElementById('refundList');
-//   list.replaceChildren(); // removes all children (list items) from list, before adding freshly acquired ones
-//   result.Items.forEach((item) => createTableRow(item, list));
-// };
+
+
+  const result = await getRefundList();
+  const list = document.getElementById('tbody');
+  list.replaceChildren(); // removes all children (list items) from list, before adding freshly acquired ones
+  result.Items.forEach((item) => createTableRow(item, list));
+
 
 // // --------------POST
 // async function postRefund(pName,pDebtor,pAmount,pDueDate) {
@@ -42,7 +47,7 @@ function createTableRow(row, table){
 //       dueDate: pDueDate,
 //       // currency: 'euro' // optional field, you can pass any currenct name, but you don't have to. By default it's in euro.
 //     })
-  
+
 //   });
 //   let result = {
 //     status: response.status,
@@ -71,5 +76,3 @@ function createTableRow(row, table){
 //     resultText.innerHTML = result.statusText;
 //   }
 // }
-
-
