@@ -1,3 +1,5 @@
+import { startUserSession } from './startUserSession.mjs'
+
 function main() {
    const form = document.getElementById('registerForm');
    form.onsubmit = function (event) {
@@ -28,7 +30,14 @@ function signup(data) {
          userPassword: data.password1
       })
    })
-      .then(function (res) { console.log(res) })
+      .then(function (res) {
+         return res.json();
+      })
+      .then(function (res) {
+         console.log(res);
+         const accessToken = res.accessToken.split(" ")[1];
+         startUserSession(accessToken);
+      })
       .catch(function (res) { console.log(res) });
 }
 

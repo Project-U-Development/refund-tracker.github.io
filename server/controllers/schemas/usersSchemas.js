@@ -10,9 +10,14 @@ const addUserSchema = {
       }
    },
    response: {
-      201: stringType,
-      400: stringType,
-      403: stringType
+      201: {
+         type: 'object',
+         properties: {
+            message: stringType,
+            accessToken: stringType
+         }
+      },
+      400: stringType
    }
 }
 
@@ -30,11 +35,11 @@ const loginUserSchema = {
          type: 'object',
          properties: {
             accessToken: stringType
-         },
-         401: stringType,
-         404: stringType,
-         500: stringType
-      }
+         }
+      },
+      401: stringType,
+      404: stringType,
+      500: stringType
    }
 }
 
