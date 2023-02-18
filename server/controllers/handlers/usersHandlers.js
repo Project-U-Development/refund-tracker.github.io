@@ -43,10 +43,7 @@ const loginUserHandler = async (request, reply) => {
       if (!await checkUserPassword(userPassword, candidateUser.data.user_password)) {
          return reply.status(401).send(`Password is not correct for user ${userMail}`);
       }
-      const resetPasswordCode = null;
-      await executeQuery(
-         `UPDATE users SET user_reset_password_code=? WHERE user_id=?`,
-         [resetPasswordCode, candidateUser.data.user_id]);
+
       const payload = {
          userId: candidateUser.data.user_id,
          userMail: candidateUser.data.user_mail
