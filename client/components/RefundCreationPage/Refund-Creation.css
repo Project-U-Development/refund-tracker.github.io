@@ -9,12 +9,12 @@ body {
     width: 1440px;
     height: 900px;
     font-family: IBM Plex Sans;
-   
+     
 }
 
 .container {
     height: 86px;
-    left: 260px;
+    margin-left: 260px;
     margin-top: 80px; 
  
 }
