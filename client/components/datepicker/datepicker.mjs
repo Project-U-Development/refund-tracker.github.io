@@ -15,8 +15,8 @@ export default function initDatepicker() {
       const currentMonth = new Date().getMonth();
       const selectedYear = date.getFullYear();
       const currentYear = new Date().getFullYear();      
-      console.log(selectedYear, currentYear);
-      if(selectedMonth > currentMonth)
+     
+      if((selectedMonth > currentMonth) || (selectedYear > currentYear))
        {
         date.setMonth(selectedMonth - 1);
            
@@ -27,9 +27,9 @@ export default function initDatepicker() {
    
 
 document.querySelector(".next").addEventListener("click", () => {
-  const selectedYear = date.getFullYear();
-  const currentYear = new Date().getFullYear();      
-  console.log(selectedYear, currentYear);
+  // const selectedYear = date.getFullYear();
+  // const currentYear = date.getFullYear();      
+  // console.log(selectedYear, currentYear);
   date.setMonth(date.getMonth() + 1);
   controlPrevButton(date.getMonth(), date.getFullYear());
   renderCalendar();
@@ -214,7 +214,7 @@ function controlPrevButton(selectedMonth, selectedYear){
     const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
     
-      if(selectedMonth > currentMonth) 
+      if((selectedMonth > currentMonth) || (selectedYear>currentYear))
       {
    
      prev.removeAttribute('disabled');
