@@ -8,11 +8,12 @@ import { formatISO } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 const form = document.getElementById('createRefundForm');
 
 function changeStringToDate (dateValue) {
-    const parsedDateValues = dateValue ? dateValue.split('-') : '';
-    const year = parsedDateValues[2];
-    const month = parsedDateValues[1];
-    const day = parsedDateValues[0];
+    // const parsedDateValues = dateValue ? dateValue.split('-') : '';
+    // const year = parsedDateValues[2];
+    // const month = parsedDateValues[1];
+    // const day = parsedDateValues[0];
     const date = new Date(year, month, day);
+    // console.log(date);
     return formatISO(date, {representation: 'date'});
 }
 
