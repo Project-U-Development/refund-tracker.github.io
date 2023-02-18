@@ -11,13 +11,24 @@ const addUserHandler = async (request, reply) => {
       if (validationEmail.status === 400) {
          return reply.status(400).send(validationEmail.message);
       }
+      userId = uuid.v4();
       await executeQuery(
          'INSERT INTO users(user_id, user_mail, user_password) VALUES (?,?,?)',
-         [uuid.v4(), userMail, await hashPassword(userPassword)]);
-      return reply.status(201).send(`User ${userMail} is registered`);
+         [userId, userMail, await hashPassword(userPassword)]);
+      const payload = {
+         userId: userId,
+         userMail: userMail
+      };
+      const secretKey = process.env.JWT_ACCESS_SECRET_KEY;
+      const tokenExpiresIn = process.env.JWT_ACCESS_EXPIRE;
+      const accessToken = await tokenGenerator(payload, secretKey, tokenExpiresIn);
+      return reply.status(201).send({
+         message: `User ${userMail} is registered`,
+         accessToken: `Bearer ${accessToken}`
+      });
    }
    catch (err) {
-      return err.code === 'ER_DUP_ENTRY' ? reply.status(403).send(`An Email |${userMail}| is already in use. Please, provide email not registered before`) :
+      return err.code === 'ER_DUP_ENTRY' ? reply.status(400).send(`An Email |${userMail}| is already in use. Please, provide email not registered before`) :
          reply.status(400).send(err);
    }
 }

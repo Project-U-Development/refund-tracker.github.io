@@ -4,7 +4,7 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "start": "ENV=local serve .",
+      "start": "serve .",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "author": "",
