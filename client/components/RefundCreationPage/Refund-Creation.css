@@ -1,0 +1,97 @@
+@import '../typography/typography.css';
+@import '../typography/color.css';
+@import '../datepicker/datepicker.css';
+@import '../selectors/selectors.css';
+@import '../button/button.css';
+@import '../input/input.css';
+
+body {
+    width: 1440px;
+    height: 900px;
+    font-family: IBM Plex Sans;
+   
+}
+
+.container {
+    height: 86px;
+    left: 260px;
+    margin-top: 80px; 
+ 
+}
+.container2 {
+    width: 460px;
+    box-sizing: border-box;
+    margin-left: -6px;
+    
+}
+.container3 {
+    width: 920px;
+    display: flex;
+    flex-wrap: wrap;
+      
+}
+
+#input-container1-id {
+    margin: 0px 12px 0px 0px;
+}
+
+#input-container2-id {
+    margin: 12px 12px 0px 0px;
+}
+
+#input-container3-id {
+    margin: 0px 0px 12px 12px;
+}
+
+#input-container4-id {
+    margin: 5px 0px 0px 18px;
+    }
+
+#select-label-id {
+    padding: 0px;
+    } 
+.buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 186px;
+        margin-top: 16px;
+}
+h2 {
+    display: flex;
+    align-items: center; 
+    width: 920px;
+    height: 86px;
+}
+h3 {
+    padding-top: 40px;
+    margin-bottom: 24px;
+    display: block;
+    width: 920px;
+}
+.input-label {
+    width: 448px;
+}
+.datepicker-weekdays {
+    width: 312px;
+    padding: 12px 68px 0px 68px;
+}
+.datepicker-label {
+    width: 448px;
+    height: 64px;
+}
+  .activated-input-label {
+    width: 442.5px;
+}
+
+/* .input-block {
+    display: flex;
+    flex-direction: row;
+    
+    width: 920px;
+    height: 152px;
+    
+} */
+
+
+
