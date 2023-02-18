@@ -5,7 +5,8 @@
 #sort-select {
   position: relative;
   width: 290px;
-  height: 64px;
+  /*height: 64px;*/
+  height: 48px;
   border: 1px solid var(--border-unfocused);
   border-radius: 8px;
   box-sizing: border-box;
@@ -13,7 +14,7 @@
   text-align: center;
   color: #0061ff;
   font-family: inherit;
-  
+  margin-top: 8px;
 }
 
 #sort-select {

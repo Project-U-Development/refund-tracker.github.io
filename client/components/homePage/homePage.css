@@ -8,6 +8,7 @@
 @import "../typography/typography.css";
 
 
+
 .section_serch {
   display: flex;
   justify-content: space-between;
@@ -16,11 +17,50 @@
   padding-right: 20px;
 }
 #sort-select {
-  margin-right: 60px;
+  margin-right: 50px;
 }
 #search1 {
   margin-left: 700px;
 }
 #buttonPrimary {
   margin-left: 30px;
+
 }
+
+.footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  text-align: center;
+  height: 40px;
+  margin-top: -40px;
+}
+/*body{
+  max-width: 1220px;
+padding: 0 10px;
+margin: 0 auto;
+}
+
+.dv1 {
+  max-width: 100%;
+  min-width: 50%;
+  padding: 0 10px;
+  margin: 0 auto;
+}*/
+html{
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 50%;
+  overflow-x: hidden;
+}
+
+body{
+  width: 100%;
+  max-width: 100%;
+  min-width: 50%;
+  overflow-x: hidden;
+}
+
+  
