@@ -5,7 +5,9 @@ function createTableRow(row, table) {
     `<td>${date.toLocaleString()}</td>` +
     `<td>${product_name}</td><td>${row.debtor}</td><td>${row.amount$}</td><td>${row.due_date}</td>`;
   table.appendChild(tr);
+
 }
+console.log("Hi");
 
 let token = localStorage.getItem("token");
 const apiUrl =
