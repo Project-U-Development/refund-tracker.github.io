@@ -14,14 +14,23 @@
 			<span class="button-create-refund"> 
 				<button class="button primary heading-h5" id="buttonPrimary">Create refund</button>
 			</span>
-			<span class="search-and-filter"> 
+			<span class="search-and-sort-select"> 
 				<form action="" class="search-form" method="GET" >
 					<input type="search" id="search1" class="search-form-input" placeholder="Search" />
 					<button type="submit" id="btn1" class="search-form-btn" placeholder="">
 						<svg focusable="false" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" style="fill:#0044B3;"></path></svg>
 					</button>
 				</form>
-				<button class="button ghost heading-h5" id="buttonGhost">Filter</button>
+				<span>
+					<select class="heading-h5 sort-select" name="sort" id="sort-select">
+						<option class="imput-label" value="">--Please Sort by--</option>
+						<option class="options-label" value="0">Create Date</option>
+						<option class="options-label" value="1">What</option>
+						<option class="options-label" value="2">Who</option>
+						<option class="options-label" value="3">How much</option>
+						<option class="options-label" value="4">Due date</option>
+					</select>
+				</span>
 			</span>
 		</span>
 		<table class="table-refund">

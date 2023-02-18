@@ -18,8 +18,8 @@
 	flex-direction: row;
 }
 
-.search-and-filter{
-	width: 40%;
+.search-and-sort-select{
+	width: 55%;
 	display: flex;
     justify-content: space-between;
 }
