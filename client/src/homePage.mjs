@@ -10,6 +10,7 @@ function createTableRow(row, table) {
 console.log("Hi");
 
 let token = localStorage.getItem("token");
+console.log('-----------------------------', token);
 const apiUrl =
   window.origin === "http://localhost:3000"
     ? "http://localhost:80"
@@ -20,7 +21,7 @@ async function getRefundList() {
     method: "GET",
     headers: {
       "Content-Type": "application/json", 
-      "Authorization": token
+      "Authorization": "Bearer " + token
     },
   });
   const json = await response.json();
