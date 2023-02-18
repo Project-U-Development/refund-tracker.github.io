@@ -3,7 +3,7 @@ import initDatepicker from "../components/datepicker/datepicker.mjs";
 import "../components/button/button.mjs";
 import "../components/input/input.mjs";
 import "../components/selectors/selectors.mjs";
-import { parseDate, formatISO } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
+import { formatISO, parse as parseDate } from 'https://unpkg.com/date-fns@2.29.3/esm/index.js';
 
 const form = document.getElementById('createRefundForm');
 
