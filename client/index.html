@@ -9,6 +9,7 @@
 
    <!-- Component styles -->
    <link rel="stylesheet" href="./components/components.css">
+   <link rel="stylesheet" href="./components/LogOutButton/logout.css">
 </head>
 
 <body>
@@ -16,14 +17,18 @@
   
   <link rel="stylesheet" href="../client/components/button/button.css">
   <link rel="stylesheet" href="../client/components/layout/layout.css">
-
-             <h1>Refund tracker</h1>
+<div class="header"> <h1>Refund tracker</h1>
+    <button class="button ghost heading-h5 log-out-btn" id="LogOutBtn">Log Out</button>
+              <!-- <button class="button disable heading-h5 log-out-btn" id="LogOutBtn" type="button">t</button> -->
+             </div>
          <div class="container">
           <button class="button primary heading-h5" id="buttonPrimary">Create Refund</button>
+         
         <form action="" class="search-form" method="GET" >
             <h2>You do not have any refund records yet...</h2>
          </div>
            <script src="./src/authentication.js"></script>
         <script src="../../sortSelect/sortSelect.mjs" type="module"></script>
+        <script src = "components/logOutButton/logOutButton.js" type="module"></script>
     </div>
 </html>
