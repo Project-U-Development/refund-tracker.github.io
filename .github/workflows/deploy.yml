@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: source ./scripts/prepareForS3.sh
+      - run: source ./scripts/prepareClientForS3.sh
 
   # Deploying FE to S3 bucket
   upload-fe-build:
