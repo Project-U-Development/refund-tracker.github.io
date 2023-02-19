@@ -7,13 +7,13 @@ on:
 
 # Cleanup and prepare FE before deploy
 jobs:
-  fe-cleanup:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: source ./scripts/prepareForS3.sh
 
   # Deploying FE to S3 bucket
-  upload-files:
+  upload-fe-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -25,13 +25,13 @@ jobs:
           source_dir: "./client-build"
           destination_dir: "./"
 
-    upload-html:
-      runs-on: ubuntu-latest
-      steps:
-        - run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
+  upload-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
 
-    cleanup:
-      runs-on:
-      steps:
-        - rm -rf client-build
-        - rm -rf client-pages
+  cleanup:
+    runs-on:
+    steps:
+      - rm -rf client-build
+      - rm -rf client-pages
