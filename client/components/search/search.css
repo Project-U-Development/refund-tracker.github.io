@@ -13,7 +13,7 @@
     height: 48px;
     line-height: 28px;
     margin: 10px;
-    padding: 10px 16px 10px 16px;
+    padding: 10px 32px 10px 16px;
     border: 1px solid var(--border-unfocused);
     padding-top: 7px;
     padding-bottom: 8px;
@@ -33,9 +33,9 @@
 }
 
 .search-form-btn {
-    position: absolute;
-    right: 30px;
-    top: 22px;
+    position: relative;
+    right: 45px;
+    top: 5px;
     width: 21px;
     height: 21px;
     margin: 0;
