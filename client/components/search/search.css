@@ -2,65 +2,58 @@
 @import "../typography/color.css";
 
 .search-form {
- left: 6px;
- top: 8px;
- display: inline-block;
- position: relative;
+    left: 6px;
+    top: 8px;
+    display: inline-block;
+    position: relative;
 }
 
 .search-form-input {
- width: 318px;
- height: 48px;
- line-height: 28px;
- margin: 0;
- padding: 10px 16px 10px 16px;
- border: 1px solid var(--border-unfocused);
- padding-top: 7px;
- padding-bottom: 8px;
- border-radius: 8px;
- background-color: var(--primary-white);
- -moz-box-sizing: border-box;
- box-sizing: border-box;
- font-family: 'IBM Plex Sans';
- font-style: normal;
- font-weight: 300;
- font-size: 18px;
- outline: none;
+    width: 318px;
+    height: 48px;
+    line-height: 28px;
+    margin: 10px;
+    padding: 10px 16px 10px 16px;
+    border: 1px solid var(--border-unfocused);
+    padding-top: 7px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    background-color: var(--primary-white);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.search-form-input:focus {
- border: 1px solid var(--border-focused);
+.search-form-input:hover {
+    border: 3px solid var(--border-focused);
+}
+
+.search-form-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
 }
 
 .search-form-btn {
- justify-content: center;
- align-items: center;
- vertical-align: middle;
- display: flex;
- flex-direction: column;
- align-items: flex-start;
- position: absolute;
- right: 30px; 
- top: 13px;
- width: 21px;
- height: 21px;
- line-height: 24px;
- font-weight: bold;      
- margin: 0;
- padding: 0;
- border: 0;
- border-radius: 2px;
- background-color: transparent;
- text-align: center;
- cursor: pointer;
-}
-svg path {
- stroke:inherit;
- stroke-width:inherit;
+    position: absolute;
+    right: 30px;
+    top: 22px;
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
 }
 
-.btn1 {
- background: var(--modes-background);
- border: 1px solid var(--border-focused);
- border-radius: 8px;
+svg path {
+    stroke: inherit;
+    stroke-width: inherit;
 }
+
+/* .btn1 {
+    background: var(--modes-background);
+    border: 1px solid var(--border-focused);
+    border-radius: 8px;
+} */
