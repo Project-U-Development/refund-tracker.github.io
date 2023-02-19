@@ -2,8 +2,6 @@
 @import "../typography/color.css";
 
 .search-form {
-    left: 6px;
-    top: 8px;
     display: inline-block;
     position: relative;
 }
@@ -25,6 +23,10 @@
 }
 
 .search-form-input:hover {
+    border: 1px solid var(--primary-blue);
+}
+
+.search-form-input:focus {
     border: 3px solid var(--border-focused);
 }
 
