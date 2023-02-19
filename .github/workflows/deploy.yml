@@ -10,9 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: source ./scripts/prepareClientForS3.sh
-      - uses: actions/upload-artifact@v3
+      - name: Checkout from repo
+        uses: actions/checkout@v3
+      - name: Prepare files for upload to S3
+        run: source ./scripts/prepareClientForS3.sh
+      - name: Upload generated folders
+        uses: actions/upload-artifact@v3
         with:
           name: fe-build
           path: |
@@ -22,7 +25,6 @@ jobs:
   # Deploying FE to S3 bucket
   upload-fe-build:
     needs: build
-
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
