@@ -13,6 +13,7 @@ jobs:
       - name: Checkout from repo
         uses: actions/checkout@v3
       - name: Prepare files for upload to S3
+        shell: bash
         run: source ./scripts/prepareClientForS3.sh
       - name: Upload generated folders
         uses: actions/upload-artifact@v3
@@ -44,11 +45,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       steps:
-      - uses: actions/download-artifact@v3
+      - name: Download client pages
+        uses: actions/download-artifact@v3
         with:
           name: fe-build
           path: client-pages
-      - run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
+      - name: Upload and set Content type to html
+        shell: bash
+        run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
 
   cleanup:
     needs: upload-pages
