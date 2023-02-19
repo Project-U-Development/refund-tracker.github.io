@@ -1,8 +1,11 @@
 export DEPLOY_DIR="client-build"
+export PAGES_DIR="client-pages"
 
 # Copy the site directory to a temporary location
 mkdir -p $DEPLOY_DIR
 cp -a ./client/. $DEPLOY_DIR
+
+mkdir -p $PAGES_DIR
 
 # Remove components.html page, it should not appear on production
 rm $DEPLOY_DIR/components.html
@@ -24,6 +27,6 @@ for filename in $DEPLOY_DIR/*.html; do
   filename="${filename%.*}"
 
   # Move it
-  mv $original $DEPLOY_DIR/$filename
+  mv $original $PAGES_DIR/$filename
 done
 
