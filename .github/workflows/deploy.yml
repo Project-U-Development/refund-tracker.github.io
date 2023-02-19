@@ -58,5 +58,4 @@ jobs:
     needs: upload-pages
     runs-on: ubuntu-latest
     steps:
-      - run: rm -rf client-build
-      - run: rm -rf client-pages
+      - run: rm -rf client-build client-pages
