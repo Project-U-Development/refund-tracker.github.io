@@ -10,22 +10,97 @@
    <!-- Component styles -->
    <link rel="stylesheet" href="./components/components.css">
    <link rel="stylesheet" href="./components/LogOutButton/logout.css">
+   <link rel="stylesheet" href="./components/homePage/homePage.css">
 </head>
 
 <body>
    <!-- App layout goes here -->
-<div class="header"> <h1>Refund tracker</h1>
-    <button class="button ghost heading-h5 log-out-btn" id="LogOutBtn">Log Out</button>
-             </div>
-         <div class="container">
-          <button class="button primary heading-h5" id="buttonPrimary">Create Refund</button>
-
-        <form action="" class="search-form" method="GET" >
-            <h2>You do not have any refund records yet...</h2>
+   <div class="header">
+      <h1>Refund tracker</h1>
+      <button class="button ghost heading-h5 log-out-btn" id="LogOutBtn">Log Out</button>
+   </div>
+   <div class="container">
+      <div class="section_search">
+         <button class="button primary heading-h5" id="buttonPrimary">Create refund</button>
+         <div >
+            <form action="" class="search-form" method="GET">
+               <input type="search" id="search1" class="search-form-input input heading-h5" placeholder="Search" />
+               <button type="submit" id="btn1" class="search-form-btn" placeholder="">
+                 <svg focusable="false" viewBox="0 0 16 16">
+                   <path
+                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                     style="fill:#0044B3;"></path>
+                 </svg>
+               </button>
+             </form>
+           
+            <select class="heading-h5 sort-select" name="sort" id="sort-select">
+               <option class="imput-label" value="">--Please Sort by--</option>
+               <option class="options-label" value="0">Create Date</option>
+               <option class="options-label" value="1">What</option>
+               <option class="options-label" value="2">Who</option>
+               <option class="options-label" value="3">How much</option>
+               <option class="options-label" value="4">Due date</option>
+            </select>
          </div>
-           <script src="./src/authentication.js"></script>
-        <script src="../../sortSelect/sortSelect.mjs" type="module"></script>
-        <script src="components/logOutButton/logOutButton.js" type="module"></script>
-        <script src="components/createRefundButton/createRefundButton.mjs"></script>
-    </div>
+      </div>
+
+   </div>
+   <div class="container__refund">
+      <table class="table-refund">
+         <thead id="thead">
+            <tr>
+               <td class="table-1cell-head">
+                  <h5 class="heading-h5"> Created </h5>
+               </td>
+               <td class="table-cell-head">
+                  <h5 class="heading-h5"> What </h5>
+               </td>
+               <td class="table-cell-head">
+                  <h5 class="heading-h5"> Who </h5>
+               </td>
+               <td class="table-cell-head">
+                  <h5 class="heading-h5"> How much </h5>
+               </td>
+               <td class="table-cell-head">
+                  <h5 class="heading-h5"> Due date </h5>
+               </td>
+            </tr>
+         </thead>
+         <tbody id="tbody">
+            <tr>
+               <td class="table-cell table-data">
+                  <input class="checkbox checkbox-label" type="checkbox" />
+                  <span class="checkbox-new"></span>
+                  12.12.2022
+               </td>
+               <td class="table-cell table-data">
+                  Bag
+               </td>
+               <td class="table-cell table-data">
+                  Gucci
+               </td>
+               <td class="table-cell table-data">
+                  100
+               </td>
+               <td class="table-cell table-data">
+                  20.12.2022
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="footer">
+         <a href="./terms-conditions">Terms & Conditions</a>
+      </div>
+   </div>
+   </div>
+
+   <script src="./src/authentication.js"></script>
+   <script src="./components/sortSelect/sortSelect.mjs" type="module"></script>
+   <script src="./components/logOutButton/logOutButton.js" type="module"></script>
+   <script src="./components/createRefundButton/createRefundButton.mjs"></script>
+   <script src="./src/homePage.mjs" type="module"></script>
+
+</body>
+
 </html>

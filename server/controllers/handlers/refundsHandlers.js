@@ -1,4 +1,4 @@
-const executeQuery = require('../../db/db');
+const db = require('../../db/db');
 const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
 
@@ -11,7 +11,7 @@ const getRefundsListHandler = async (request, reply) => {
       }
       const userId = payload.data.userId;
 
-      let data = await executeQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
+      let data = await db.executeQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
       if (data.length > 0) {
          return reply.status(200).send(data);
       }
@@ -29,7 +29,7 @@ const createRefundHandler = async (request, reply) => {
    try {
       let body = request.body;
       body.user_id = request.user.id;
-      await executeQuery.createRefund(body);
+      await db.createRefund(body);
       reply.status(201).send(`Refund created`);      
    }
    catch (err) {
