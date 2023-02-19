@@ -33,5 +33,5 @@ jobs:
   cleanup:
     runs-on:
     steps:
-      - rm -rf client-build
-      - rm -rf client-pages
+      - run: rm -rf client-build
+      - run: rm -rf client-pages
