@@ -1,3 +1,4 @@
+#!/bin/bash
 export DEPLOY_DIR="client-build"
 export PAGES_DIR="client-pages"
 
