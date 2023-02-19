@@ -10,7 +10,7 @@ jobs:
   fe-cleanup:
     runs-on: ubuntu-latest
     steps:
-      - run: source ./deployment/prepareForS3.sh
+      - run: source ./scripts/prepareForS3.sh
 
 # Deploying FE to S3 bucket
 jobs:
