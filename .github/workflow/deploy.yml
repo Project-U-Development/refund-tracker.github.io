@@ -1,0 +1,37 @@
+name: Deploy to production
+
+on:
+  push:
+    branches:
+      - "main"
+
+# Cleanup and prepare FE before deploy
+jobs:
+  fe-cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: source ./scripts/prepareForS3.sh
+
+  # Deploying FE to S3 bucket
+  upload-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: "./client-build"
+          destination_dir: "./"
+
+    upload-html:
+      runs-on: ubuntu-latest
+      steps:
+        - run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
+
+    cleanup:
+      runs-on:
+      steps:
+        - rm -rf client-build
+        - rm -rf client-pages
