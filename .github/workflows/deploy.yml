@@ -31,7 +31,7 @@ jobs:
       - run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
 
   cleanup:
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       - run: rm -rf client-build
       - run: rm -rf client-pages
