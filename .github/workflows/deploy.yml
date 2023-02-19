@@ -44,15 +44,14 @@ jobs:
     needs: upload-fe-build
     runs-on: ubuntu-latest
     steps:
-      steps:
-      - name: Download client pages
-        uses: actions/download-artifact@v3
-        with:
-          name: fe-build
-          path: client-pages
-      - name: Upload and set Content type to html
-        shell: bash
-        run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
+    - name: Download client pages
+      uses: actions/download-artifact@v3
+      with:
+        name: fe-build
+        path: client-pages
+    - name: Upload and set Content type to html
+      shell: bash
+      run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
 
   cleanup:
     needs: upload-pages
