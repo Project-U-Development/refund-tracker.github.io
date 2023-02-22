@@ -12,16 +12,15 @@
 
 <body>
    <div class="mainConteiner">
-      <form class="registerForm" action="" method="post">
+      <form class="registerForm" action="" method="post" id="registerForm">
          <div class="formContainer">
             <div class="newAccount heading-h2">Create new account</div>
-            
+
             <div class="input-container">
                <fieldset class="input-fieldset" id="fieldEmail">
                   <i class="icon iconEmail"></i>
-                  <input class="input inputNoLabel heading-h5 registerFormInput" id="eMail" type="email"
-                     name="emailInput" maxlength="125" placeholder="Your E-mail"
-                     title="This is not a valid e-mail address" required="">
+                  <input class="input inputNoLabel heading-h5 registerFormInput" id="eMail" type="email" name="email"
+                     maxlength="125" placeholder="Your E-mail" title="This is not a valid e-mail address" required="">
                </fieldset>
                <div class="mistakeMessage error-message">Error. You should provide email address.</div>
             </div>
@@ -53,9 +52,10 @@
                <button class="button primary heading-h5" id="createAccount" type="submit" disabled>Create
                   account</button>
             </div>
+            <div class="error-message" id="submitErrorMessage"></div>
             <div class="containerRegister heading-h5">
                <p>Already have an account? <br>
-                  <a href="./logIn.html">Sign in</a>
+                  <a href="./login">Sign in</a>
                </p>
             </div>
          </div>
@@ -63,5 +63,6 @@
    </div>
 </body>
 <script src="./components/pageRegistration/register.mjs" type="module"></script>
+<script src="./src/signup.js" type="module"></script>
 
 </html>

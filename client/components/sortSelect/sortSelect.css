@@ -5,15 +5,14 @@
 #sort-select {
   position: relative;
   width: 290px;
-  height: 64px;
+  height: 48px;
   border: 1px solid var(--border-unfocused);
   border-radius: 8px;
   box-sizing: border-box;
   background: var(--primary-white);
   text-align: center;
-  color: #0061ff;
+  color: var(--primary-blue);
   font-family: inherit;
-  
 }
 
 #sort-select {
@@ -22,7 +21,7 @@ outline: none;
 }
 
 #sort-select:hover {
-  border: 1px solid var(--primary-blue);
+  border: 1px solid 
   }
 
 #sort-select:focus {

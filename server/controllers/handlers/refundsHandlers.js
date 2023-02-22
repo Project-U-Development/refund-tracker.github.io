@@ -1,13 +1,6 @@
-const executeQuery = require('../../db/db');
+const db = require('../../db/db');
 const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
-
-if (process.env.NODE_ENV === 'local') {
-   dotenv.config({ path: './.env-local' });
-}
-else {
-   dotenv.config({ path: './.env-prod' });
-}
 
 const getRefundsListHandler = async (request, reply) => {
    try {
@@ -18,7 +11,7 @@ const getRefundsListHandler = async (request, reply) => {
       }
       const userId = payload.data.userId;
 
-      let data = await executeQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
+      let data = await db.executeQuery('SELECT * FROM `refunds` WHERE user_id=?', [userId]);
       if (data.length > 0) {
          return reply.status(200).send(data);
       }
@@ -32,6 +25,19 @@ const getRefundsListHandler = async (request, reply) => {
    }
 }
 
+const createRefundHandler = async (request, reply) => {
+   try {
+      let body = request.body;
+      body.user_id = request.user.id;
+      await db.createRefund(body);
+      reply.status(201).send(`Refund created`);
+   }
+   catch (err) {
+      reply.status(400).send(err);
+   }
+}
+
 module.exports = {
-   getRefundsListHandler
+   getRefundsListHandler,
+   createRefundHandler
 }

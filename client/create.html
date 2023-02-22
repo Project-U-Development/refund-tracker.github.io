@@ -1,15 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./components/components.css">
-</head>
-<body>
-    <!-- App layout goes here -->
 
-    <script src="./src/create.js"></script>
+<head>
+   <meta charset="UTF-8">
+   <title>Refund creation</title>
+   <link rel="stylesheet" href="./components/RefundCreationPage/Refund-Creation.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+   <div class="container">
+      <h2 class="heading-h2">Refund creation</h2>
+      <form class="formForInputValue" id="createRefundForm" method="POST"> 
+      <div class="buttons">
+         <button class="button ghost heading-h5" id="buttonGhost" >Back</button>
+         <button class="button primary prim heading-h5" type="submit" id="buttonPrimary" disabled>Create</button>
+      </div>
+      <h3 class="heading-h3">Enter details</h3>
+      
+      <div class="container3">
+         
+         <div class="container2">
+            <div class="input-container" id="input-container1-id">
+               <fieldset class="input-fieldset" id="fieldText">
+                  <label class="input-label" for="text">What to refund
+                     <input class="input heading-h5" id="text" type="text" name="product_name" minlength="1"
+                        maxlength="125" placeholder="Text" required="">
+                  </label>
+               </fieldset>
+            </div>
+
+            <div class="input-container" id="input-container2-id">
+               <fieldset class="input-fieldset" id="fieldText">
+                  <label class="input-label" for="text">Who refunds
+                     <input class="input heading-h5" id="text" type="text" name="debtor" minlength="1"
+                        maxlength="125" placeholder="Text" required="" >
+                  </label>
+               </fieldset>
+            </div>
+         </div>
+
+         <div class="container2">
+
+            <div class="input-container" id="input-container3-id">
+               <fieldset class="input-fieldset" id="fieldNumber">
+                  <label class="input-label" for="number">Expected money amount
+                     <input class="input heading-h5" id="number" type="number" name="amount" min="0" max="99000"
+                        value="" step=".01" placeholder="Number" required="" >
+                  </label>
+               </fieldset>
+               <div class="mistakeMessage error-message">Your text of error/mistake</div>
+            </div>
+
+            <div class="datepicker" id="input-container4-id">
+               <button name="buttonSubmit" id="buttonSubmitId" class="datepicker-button" type="button"></button> 
+                   <label class="input-label datepicker-label" for="DuedateId">
+                 Due date
+                 <br />
+                 <input class="datepicker-input heading-h5" name="due_date" id="DuedateId" type="text" maxlength="10" readonly />
+               </label>
+               <div class="datepicker-calendar" id="myCalendar" name="calendarName" hidden>
+                 <div class="datepicker-month">
+                   <i class="fas fa-angle-left prev"></i>
+                   <div class="datepicker-date">
+                     <h1 class="heading-h5"></h1>
+                   </div>
+                   <i class="fas fa-angle-right next"></i>
+                 </div>
+                 <div class="datepicker-line"></div>
+                 <div class="datepicker-weekdays input-label">
+                   
+                   <div>Mo</div>
+                   <div>Tu</div>
+                   <div>We</div>
+                   <div>Th</div>
+                   <div>Fr</div>
+                   <div>Sa</div>
+                   <div>Su</div>
+                 </div>
+                 <div class="datepicker-days table-data"></div>
+               </div>
+             </div>
+            
+         </div>
+      </div>
+      <h3 class="heading-h3">Set reminder (optional)</h3>
+      <div class="select-container">
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Reminder type</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="reminder_type"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+               
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">After</li>
+             <li class="select-option-item">Each</li>
+           </ul>
+         </div>
+   
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Frequency</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="frequency"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+               
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">1</li>
+             <li class="select-option-item">2</li>
+             <li class="select-option-item">3</li>
+             <li class="select-option-item">4</li>
+             <li class="select-option-item">5</li>
+             <li class="select-option-item">6</li>
+             <li class="select-option-item">7</li>
+             <li class="select-option-item">8</li>
+             <li class="select-option-item">9</li>
+             <li class="select-option-item">10</li>
+           </ul>
+         </div>
+   
+         <div class="select-group">
+           <div class="select-block">
+             <label for="select-block" class="select-label input-label" id="select-label-id"
+               >Time Unit</label
+             >
+             <button class="select-button"></button>
+             <input
+               type="text"
+               name="time_unit"
+               value=""
+               class="dropdown-input"
+               placeholder="Select"
+              
+             />
+           </div>
+           <ul class="select-options">
+             <li class="select-option-item">Day</li>
+             <li class="select-option-item">Week</li>
+             <li class="select-option-item">Month</li>
+             <li class="select-option-item">Year</li>
+           </ul>
+         </div>
+       </div>
+      </form>
+   </div>
+
+
 </body>
+
+<script src="./src/create.js" type="module"></script>
+
 </html>

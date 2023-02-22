@@ -1,0 +1,60 @@
+name: Deploy to production
+
+on:
+  push:
+    branches:
+      - "main"
+
+# Cleanup and prepare FE before deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout from repo
+        uses: actions/checkout@v3
+      - name: Prepare files for upload to S3
+        shell: bash
+        run: source ./scripts/prepareClientForS3.sh
+      - name: Upload generated folders
+        uses: actions/upload-artifact@v3
+        with:
+          name: fe-build
+          path: |
+            client-build
+            client-pages
+
+  # Deploying FE to S3 bucket
+  upload-fe-build:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: fe-build
+          path: client-build
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: "./client-build"
+          destination_dir: "./"
+
+  upload-pages:
+    needs: upload-fe-build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download client pages
+      uses: actions/download-artifact@v3
+      with:
+        name: fe-build
+        path: client-pages
+    - name: Upload and set Content type to html
+      shell: bash
+      run: source ./scripts/uploadAndSetHtmlContentType.sh ${{ secrets.AWS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY}} ${{ secrets.AWS_BUCKET }}
+
+  cleanup:
+    needs: upload-pages
+    runs-on: ubuntu-latest
+    steps:
+      - run: rm -rf client-build client-pages

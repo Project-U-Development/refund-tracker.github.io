@@ -1,0 +1,10 @@
+.log-out-btn {
+  margin-top: 17px;
+  margin-right: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

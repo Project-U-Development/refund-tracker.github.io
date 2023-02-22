@@ -3,3 +3,5 @@ client/node_modules/
 server/node_modules/
 .env-prod
 server/.env-prod
+client-build
+client-pages

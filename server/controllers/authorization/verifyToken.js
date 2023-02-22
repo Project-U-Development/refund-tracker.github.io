@@ -1,7 +1,4 @@
-const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-
-dotenv.config({ path: '.env-local' });
 
 async function verifyToken(token, secretKey) {
    try {

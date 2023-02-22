@@ -23,6 +23,7 @@
 
 .checkbox:checked+.checkbox-new {
     background: var(--primary-blue);
+
 }
 
 .checkbox-new:after {
