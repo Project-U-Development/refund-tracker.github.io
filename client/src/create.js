@@ -45,6 +45,7 @@ function main() {
     form.onsubmit = function (event) {
         event.preventDefault();
         const data = getRefundData(event.target);
+        console.log(data);
         refund(data);
     };
 }
@@ -59,7 +60,7 @@ function getRefundData(form) {
         due_date: changeStringToDate(formData.get("due_date"))
     };
 
-    if (formData.has("reminder_type")) {
+    if (formData.get("reminder_type")) {
         body.reminder = {
             reminder_type: formData.get("reminder_type"),
             frequency: formData.get("frequency"),
