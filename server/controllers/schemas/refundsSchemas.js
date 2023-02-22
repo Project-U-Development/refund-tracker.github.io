@@ -76,12 +76,12 @@ const createRefundSchema = {
             properties: {
                reminder_type: {
                   type: 'string',
-                  enum: ['each', 'every']
+                  enum: ['each', 'after']
                },
                frequency: { type: 'number' },
                time_unit: {
                   type: 'string',
-                  enum: ['week', 'weeks', 'day', 'days']
+                  enum: ['week', 'day']
                }
             }
          }
