@@ -1,4 +1,17 @@
 import { startUserSession } from './startUserSession.mjs'
+import { inputListener } from '../components/input/input.mjs';
+
+const inputs = document.getElementsByClassName('registerFormInput');
+const errorMessage = document.getElementById('submitErrorMessage');
+inputListener(inputs, 'input', clearErrorMessage);
+
+function clearErrorMessage() {
+   showErrorMessage('')
+}
+
+function showErrorMessage(err) {
+   errorMessage.innerHTML = err;
+}
 
 function main() {
    const form = document.getElementById('registerForm');
@@ -21,11 +34,12 @@ function getLoginData(form) {
 
 const apiUrl = window.origin === 'http://localhost:3000' ? 'http://localhost:80' : 'http://ec2-18-197-163-2.eu-central-1.compute.amazonaws.com';
 
-const handleResponse = (res) => {
-   if (res.status === 400) {
-      throw new Error(`User with such email exist`);
-   } else {
-      return res.json();
+const handlerResponse = (res) => {
+   switch (res.status) {
+      case 400: throw new Error('User with such email exist');
+      case 403: throw new Error('Please, provide a valid email address');
+      case 201: alert('User is registered successfully');
+         return res.json();
    }
 }
 
@@ -40,7 +54,7 @@ async function signup(data) {
          userPassword: data.password1
       })
    })
-      .then(handleResponse)
+      .then(handlerResponse)
       .then(function (res) {
          const accessToken = res.accessToken.split(" ")[1];
          startUserSession(accessToken);
@@ -51,8 +65,3 @@ async function signup(data) {
 }
 
 main();
-
-function showErrorMessage(err) {
-   const message = document.getElementById('submitErrorMessage');
-   message.innerHTML = err;
-}

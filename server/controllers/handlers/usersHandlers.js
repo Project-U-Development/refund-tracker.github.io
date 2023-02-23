@@ -12,8 +12,8 @@ const addUserHandler = async (request, reply) => {
    const { userMail, userPassword } = request.body;
    try {
       const validationEmail = checkEmail(userMail, userPassword);
-      if (validationEmail.status === 400) {
-         return reply.status(400).send(validationEmail.message);
+      if (validationEmail.status === 403) {
+         return reply.status(403).send(validationEmail.message);
       }
       userId = uuid.v4();
       await executeQuery(
@@ -139,7 +139,7 @@ async function hashPassword(password) {
 function checkEmail(userMail) {
    if (!validator.isEmail(userMail)) {
       return {
-         status: 400,
+         status: 403,
          message: 'Please, provide a valid email address'
       }
    }

@@ -21,6 +21,16 @@ const apiUrl =
       ? "http://localhost:80"
       : "http://ec2-18-197-163-2.eu-central-1.compute.amazonaws.com";
 
+const handlerResponse = (res) => {
+   switch (res.status) {
+      case 401: alert('Password is not correct! Use link "Forgot password?" for password reset');
+         break;
+      case 404: alert('There is no user with specified email! Use link "Do not have an account yet" for registration');
+         break;
+      case 202: return res.json();
+   }
+}
+
 function login(data) {
    fetch(`${apiUrl}/login`, {
       method: "POST",
@@ -32,9 +42,7 @@ function login(data) {
          userPassword: data.password,
       }),
    })
-      .then(function (res) {
-         return res.json();
-      })
+      .then(handlerResponse)
       .then(function (res) {
          const accessToken = res.accessToken.split(" ")[1];
          startUserSession(accessToken);
