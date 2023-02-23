@@ -1,5 +1,4 @@
 const db = require('../../db/db');
-const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
 
 const getRefundsListHandler = async (request, reply) => {
@@ -30,7 +29,7 @@ const createRefundHandler = async (request, reply) => {
       let body = request.body;
       body.user_id = request.user.id;
       await db.createRefund(body);
-      reply.status(201).send(`Refund created`);      
+      reply.status(201).send(`Refund created`);
    }
    catch (err) {
       reply.status(400).send(err);

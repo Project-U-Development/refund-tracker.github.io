@@ -43,6 +43,50 @@ const loginUserSchema = {
    }
 }
 
+const forgetPasswordSchema = {
+   body: {
+      type: 'object',
+      required: ['userMail'],
+      properties: {
+         userMail: stringType
+      }
+   },
+   response: {
+      202: stringType,
+      400: stringType,
+      404: stringType
+   }
+}
+
+const resetPasswordSchema = {
+   headers: {
+      type: 'object',
+      required: ['authorization'],
+      properties: {
+         authorization: stringType,
+      }
+   },
+   body: {
+      type: 'object',
+      required: ['newPassword'],
+      properties: {
+         newPassword: stringType
+      }
+   },
+   response: {
+      202: stringType,
+      400: stringType,
+      401: {
+         type: 'object',
+         properties: {
+            message: stringType,
+            error: stringType
+         }
+      },
+      500: stringType,
+   }
+}
+
 const user = {
    type: 'object',
    properties: {
@@ -75,5 +119,7 @@ module.exports = {
    getAllUsersShema,
    getUserByIdShema,
    addUserSchema,
-   loginUserSchema
+   loginUserSchema,
+   forgetPasswordSchema,
+   resetPasswordSchema
 }

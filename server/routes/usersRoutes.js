@@ -18,7 +18,14 @@ async function routes(fastify, option) {
       schema: usersSchema.loginUserSchema,
       handler: usersHandler.loginUserHandler
    });
-
+   fastify.post('/forgetpassword', {
+      schema: usersSchema.forgetPasswordSchema,
+      handler: usersHandler.forgetPasswordHandler
+   });
+   fastify.post('/resetpassword', {
+      schema: usersSchema.resetPasswordSchema,
+      handler: usersHandler.resetPasswordHandler
+   });
 }
 
 module.exports = routes;
