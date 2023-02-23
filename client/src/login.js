@@ -16,7 +16,6 @@ function getLoginData(form) {
    return { email, password };
 }
 
-console.log(window.origin);
 const apiUrl =
    window.origin === "http://localhost:3000"
       ? "http://localhost:80"

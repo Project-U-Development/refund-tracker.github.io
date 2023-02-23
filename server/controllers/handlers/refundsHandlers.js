@@ -1,5 +1,4 @@
 const db = require('../../db/db');
-const dotenv = require('dotenv');
 const { verifyToken } = require('../authorization/verifyToken');
 
 const getRefundsListHandler = async (request, reply) => {

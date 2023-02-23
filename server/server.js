@@ -7,10 +7,12 @@ if (process.env.NODE_ENV === "local") {
 } else {
    dotenv.config({ path: "./.env" });
 }
+
 fastify.register(cors, {
    origin: "*",
    methods: ["GET", "POST", "OPTIONS"],
 });
+
 const { verifyJWT } = require("./controllers/authorization/auth");
 fastify.decorate("verifyJWT", verifyJWT);
 

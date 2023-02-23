@@ -2,19 +2,11 @@ const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const jwt = require('jsonwebtoken');
 const validator = require('validator');
-const dotenv = require('dotenv');
-const executeQuery = require('../../db/db');
+const { executeQuery } = require('../../db/db');
 const nodemailer = require('nodemailer');
 const { resPassEmailMessage } = require('./resPassEmailMessages');
 const { verifyToken } = require('../authorization/verifyToken');
 
-if (process.env.NODE_ENV === 'local') {
-   dotenv.config({ path: './.env-local' });
-}
-else {
-   dotenv.config({ path: './.env-prod' });
-}
-const { executeQuery } = require('../../db/db');
 
 const addUserHandler = async (request, reply) => {
    const { userMail, userPassword } = request.body;
@@ -88,7 +80,7 @@ const forgetPasswordHandler = async (request, reply) => {
          await executeQuery(
             `UPDATE users SET user_reset_password_code=? WHERE user_id=?`,
             [resetPasswordCode, candidateUser.data.user_id]);
-         return reply.status(202).send(`Reset password code was sent to ${userMail} successfully`);
+         return reply.status(202).send(`Reset password link was sent to ${userMail} successfully`);
       }
    }
    catch (err) {
@@ -98,7 +90,6 @@ const forgetPasswordHandler = async (request, reply) => {
 
 const resetPasswordHandler = async (request, reply) => {
    try {
-      // const token = request.headers['authorization'].split(' ')[1];
       const token = request.headers['authorization'];
       const payload = await verifyToken(token, process.env.JWT_RESETPASS_SEKRET_KEY);
       if (payload.status === 401) {
@@ -193,7 +184,8 @@ async function sendResetPassCodeMail(userMail, resetPasswordToken) {
             pass: process.env.EMAIL_PASS
          }
       });
-      const emailMessage = resPassEmailMessage(`${process.env.LINK_RESETPASS_MAIL}#${resetPasswordToken}`);
+      const newPasswordlink = process.env.LINK_RESETPASS_MAIL;
+      const emailMessage = resPassEmailMessage(`${newPasswordlink}#${resetPasswordToken}`);
       const options = {
          from: process.env.EMAIL_USER,
          to: userMail,
