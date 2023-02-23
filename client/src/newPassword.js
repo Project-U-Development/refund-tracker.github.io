@@ -19,16 +19,17 @@ const apiUrl =
       ? "http://localhost:80"
       : "http://ec2-18-197-163-2.eu-central-1.compute.amazonaws.com";
 
-const handleResponse = (res) => {
-   console.log(res.status);
+const handlerResponse = (res) => {
    switch (res.status) {
       case 400: alert('A password was not reset before. Please, go through the forget password procedure');
+         window.location.href = "/forgotPassword"
          break;
-      case 404: alert('Reset password link is expired or token is not verified!');
+      case 401: alert('Reset password link is expired or token is not verified!');
+         window.location.href = "/forgotPassword"
          break;
-      case 202: alert('Password was changed successfully. Please, go through the login procedure')
+      case 202: alert('Password was changed successfully. Please, go through the login procedure');
+         window.location.href = "/";
    }
-   window.location.href = "/";
 }
 
 async function resetPassword(data, token) {
@@ -42,7 +43,7 @@ async function resetPassword(data, token) {
          newPassword: data.password,
       })
    })
-      .then(handleResponse)
+      .then(handlerResponse)
       .catch(res => {
          console.log(res);
       });

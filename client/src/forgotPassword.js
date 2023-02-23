@@ -18,13 +18,13 @@ const apiUrl =
       ? "http://localhost:80"
       : "http://ec2-18-197-163-2.eu-central-1.compute.amazonaws.com";
 
-const handleResponse = (res) => {
+const handlerResponse = (res) => {
    switch (res.status) {
       case 404: alert('There is no user with specified email');
          break;
       case 202: alert('Reset password link was sent successfully. Please, go through the link in your Email box');
+         window.location.href = "/";
    }
-   window.close();
 }
 
 async function forgotPassword(data) {
@@ -37,7 +37,7 @@ async function forgotPassword(data) {
          userMail: data.userMail,
       })
    })
-      .then(handleResponse)
+      .then(handlerResponse)
       .catch(res => {
          console.log(res);
       });
